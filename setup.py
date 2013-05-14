@@ -27,7 +27,8 @@ setup(name='bise.theme',
           'setuptools',
           'z3c.jbot',
           'five.grok',
-          'plone.app.dexterity [grok, relations]'
+          'plone.app.dexterity [grok, relations]',
+          'plone.app.contenttypes'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
