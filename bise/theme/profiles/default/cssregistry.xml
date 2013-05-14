@@ -30,23 +30,24 @@
 
 
  <!-- Deactivate emtpy CSS stylesheet that come with Sunburst theme -->
- <stylesheet title=""
+<!--  <stylesheet title=""
+    id="authoring.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="0" expression=""/> -->
+
+<!--  <stylesheet title=""
     id="base.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     enabled="0" expression=""/>
+ -->
 
- <stylesheet title=""
-    id="authoring.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="0" expression=""/>
-
- <stylesheet title=""
+<!--  <stylesheet title=""
     id="controlpanel.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
-    enabled="0" expression=""/>
+    enabled="0" expression=""/> -->
 
  <stylesheet title=""
     id="deprecated.css"
@@ -54,29 +55,34 @@
     cacheable="True" compression="safe" cookable="True"
     enabled="0" expression=""/>
 
+<!--  <stylesheet title=""
+    id="forms.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="0" expression=""/> -->
+
+<!--  <stylesheet title=""
+    id="invisibles.css"
+    media="screen" rel="stylesheet" rendering="import"
+    cacheable="True" compression="safe" cookable="True"
+    enabled="0" expression=""/> -->
+
  <stylesheet title=""
     id="navtree.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     enabled="0" expression=""/>
 
- <stylesheet title=""
-    id="invisibles.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="0" expression=""/>
+<!--
+  Enable deletion of this item, commenting it out
+  if you are going to develop a custom mobile CSS
 
  <stylesheet title=""
-    id="forms.css"
+    id="mobile.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
     enabled="0" expression=""/>
-
- <stylesheet title=""
-    id="RTL.css"
-    media="screen" rel="stylesheet" rendering="import"
-    cacheable="True" compression="safe" cookable="True"
-    enabled="0" expression=""/>
+ -->
 
  <stylesheet title=""
     id="ploneCustom.css"
@@ -84,11 +90,12 @@
     cacheable="True" compression="safe" cookable="True"
     enabled="0" expression=""/>
 
+
  <stylesheet title=""
-    id="mobile.css"
+    id="RTL.css"
     media="screen" rel="stylesheet" rendering="import"
     cacheable="True" compression="safe" cookable="True"
-    enabled="0" expression=""/>    
+    enabled="0" expression=""/>
 
 
 </object>
