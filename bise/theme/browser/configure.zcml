@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="bise.theme">
 
     <!-- 'BISETheme' Zope 3 browser layer
@@ -20,5 +21,46 @@
     <browser:jbot
         directory="template-overrides"
         layer=".interfaces.IThemeSpecific" />
-
+    <!-- The customized logo -->
+    <browser:viewlet
+        name="plone.logo"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        layer=".interfaces.IThemeSpecific"
+        class=".viewlets.LogoViewlet"
+        permission="zope.Public"
+        /> 
+    <!-- The global sections -->
+    <browser:viewlet
+        name="plone.global_sections"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        layer=".interfaces.IThemeSpecific"
+        class=".viewlets.GlobalSectionsViewlet"
+        permission="zope.Public"
+        />        
+    <!-- The personal bar -->
+    <browser:viewlet
+        name="plone.personal_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        layer=".interfaces.IThemeSpecific"
+        class=".viewlets.PersonalBarViewlet"
+        permission="zope.Public"
+        />   
+    <!-- The breadcrumbs -->
+    <browser:viewlet
+        name="plone.path_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        layer=".interfaces.IThemeSpecific"
+        class=".viewlets.PathBarViewlet"
+        permission="zope2.View"
+        />             
+    <!-- Footer -->
+    <browser:viewlet
+        name="plone.footer"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        layer=".interfaces.IThemeSpecific"
+        class=".viewlets.FooterViewlet"
+        permission="zope.Public"
+        />   
+                    
 </configure>

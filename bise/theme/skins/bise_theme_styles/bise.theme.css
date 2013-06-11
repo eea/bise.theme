@@ -1,1 +1,136 @@
 /* Add here your CSS commands */
+body {
+	width: 960px;
+	margin: 0 auto;
+	font-family: "Arial", sans-serif;
+	font-family: "Arial", sans-serif;
+	background-image: url(Bise-back-short.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	margin: 0 auto;
+}
+a {
+	color: #286d4e;
+}
+a:visited {
+	color: #693;
+}
+#visual-portal-wrapper{
+	width: 100%;
+}
+#portal-top,
+#portal-columns,
+#portal-footer-wrapper{
+	width: 960px;
+	margin: 0 auto;
+}
+#portal-header li{
+	display: inline-block;
+}
+#portal-logo {
+	margin-top: 2px;
+}
+#portal-personaltools-wrapper a{
+	color: #0a7223;
+}
+#personalbar-options{
+	float:right;
+	margin-top: 20px;
+	font-size: 12px;
+}
+#personalbar-options li{
+	padding: 0.3em;
+}
+#portal-personaltools {
+	background-color: transparent;
+	padding: 0px;
+	font-size: 100%;
+	margin-top: 24px;
+	font-size: 12px;
+}
+#searchbar-options{
+	float:right;
+
+}
+#searchForm{
+	width: 180px !important;
+	margin-top: 10px;
+}
+#portal-personaltools dd {
+	background-color: white;
+}
+#portal-globalnav {
+	height: 5em;
+}
+#portal-globalnav{
+	width: 960px;
+	margin-top: -20px;
+	background: none;
+}
+#portal-globalnav li a,
+#portal-globalnav li a:hover
+{
+	//width: 16.4%;
+	width: 123px;
+	color: #000;
+	text-align: center;
+	font-size: 18px;
+	background: none;
+	height: 9px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-right: 0px;
+}
+#portal-globalnav li:first-child a {
+	background-image: url(Topics-bg.png);
+	background-repeat: repeat-x;
+}
+#portal-globalnav li:nth-child(2) a {
+	background-image: url(Policy-bg.png);
+	background-repeat: repeat-x;
+}
+#portal-globalnav li:nth-child(3) a {
+	background-image: url(Data-bg.png);
+	background-repeat: repeat-x;
+}
+#portal-globalnav li:nth-child(4) a {
+	background-image: url(Research-bg.png);
+	background-repeat: repeat-x;
+}
+#portal-globalnav li:nth-child(5) a {
+	background-image: url(Countries-bg.png);
+	background-repeat: repeat-x;
+}
+#portal-globalnav li:nth-child(6) a {
+	background-image: url(Networks-bg.png);
+	background-repeat: repeat-x;
+}
+#content h1.documentFirstHeading{
+	margin-top: -20px;
+	color: #168130;
+	border-bottom: 1px solid #168130;
+}
+#portal-column-one{
+	margin-top: 28px;
+}
+dl.portlet dt{
+	background-color: transparent;
+}
+dl.portlet dt a:link,
+dl.portlet dt a:hover,
+dl.portlet dt a:visited {
+	color: #168130;
+	border-bottom: 1px solid #BAE2FF;
+}
+#portal-footer{
+	background-image: url(Bise-back-footer.jpg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	height: 22em;
+	width: 960px;
+	text-align: center;
+}
+#imgFooterLogos{
+	padding-top: 9em;
+}
