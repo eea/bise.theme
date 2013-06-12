@@ -3,7 +3,7 @@
 
 <p class="hiddenStructure" i18n:translate="heading_personal_tools">Personal tools</p>
 <ul id="searchbar-options">
-  <li>|</li>
+  
   <li>
     <div id="searchForm" style="width:15em">Loading</div>
       <script type="text/javascript">  

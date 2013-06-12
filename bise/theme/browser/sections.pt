@@ -6,8 +6,9 @@
     <ul id="portal-globalnav"
         tal:define="selected_tab python:view.selected_portal_tab"
         ><tal:tabs tal:repeat="tab portal_tabs"
-        ><li tal:define="tid tab/id"
+        ><li tal:define="tid tab/id;name tab/name"
              tal:attributes="id string:portaltab-${tid};"
+             tal:condition="python:name!='Home'"
             ><a href=""
                tal:content="tab/name"
                tal:attributes="href tab/url;
