@@ -9,7 +9,7 @@ body {
 	background-position: top center;
 	margin: 0 auto;
 }
-a {
+a:link {
 	color: #286d4e;
 }
 a:visited {
@@ -29,6 +29,16 @@ a:visited {
 }
 #portal-logo {
 	margin-top: 2px;
+}
+#wrap_logoBiseShadow {
+	position: absolute;
+	width: 133px;
+	height: 44px;
+	top: 0;
+	z-index: -100;
+	-webkit-box-shadow: 3px 0 15px #CCC, -3px 0 15px #CCC;
+	-moz-box-shadow: 3px 0 15px #CCC, -3px 0 15px #CCC;
+	box-shadow: 3px 0 15px #CCC, -3px 0 15px #CCC;
 }
 #portal-personaltools-wrapper a{
 	color: #0a7223;
@@ -67,42 +77,50 @@ a:visited {
 	margin-top: -20px;
 	background: none;
 }
+#portal-globalnav li{
+	width: 16.4%;
+}
+#portal-globalnav li div{
+	height: 35px;
+	width: 100%;
+	font-size: 18px;
+	padding-top: 15px;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
 #portal-globalnav li a,
 #portal-globalnav li a:hover
 {
-	//width: 16.4%;
-	width: 123px;
+	padding: 0px;
+	width: 100%;
 	color: #000;
 	text-align: center;
 	font-size: 18px;
 	background: none;
-	height: 9px;
-	border-left: 1px solid #ccc;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 	border-right: 0px;
 }
-#portal-globalnav li:first-child a {
+#portal-globalnav li:first-child div {
 	background-image: url(Topics-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(2) a {
+#portal-globalnav li:nth-child(2) div {
 	background-image: url(Policy-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(3) a {
+#portal-globalnav li:nth-child(3) div {
 	background-image: url(Data-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(4) a {
+#portal-globalnav li:nth-child(4) div {
 	background-image: url(Research-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(5) a {
+#portal-globalnav li:nth-child(5) div {
 	background-image: url(Countries-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(6) a {
+#portal-globalnav li:nth-child(6) div {
 	background-image: url(Networks-bg.png);
 	background-repeat: repeat-x;
 }
