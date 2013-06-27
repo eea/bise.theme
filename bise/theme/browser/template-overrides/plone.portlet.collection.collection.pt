@@ -18,20 +18,21 @@
     <dd class="portletItem"
         tal:define="oddrow repeat/obj/odd;
                     useView python:obj.portal_type in viewActions;
-                    itemUrl python:useView and obj.getURL() + '/view' or obj.getURL();
+                    itemUrl python:useView and obj.getURL() + '/view' or obj.getLink;
                     normalizeString nocall:plone_view/normalizeString;"
         tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
+    <span class="portletItemDetail" tal:content="python:obj.getObject().aq_parent.Subject()[0]"></span>,
+            <span class="portletItemDetail"
+                  tal:condition="view/data/show_dates"
+                  tal:content="python:toLocalizedTime(obj.Date())">
+                Date
+            </span>:<br/>
         <a href="#"
            tal:attributes="href itemUrl;
                            class python:'tile contenttype-' + normalizeString(obj.portal_type);
                            title obj/Description">
             <span tal:replace="obj/Title">
              Title
-            </span>
-            <span class="portletItemDetails"
-                  tal:condition="view/data/show_dates"
-                  tal:content="python:toLocalizedTime(obj.Date)">
-                Date
             </span>
         </a>
     </dd>
