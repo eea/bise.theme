@@ -9,6 +9,7 @@
    <grok:grok package="." />
 
    <include package=".browser" />
+   <include package=".behaviors" />
 
    <include file="skins.zcml" />
    <include file="profiles.zcml" />
