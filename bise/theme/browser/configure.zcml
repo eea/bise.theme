@@ -28,7 +28,7 @@
         layer=".interfaces.IThemeSpecific"
         class=".viewlets.LogoViewlet"
         permission="zope.Public"
-        /> 
+        />
     <!-- The global sections -->
     <browser:viewlet
         name="plone.global_sections"
@@ -36,7 +36,7 @@
         layer=".interfaces.IThemeSpecific"
         class=".viewlets.GlobalSectionsViewlet"
         permission="zope.Public"
-        />        
+        />
     <!-- The personal bar -->
     <browser:viewlet
         name="plone.personal_bar"
@@ -44,7 +44,7 @@
         layer=".interfaces.IThemeSpecific"
         class=".viewlets.PersonalBarViewlet"
         permission="zope.Public"
-        />   
+        />
     <!-- The breadcrumbs -->
     <browser:viewlet
         name="plone.path_bar"
@@ -52,7 +52,7 @@
         layer=".interfaces.IThemeSpecific"
         class=".viewlets.PathBarViewlet"
         permission="zope2.View"
-        />             
+        />
     <!-- Footer -->
     <browser:viewlet
         name="plone.footer"
@@ -61,6 +61,13 @@
         layer=".interfaces.IThemeSpecific"
         class=".viewlets.FooterViewlet"
         permission="zope.Public"
-        />   
-                    
+        />
+
+    <browser:page
+        name="rss_summary_view"
+        permission="zope2.View"
+        for="plone.app.collection.interfaces.ICollection"
+        template="templates/rss_summary_view.pt"
+        />
+
 </configure>
