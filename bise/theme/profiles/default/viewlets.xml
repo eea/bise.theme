@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<object>
+    
+    <!-- plone.belowcontenttitle order -->
+    <order manager="plone.belowcontenttitle" skinname="BISETheme"
+        based-on="Sunburst Theme">
+    </order>
+    <order manager="plone.portalheader" skinname="BISETheme"
+         based-on="Sunburst Theme">
+        <viewlet name="plone.path_bar" insert-after="*" />
+    </order>
+    <!-- end plone.belowcontenttitle order -->
+    <hidden manager="plone.portalheader" skinname="BISETheme">
+    	<viewlet name="plone.searchbox" />
+    </hidden>
+    <hidden manager="plone.portalfooter" skinname="BISETheme">
+    	<viewlet name="plone.colophon" />
+    </hidden>
+    <hidden manager="plone.abovecontent " skinname="BISETheme" based-on="Sunburst Theme">
+        <viewlet name="plone.path_bar" />
+    </hidden>
+</object>
