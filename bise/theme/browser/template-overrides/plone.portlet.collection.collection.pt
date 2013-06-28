@@ -24,7 +24,7 @@
     <span class="portletItemDetail" tal:content="python:obj.getObject().aq_parent.Subject()[0]"></span>,
             <span class="portletItemDetail"
                   tal:condition="view/data/show_dates"
-                  tal:content="python:toLocalizedTime(obj.getFeedItemUpdated())">
+                  tal:content="python:toLocalizedTime(obj.getFeedItemUpdated)">
                 Date
             </span>:<br/>
         <a href="#"
