@@ -34,6 +34,7 @@ setup(name='bise.theme',
           'Products.Collage',
           'collective.collage.portlets',
           'se.portlet.gallery',
+          'collective.uploadify',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
