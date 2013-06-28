@@ -45,8 +45,7 @@ class ImportNews(grok.View):
             log.info('Added: %s' % id)
             try:
                 newsitem.reindexObject()
-            except:
-                import pdb; pdb.set_trace()
-                a = 1
+            except Exception, e:
+                log.exception(e)
 
         return 1
