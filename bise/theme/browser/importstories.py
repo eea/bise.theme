@@ -4,7 +4,13 @@ from Products.CMFCore.utils import getToolByName
 from zope.interface import Interface
 from Acquisition import aq_inner
 from five import grok
-from .data import main
+from Products.CMFPlone.utils import safe_unicode
+
+
+def main():
+    import urllib2
+    sock = urllib2.urlopen('http://biodiversity.europa.eu/AAAAAAA-Stories')
+    return sock.read()
 
 
 class ImportStories(grok.View):
@@ -16,7 +22,7 @@ class ImportStories(grok.View):
         wtool = getToolByName(context, 'portal_workflow')
         from logging import getLogger
         log = getLogger('Import Stories')
-        for item in main():
+        for item in eval(main()):
             id = context.invokeFactory(
                 id=item['id'],
                 type_name='News Item',
@@ -24,7 +30,9 @@ class ImportStories(grok.View):
 
                 )
             newsitem = context.get(id)
-            newsitem.text = RichTextValue(item['description'], 'text/html', 'text/html')
+            text = u' '.join((safe_unicode(item['description'], 'latin-1'), safe_unicode(item['body'], 'latin-1')))
+            text = text.replace(u'\x96', u'').replace(u'\x92', u'').replace(u'\x93', u'').replace(u'\x94', u'')
+            newsitem.text = RichTextValue(text, 'text/html', 'text/html')
             newsitem.setModificationDate(item['last_modification'])
             newsitem.setEffectiveDate(item['releasedate'])
             newsitem.resourceurl = item.get('resourceurl', '')
@@ -35,6 +43,11 @@ class ImportStories(grok.View):
                 newsitem.image = NamedBlobImage(data=data)
             wtool.doActionFor(newsitem, action='publish')
             log.info('Added: %s' % id)
+            try:
+                newsitem.reindexObject()
+            except:
+                import pdb; pdb.set_trace()
+                a = 1
 
         return 1
 
