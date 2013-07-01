@@ -23,16 +23,20 @@
     enabled="True" expression=""  inline="False"/>
 -->
  <!--javascript title=""
+    id="bise.theme.js"
+    cacheable="False" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/-->
+ <!--javascript title=""
     id="http://www.google.com/jsapi"
     cacheable="False" compression="none" cookable="False"
     enabled="1" expression=""  inline="False"/-->
- <javascript
+ <!--javascript
     id="++resource++bise.theme.javascripts/jquery.collapsible.min.js"
     cacheable="False" compression="safe" cookable="False"
     enabled="True" expression=""  inline="False"/>
  <javascript
     id="http://www.google.com/jsapi"
     cacheable="True" compression="safe" cookable="True"
-    enabled="1" expression=""/>
+    enabled="1" expression=""/-->
 
 </object>

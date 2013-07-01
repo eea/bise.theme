@@ -106,6 +106,7 @@ a:hover{
 	font-size: 18px;
 	background: none;
 	border-right: 0px;
+	text-decoration: none;
 }
 #portal-globalnav li div#portaltab-topics {
 	background-image: url(Topics-bg.png);
@@ -132,7 +133,93 @@ a:hover{
 	background-repeat: repeat-x;
 }
 
-
+.portalsubtabs{
+	background-color: #fff !important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 1px 1px 5px #cfcfcf;
+	-webkit-box-shadow: 1px 1px 5px #cfcfcf;
+	box-shadow: 1px 1px 5px #cfcfcf;
+	z-index: 9999;
+	padding: 10px;
+	color: #000;
+	font-size: 12px;
+	display: none;
+}
+#portalsubtabs-topics {
+	border: 1px solid #ecca5a;
+	-moz-box-shadow: 1px 1px 5px #ecca5a;
+	-webkit-box-shadow: 1px 1px 5px #ecca5a;
+	box-shadow: 1px 1px 5px #ecca5a;
+}
+#portalsubtabs-policy {
+	border: 1px solid #e5bcb6;
+	-moz-box-shadow: 1px 1px 5px #e5bcb6;
+	-webkit-box-shadow: 1px 1px 5px #e5bcb6;
+	box-shadow: 1px 1px 5px #e5bcb6;
+}
+.portalsubtabs .column {
+	float: left;
+	width: 290px;
+	padding: 5px;
+}
+.portalsubtabs .first-level {
+	list-style-image: url('bise-submenu-first-level.gif');
+}
+.portalsubtabs .list-title {
+	padding: 5px;
+	font-weight: bold;
+	list-style-position: inside;
+}
+#portalsubtabs-topics .list-title{
+	background-image: url(Topics-bg.png);
+	background-repeat: repeat-x;
+}
+#portalsubtabs-policy .list-title{
+	background-image: url(Policy-bg.png);
+	background-repeat: repeat-x;
+}
+#portalsubtabs-data .list-title{
+	background-image: url(Data-bg.png);
+	background-repeat: repeat-x;
+}
+#portalsubtabs-research .list-title{
+	background-image: url(Research-bg.png);
+	background-repeat: repeat-x;
+}
+#portalsubtabs-countries_and_networks .list-title{
+	background-image: url(Countries-bg.png);
+	background-repeat: repeat-x;
+}
+#portalsubtabs-networks .list-title{
+	background-image: url(Networks-bg.png);
+	background-repeat: repeat-x;
+}
+.portalsubtabs .second-level {
+	list-style-image: url('bise-submenu-second-level.gif');
+	padding-left: 25px;
+}
+.portalsubtabs li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	display: list-item !important;
+}
+.portalsubtabs .third-level {
+	padding-left: 25px;
+}
+.portalsubtabs a,
+.portalsubtabs a:link,
+.portalsubtabs a:hover,
+.portalsubtabs a:visited {
+	color:#000;
+}
+.portalsubtabs .description {
+	display: block;
+	font-style: italic;
+	color: gray;
+	font-size: 12px;
+}
 
 
 #content h1.documentFirstHeading{
