@@ -1,4 +1,14 @@
 $(document).ready(function(){
+	$("a[href*='http://']:not([href*='"+location.hostname.replace("www.","")+"'])").each(function() {
+	  $(this).click(function(event) {
+	     event.preventDefault();
+	     event.stopPropagation();
+	     window.open(this.href, '_blank');
+	  })
+	$("a[href*='http://']:not([href*='"+location.hostname.replace("www.","")+"']):not(:has(>img))").addClass('externalLink');
+	});
+
+	
   $(function () {
     //$('#wrap_menuBise ul').each(function () {
       function showSubMenu(sid){

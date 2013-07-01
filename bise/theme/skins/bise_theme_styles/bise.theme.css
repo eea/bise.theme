@@ -21,7 +21,10 @@ a:link {
 a:hover{
 	text-decoration: underline;
 }
-
+.externalLink {
+	background: url("external-link.png") no-repeat scroll right center transparent;
+	padding-right: 15px;
+}
 #visual-portal-wrapper{
 	width: 100%;
 }
