@@ -22,10 +22,10 @@
     cacheable="False" compression="safe" cookable="False"
     enabled="True" expression=""  inline="False"/>
 -->
- <!--javascript title=""
+ <javascript 
     id="bise.theme.js"
     cacheable="False" compression="safe" cookable="False"
-    enabled="True" expression=""  inline="False"/-->
+    enabled="True" expression=""  inline="False"/>
  <!--javascript title=""
     id="http://www.google.com/jsapi"
     cacheable="False" compression="none" cookable="False"
