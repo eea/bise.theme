@@ -337,6 +337,12 @@ dl.portlet dt a:visited {
 .collage-row .row_2 .portletItem{
 	font-size: 14px;
 }
+.collage-row .row_2 dl.portletCollection{
+	background-image: url(Bise-bak-news.png);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	padding-bottom: 10px;
+}
 .collage-row .row_2 dl.portletCollection dd.portletItem{
 	border-bottom: 1px dotted #c5cd85;
 	padding-bottom: 0px;
@@ -349,4 +355,10 @@ dl.portlet dt a:visited {
 .collage-row .row_2 dl.portletCollection dd.portletItem a{
 	padding-left: 15px;
 	display: block;
+}
+.collage-row .row_2 .block_2 .portletStaticText,
+.collage-row .row_2 .block_3 .portletStaticText, {
+	text-align: right;
+	font-weight: bold;
+	font-size: 14px;
 }
