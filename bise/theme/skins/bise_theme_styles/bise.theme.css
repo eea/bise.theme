@@ -337,3 +337,16 @@ dl.portlet dt a:visited {
 .collage-row .row_2 .portletItem{
 	font-size: 14px;
 }
+.collage-row .row_2 dl.portletCollection dd.portletItem{
+	border-bottom: 1px dotted #c5cd85;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+.collage-row .row_2 dl.portletCollection dd.portletItem span:first-child{
+	background: url(Bise-bullet.png)  no-repeat scroll left center transparent;
+	padding-left: 15px;
+}
+.collage-row .row_2 dl.portletCollection dd.portletItem a{
+	padding-left: 15px;
+	display: block;
+}
