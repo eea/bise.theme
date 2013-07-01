@@ -328,6 +328,10 @@ dl.portlet dt a:visited {
 	font-style: italic;
 	font-size: 22px;
 }
+.portlet-collection-news-europe .portletHeader span,
+.portlet-collection-news-world .portletHeader span{
+	margin-left: 16px;
+}
 .collage-row .row_2 .portletItem ul{
 	font-size: 14px;
 	list-style-image: url(Bise-bullet.png) !important;
@@ -348,8 +352,10 @@ dl.portlet dt a:visited {
 	padding-bottom: 0px;
 	padding-top: 0px;
 	font-size: 13px;
-	padding-left: 30px;
-	padding-right: 25px;
+	padding-left: 0px;
+	margin-left: 30px;
+	padding-right: 0px;
+	margin-right: 25px;
 }
 .collage-row .row_2 dl.portletCollection dd.portletItem span:first-child{
 	background: url(Bise-bullet.png)  no-repeat scroll left center transparent;
