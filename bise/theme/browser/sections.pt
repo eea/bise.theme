@@ -9,7 +9,7 @@
         ><li tal:define="tid tab/id;name tab/name"
              tal:attributes="id string:portaltab-${tid};"
              tal:condition="python:name!='Home'"
-            ><div><a href=""
+            ><div tal:attributes="id string:portaltab-${tid};"><a href=""
                tal:content="tab/name"
                tal:attributes="href tab/url;
                                title tab/description|nothing;">

@@ -152,7 +152,7 @@ body.section-data #content h1.documentFirstHeading {
 	color: #7fba46;
 	border-bottom: 1px solid #7fba46 !important;
 }
-body.section-data #content h1.documentFirstHeading {
+body.section-research #content h1.documentFirstHeading {
 	color: #3fafdb;
 	border-bottom: 1px solid #3fafdb !important;
 }
@@ -160,7 +160,7 @@ body.section-countries_and_networks #content h1.documentFirstHeading {
 	color: #8F68DA;
 	border-bottom: 1px solid #8F68DA !important;
 }
-body.section-countries_and_networks #content h1.documentFirstHeading {
+body.section-networks #content h1.documentFirstHeading {
 	color: #d5dbcd;
 	border-bottom: 1px solid #d5dbcd !important;
 }
