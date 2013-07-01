@@ -10,9 +10,16 @@ body {
 	margin: 0 auto;
 	color:#4C4C4C;
 }
+body.section-index,
+body.section-bise{
+	background-image: url("Bise-back-main.jpg");
+}
 a,
 a:link {
 	border-bottom: 0px !important;
+}
+a:hover{
+	text-decoration: underline;
 }
 
 #visual-portal-wrapper{
@@ -100,34 +107,62 @@ a:link {
 	background: none;
 	border-right: 0px;
 }
-#portal-globalnav li:first-child div {
+#portal-globalnav li div#portaltab-topics {
 	background-image: url(Topics-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(2) div {
+#portal-globalnav li div#portaltab-policy {
 	background-image: url(Policy-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(3) div {
+#portal-globalnav li div#portaltab-data {
 	background-image: url(Data-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(4) div {
+#portal-globalnav li div#portaltab-research {
 	background-image: url(Research-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(5) div {
+#portal-globalnav li div#portaltab-countries_and_networks {
 	background-image: url(Countries-bg.png);
 	background-repeat: repeat-x;
 }
-#portal-globalnav li:nth-child(6) div {
+#portal-globalnav li div#portaltab-networks {
 	background-image: url(Networks-bg.png);
 	background-repeat: repeat-x;
 }
+
+
+
+
 #content h1.documentFirstHeading{
 	margin-top: -20px;
 	color: #168130;
 	border-bottom: 1px solid #168130;
+}
+body.section-topics #content h1.documentFirstHeading {
+	color: #f4b409;
+	border-bottom: 1px solid #f4b409 !important;
+}
+body.section-policy #content h1.documentFirstHeading {
+	color: #ef7153;
+	border-bottom: 1px solid #ef7153 !important;
+}
+body.section-data #content h1.documentFirstHeading {
+	color: #7fba46;
+	border-bottom: 1px solid #7fba46 !important;
+}
+body.section-data #content h1.documentFirstHeading {
+	color: #3fafdb;
+	border-bottom: 1px solid #3fafdb !important;
+}
+body.section-countries_and_networks #content h1.documentFirstHeading {
+	color: #8F68DA;
+	border-bottom: 1px solid #8F68DA !important;
+}
+body.section-countries_and_networks #content h1.documentFirstHeading {
+	color: #d5dbcd;
+	border-bottom: 1px solid #d5dbcd !important;
 }
 #content-core h3{
 	border-bottom: 1px solid #e9efcd;
@@ -173,4 +208,42 @@ dl.portlet dt a:visited {
 }
 #imgFooterLogos{
 	padding-top: 9em;
+}
+.portletGalleryPortlet .portletItem{
+	background-image: url(bise-back-gallery.png);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+}
+.portletGalleryPortlet .portletItem div:first-child{
+	border: 10px solid white;
+}
+.collage-row .row_1 .block_2 h1{
+	color: #fff;
+	font-size:37px;
+	text-align: left;
+	font-family: 'Asap', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+}
+.collage-row .row_1 .block_2 h2{
+	color: #fff;
+	text-align: left;
+	font-family: 'Asap', sans-serif;
+	font-size: 17px;
+}
+.collage-row .row_2 .portletHeader span{
+	color: #158140;
+	font-family: 'Asap', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 22px;
+}
+.collage-row .row_2 .portletItem ul{
+	font-size: 14px;
+	list-style-image: url(Bise-bullet.png) !important;
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+}
+.collage-row .row_2 .portletItem{
+	font-size: 14px;
 }
