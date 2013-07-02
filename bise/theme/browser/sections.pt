@@ -25,7 +25,26 @@
                         <ul class="first-level">
                             <li class="list-title">Status</li>
                             <ul class="second-level">
-                                
+                                <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats'})">Ecosystems and habitats</a></li>
+                                <ul class="third-level">
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/agro-ecosystems-and-grasslands'})"> - Agro-ecosystems and grasslands</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/coastal'})"> - Coastal</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/forest'})"> - Forest</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/heath-and-schrubs'})"> - Heath and Scrubs</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/ice-rock-polar'})"> - Ice, rock, polar</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/islands'})"> - Islands</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/lakes-rivers-and-wetlands'})"> - Lakes, rivers and wetlands</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/marine'})"> - Marine</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/mountains'})"> - Mountains</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/urban'})"> - Urban</a></li>             
+                                </ul>
+                                <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/species'})">Species</a></li>
+                                <ul class="third-level">
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/species/amphibians'})"> - Amphibians</a></li> 
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/species/mammals'})"> - Mammals</a></li> 
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/species/reptiles'})"> - Reptiles</a></li> 
+                                </ul>
+                                <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/genetic-resources'})">Genetic resources</a></li>
                             </ul>
                         </ul>
                     </div>
@@ -33,8 +52,27 @@
                         <ul class="first-level">
                             <li class="list-title">Threats</li>
                             <ul class="second-level">
-                                
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/climate-change'})">Climate change</a></li>
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/invasive-species'})">Invasive species</a></li>
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/fragmentation'})">Fragmentation</a></li>
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/land-use-change'})">Land use change</a></li>
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/pollution'})">Pollution</a></li>
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/overexploitation'})">Overexploitation</a></li>                              
                             </ul>
+                            <li class="list-title">Impacts</li>
+                            <ul class="second-level">
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/tipping-points'})">Tipping points</a></li>     
+                            </ul>  
+                            <li class="list-title">Benefits</li>
+                            <ul class="second-level">
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystem-services'})">Ecosystem services</a></li>     
+                            </ul> 
+                            <li class="list-title">Responses</li>
+                            <ul class="second-level">
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/protected-areas'})">Protected areas</a></li>    
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/green-infraestructure'})">Green infraestructure</a></li>   
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/life-nature-and-biodiversity-projects'})">LIFE+ Nature and Biodiversity Projects</a></li>                                                                
+                            </ul> 
                         </ul>
                     </div>                    
                     <div class="column">
@@ -45,7 +83,7 @@
                             <span class="description">Biodiversity Action Plan Report</span></li>
                           <li><a href="http://www.eea.europa.eu/publications/eu-2010-biodiversity-baseline/">EU 2010 Biodiversity Baseline report</a> 
                             <span class="description">Biodiversity Baseline report</span></li>
-                          <li><a href="/topics/sebi-indicators">SEBI 2010 indicators</a>
+                          <li><a  tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/sebi-indicators'})">SEBI 2010 indicators</a>
                             <span class="description">Streamlining European Biodiversity Indicators</span></li>
                           <li><a href="http://www.eea.europa.eu/soer">SOER 2010</a>
                             <span class="description">State of the Environment Report</span></li>
@@ -62,7 +100,8 @@
                         <li class="list-title">Biodiversity strategy 2020</li>
                         <ul class="second-level">
                           <li><a href="http://ec.europa.eu/environment/nature/biodiversity/comm2006/2020.htm">EU strategy to 2020</a></li>
-                          <li><a href="/policy/eu-biodiversity-strategy">EU Targets and Actions overview</a></li>
+
+                          <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/eu-biodiversity-strategy'})">EU Targets and Actions overview</a></li>
                           <ul class="third-level">
                             <li><a href="/policy/eu-biodiversity-strategy/target-1-and-related-aichi-targets">- EU Targets mapped to Aichi Targets</a></li>
                             <li><a href="http://www.cbd.int/sp/targets/">- Aichi Targets to 2020</a></li>
@@ -118,8 +157,9 @@
                         <ul class="first-level">
                             <li class="list-title">EU Biodiversity action plan (BAP)</li>
                             <ul class="second-level">
-                                <li><a href="/countries_and_networks/bap/community_report/">BAP 2010 Community report</a></li>
-                                <li><a href="/countries_and_networks/bap/compare">BAP 2010 comparative view</a></li>
+
+                                <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/bap/community_report/'})">BAP 2010 Community report</a></li>
+                                <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/bap/compare/'})">BAP 2010 comparative view</a></li>
                             </ul>
                         </ul>
                     </div>                   
