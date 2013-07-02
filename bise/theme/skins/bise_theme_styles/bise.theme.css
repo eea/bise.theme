@@ -307,6 +307,9 @@ dl.portlet dt a:visited {
 .portletGalleryPortlet .portletItem div:first-child{
 	border: 10px solid white;
 }
+#collage{
+	margin-top: -36px;
+}
 .collage-row .row_1 .block_2 h1{
 	color: #fff;
 	font-size:37px;
@@ -314,12 +317,14 @@ dl.portlet dt a:visited {
 	font-family: 'Asap', sans-serif;
 	font-weight: bold;
 	font-style: italic;
+	margin-left: 44px;
 }
 .collage-row .row_1 .block_2 h2{
 	color: #fff;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
 	font-size: 17px;
+	margin-left: 44px;
 }
 .collage-row .row_2 .portletHeader span{
 	color: #158140;
