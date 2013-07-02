@@ -176,11 +176,11 @@
 </ul>
 <ul id="personalbar-options">
   <li>
-    <a href="">HOME</a>
+    <a tal:attributes="href view/home;">HOME</a>
   </li>
   <li>|</li>
   <li>
-    <a href="">ABOUT BISE</a>
+    <a tal:attributes="href view/about;">ABOUT BISE</a>
   </li>
   <li>|</li>
   <li>
@@ -188,7 +188,7 @@
   </li> 
   <li>|</li>  
   <li>
-    <a href="/sitemap">SITEMAP</a>
+    <a tal:attributes="href view/sitemap;">SITEMAP</a>
   </li>  
   <li>|</li> 
 </ul>
