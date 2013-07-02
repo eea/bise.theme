@@ -30,7 +30,7 @@
                                   <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/agro-ecosystems-and-grasslands'})"> - Agro-ecosystems and grasslands</a></li>
                                   <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/coastal'})"> - Coastal</a></li>
                                   <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/forest'})"> - Forest</a></li>
-                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/heath-and-schrubs'})"> - Heath and Scrubs</a></li>
+                                  <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/heath-and-scrubs'})"> - Heath and Scrubs</a></li>
                                   <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/ice-rock-polar'})"> - Ice, rock, polar</a></li>
                                   <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/islands'})"> - Islands</a></li>
                                   <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/ecosystems-and-habitats/lakes-rivers-and-wetlands'})"> - Lakes, rivers and wetlands</a></li>
@@ -70,7 +70,7 @@
                             <li class="list-title">Responses</li>
                             <ul class="second-level">
                               <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/protected-areas'})">Protected areas</a></li>    
-                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/green-infraestructure'})">Green infraestructure</a></li>   
+                              <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/green-infrastructure'})">Green infrastructure</a></li>   
                               <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/life-nature-and-biodiversity-projects'})">LIFE+ Nature and Biodiversity Projects</a></li>                                                                
                             </ul> 
                         </ul>
@@ -103,7 +103,7 @@
 
                           <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/eu-biodiversity-strategy'})">EU Targets and Actions overview</a></li>
                           <ul class="third-level">
-                            <li><a href="/policy/eu-biodiversity-strategy/target-1-and-related-aichi-targets">- EU Targets mapped to Aichi Targets</a></li>
+                            <li><a tal:define="url tab/url" tal:attributes="href python:'/'.join({url + '/eu-biodiversity-strategy/target-1-and-related-aichi-targets'})">- EU Targets mapped to Aichi Targets</a></li>
                             <li><a href="http://www.cbd.int/sp/targets/">- Aichi Targets to 2020</a></li>
                           </ul>
                         </ul>
