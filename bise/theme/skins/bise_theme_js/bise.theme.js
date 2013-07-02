@@ -52,7 +52,7 @@ $(document).ready(function(){
                 //left = $(this).offset().left;
                 left = $('#portaltab-' + sid).offset().left - $('#portal-globalnav').offset().left;
                 width = $('#portalsubtabs-' + sid).width() + parseInt($('#portalsubtabs-' + sid).css("padding-left")) + parseInt($('#portalsubtabs-' + sid).css("padding-right"));
-                if (left + width > ($('#portal-globalnav').width() + $('#portal-globalnav').offset().left)){
+                if (left + width > $('#portal-globalnav').width()){
                   //left = $('#portaltab-' + sid).offset().left + parseInt($('#portaltab-' + sid).css("padding-left")) + parseInt($('#portaltab-' + sid).css("padding-right")) + $('#portaltab-' + sid).width()  - width;
                   left = $('#portaltab-' + sid).offset().left - $('#portal-globalnav').offset().left + $('#portaltab-' + sid).width() - width;
                   //left = $('#wrap_menuBise').width() + $('#wrap_menuBise').offset().left - width;
