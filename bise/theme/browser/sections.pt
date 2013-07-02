@@ -7,12 +7,140 @@
         tal:define="selected_tab python:view.selected_portal_tab"
         ><tal:tabs tal:repeat="tab portal_tabs"
         ><li tal:define="tid tab/id;name tab/name"
-             tal:attributes="id string:portaltab-${tid};"
              tal:condition="python:name!='Home'"
-            ><div><a href=""
+            ><div tal:attributes="id string:portaltab-${tid};"><a href=""
                tal:content="tab/name"
                tal:attributes="href tab/url;
                                title tab/description|nothing;">
             Tab Name
             </a></div></li></tal:tabs></ul>
+
+
+        <tal:tabs tal:repeat="tab portal_tabs">
+            <div tal:define="tid tab/id;name tab/name"
+                tal:attributes="id string:portalsubtabs-${tid};class string:portalsubtabs"
+                tal:condition="python:tid in ('topics', 'policy', 'data', 'countries_and_networks', 'networks')">
+                <tal:block omit-tag="" tal:condition="python:tid == 'topics'">
+                    <div class="column">
+                        <ul class="first-level">
+                            <li class="list-title">Status</li>
+                            <ul class="second-level">
+                                
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <ul class="first-level">
+                            <li class="list-title">Threats</li>
+                            <ul class="second-level">
+                                
+                            </ul>
+                        </ul>
+                    </div>                    
+                    <div class="column">
+                      <ul class="first-level">
+                        <li class="list-title">Flagship projects</li>
+                        <ul class="second-level">
+                          <li><a href="http://ec.europa.eu/environment/nature/biodiversity/comm2006/index_en.htm">BAP report</a> 
+                            <span class="description">Biodiversity Action Plan Report</span></li>
+                          <li><a href="http://www.eea.europa.eu/publications/eu-2010-biodiversity-baseline/">EU 2010 Biodiversity Baseline report</a> 
+                            <span class="description">Biodiversity Baseline report</span></li>
+                          <li><a href="/topics/sebi-indicators">SEBI 2010 indicators</a>
+                            <span class="description">Streamlining European Biodiversity Indicators</span></li>
+                          <li><a href="http://www.eea.europa.eu/soer">SOER 2010</a>
+                            <span class="description">State of the Environment Report</span></li>
+                          <li><a href="http://www.teebweb.org/">TEEB study</a> 
+                            <span class="description">The Economics of Ecosystems and Biodiversity</span></li>
+                          <li><a href="http://www.eea.europa.eu/publications/10-messages-for-2010">10 Messages for Biodiversity</a></li>
+                        </ul>
+                      </ul>
+                    </div>                    
+                </tal:block>
+                <tal:block omit-tag="" tal:condition="python:tid == 'policy'">
+                    <div class="column">
+                      <ul class="first-level">
+                        <li class="list-title">Biodiversity strategy 2020</li>
+                        <ul class="second-level">
+                          <li><a href="http://ec.europa.eu/environment/nature/biodiversity/comm2006/2020.htm">EU strategy to 2020</a></li>
+                          <li><a href="/policy/eu-biodiversity-strategy">EU Targets and Actions overview</a></li>
+                          <ul class="third-level">
+                            <li><a href="/policy/eu-biodiversity-strategy/target-1-and-related-aichi-targets">- EU Targets mapped to Aichi Targets</a></li>
+                            <li><a href="http://www.cbd.int/sp/targets/">- Aichi Targets to 2020</a></li>
+                          </ul>
+                        </ul>
+                      </ul>
+                </div>                    
+                </tal:block>
+                <tal:block omit-tag="" tal:condition="python:tid == 'data'">
+                    <div class="column">
+                        <ul class="first-level">
+                            <li class="list-title">Biodiversity data centre (BDC)</li>
+                            <ul class="second-level">
+                                <li>
+                                    <a href="http://www.eea.europa.eu/themes/biodiversity/dc">BDC overview</a>
+                                </li>
+                                <ul class="third-level">
+                                    <li>
+                                        <a href="http://natura2000.eea.europa.eu/">- Natura 2000 map viewer</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.eea.europa.eu/data-and-maps/52E54BF3-ACDB-4959-9165-F3E4469BE610">- Natura 2000 data</a>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <a href="http://eunis.eea.europa.eu/">EUNIS</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.eea.europa.eu/themes/biodiversity/indicators">Indicators</a>
+                                </li>
+ 
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="column">
+                      <ul class="first-level">
+                        <li class="list-title">Other enviromental data centres from EU</li>  
+                        <ul class="second-level">
+                          <li><a href="http://www.eea.europa.eu/themes/air/dc">Air</a></li>
+                          <li><a href="http://www.eea.europa.eu/themes/climate/dc">Climate change</a></li>
+                          <li><a href="http://efdac.jrc.ec.europa.eu/">Forest</a></li>
+                          <li><a href="http://www.eea.europa.eu/themes/landuse/dc">Land use</a></li>
+                          <li><a href="http://epp.eurostat.ec.europa.eu/statistics_explained/index.php/Environmental_Data_Centre_on_Natural_Resources_and_Products">Natural resources and products</a></li>
+                          <li><a href="http://eusoils.jrc.ec.europa.eu/data.html">Soil</a></li>
+                          <li><a href="http://epp.eurostat.ec.europa.eu/portal/page/portal/waste/introduction">Waste</a></li>
+                          <li><a href="http://www.eea.europa.eu/themes/water/dc">Water</a></li>
+                        </ul>
+                      </ul>
+                    </div>
+                </tal:block>
+                <tal:block omit-tag="" tal:condition="python:tid == 'countries_and_networks'">
+                    <div class="column">
+                        <ul class="first-level">
+                            <li class="list-title">EU Biodiversity action plan (BAP)</li>
+                            <ul class="second-level">
+                                <li><a href="/countries_and_networks/bap/community_report/">BAP 2010 Community report</a></li>
+                                <li><a href="/countries_and_networks/bap/compare">BAP 2010 comparative view</a></li>
+                            </ul>
+                        </ul>
+                    </div>                   
+ 
+                </tal:block>
+                <tal:block omit-tag="" tal:condition="python:tid == 'networks'">
+                    <div class="column">
+                        <ul class="first-level">
+                            <li class="list-title">European Network of Biodiversity CHMs</li>
+                            <ul class="second-level">
+                                <li><a href="/chm-network/">Clearing House Mechanism (CHM) network</a></li>
+                            </ul>
+                            <li class="list-title">EIONET</li>
+                            <ul class="second-level">
+                                <li><a href="http://forum.eionet.europa.eu/nrc-nature-and-biodiversity-interest-group/">Forum - NRC Nature and biodiversity</a></li>
+                                <li><a href="http://bd.eionet.europa.eu/">European Topic Centre on Biological Diversity</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </tal:block>
+             </div>
+            
+        </tal:tabs>            
 </tal:sections>

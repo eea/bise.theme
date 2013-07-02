@@ -16,7 +16,6 @@ class LogoViewlet(common.LogoViewlet):
             logoName = 'BiseLogo.png'
         else:
             logoName = 'BiseLogo.png'
-
         logoTitle = self.portal_state.portal_title()
         self.logo_tag = portal.restrictedTraverse(logoName).tag(title=logoTitle, alt=logoTitle, itemprop="logo")
         self.navigation_root_title = self.portal_state.navigation_root_title()
