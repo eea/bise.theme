@@ -9,10 +9,16 @@
 
     <plone:behavior
         title="Extra fields for newsitems"
-        description="Source, reourceurl"
+        description="Source, resourceurl"
         provides=".sources.IExtraNewsItem"
         for="plone.dexterity.interfaces.IDexterityContent"
         />
 
+    <plone:behavior
+        title="Extra fields for FolderishPage"
+        description="navmenucode"
+        provides=".sources.IExtraFolderishPage"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
 
 </configure>
