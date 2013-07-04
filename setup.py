@@ -35,6 +35,8 @@ setup(name='bise.theme',
           'collective.collage.portlets',
           'se.portlet.gallery',
           'collective.uploadify',
+          'BAPDatabase',
+          'sc.social.like',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
