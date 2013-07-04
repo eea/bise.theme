@@ -63,6 +63,15 @@
         permission="zope.Public"
         />
 
+    <browser:viewlet
+        name="plone.abovecontenttitle.documentactions"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        layer=".interfaces.IThemeSpecific"
+        class="plone.app.layout.viewlets.content.DocumentActionsViewlet"
+        permission="zope.Public"
+        />
+
     <browser:page
         name="rss_summary_view"
         permission="zope2.View"

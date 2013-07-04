@@ -24,4 +24,10 @@
  <order manager="plone.abovecontent" skinname="Plone Default">
   <viewlet name="plone.path_bar"/>
  </order>
+<hidden manager="plone.belowcontentbody" skinname="BISETheme">
+  <viewlet name="plone.abovecontenttitle.documentactions"/>
+</hidden>
+<order manager="plone.belowcontenttitle" skinname="*">
+  <viewlet name="plone.abovecontenttitle.documentactions" insert_before="plone.belowcontenttitle.documentbyline"/>
+</order>
 </object>
