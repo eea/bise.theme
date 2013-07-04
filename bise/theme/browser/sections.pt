@@ -19,6 +19,7 @@
         <tal:tabs tal:repeat="tab portal_tabs">
             <div tal:define="tid tab/id;name tab/name"
                 tal:attributes="id string:portalsubtabs-${tid};class string:portalsubtabs"
+		tal:condition="tab/navmenucode|nothing"
 		tal:content="structure tab/navmenucode|nothing">
 		Sub-menu contents 
             </div>

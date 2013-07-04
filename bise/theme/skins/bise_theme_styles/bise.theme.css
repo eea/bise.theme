@@ -162,6 +162,30 @@ a:hover{
 	-webkit-box-shadow: 1px 1px 5px #e5bcb6;
 	box-shadow: 1px 1px 5px #e5bcb6;
 }
+#portalsubtabs-data {
+	border: 1px solid #b9e784;
+	-moz-box-shadow: 1px 1px 5px #b9e784;
+	-webkit-box-shadow: 1px 1px 5px #b9e784;
+	box-shadow: 1px 1px 5px #b9e784;
+}
+#portalsubtabs-research {
+	border: 1px solid #3fafdb;
+	-moz-box-shadow: 1px 1px 5px #3fafdb;
+	-webkit-box-shadow: 1px 1px 5px #3fafdb;
+	box-shadow: 1px 1px 5px #3fafdb;
+}
+#portalsubtabs-countries_and_networks {
+	border: 1px solid #c5bfd5;
+	-moz-box-shadow: 1px 1px 5px #c5bfd5;
+	-webkit-box-shadow: 1px 1px 5px #c5bfd5;
+	box-shadow: 1px 1px 5px #c5bfd5;
+}
+#portalsubtabs-networks {
+	border: 1px solid #d5dbcd;
+	-moz-box-shadow: 1px 1px 5px #d5dbcd;
+	-webkit-box-shadow: 1px 1px 5px #d5dbcd;
+	box-shadow: 1px 1px 5px #d5dbcd;
+}
 .portalsubtabs .column {
 	float: left;
 	width: 290px;
@@ -223,8 +247,19 @@ a:hover{
 	color: gray;
 	font-size: 12px;
 }
-
-
+#portal-breadcrumbs a,
+#portal-breadcrumbs a:link{
+	color: #286d4e;
+	text-decoration: none;
+}
+#portal-breadcrumbs a:visited{
+	color: #693;
+	text-decoration: none;
+}
+#portal-breadcrumbs a:hover{
+	color: #00527c;
+	text-decoration: none;
+}
 #content h1.documentFirstHeading{
 	margin-top: -20px;
 	color: #168130;
@@ -250,6 +285,11 @@ body.section-countries_and_networks #content h1.documentFirstHeading {
 	color: #8F68DA;
 	border-bottom: 1px solid #8F68DA !important;
 }
+body.section-bap .bap-action-holder h1 {
+	color: #8F68DA;
+	border-bottom: 1px solid #8F68DA !important;
+	margin-bottom: 5px;
+}
 body.section-networks #content h1.documentFirstHeading {
 	color: #d5dbcd;
 	border-bottom: 1px solid #d5dbcd !important;
@@ -269,6 +309,7 @@ body.section-networks #content h1.documentFirstHeading {
 #content a:hover{
 	color: #00527c;
 	border-bottom: 0px !important;
+	text-decoration: none;
 }
 #content ul{
 	list-style-image: url(bullet-col.png);
@@ -307,6 +348,9 @@ dl.portlet dt a:visited {
 .portletGalleryPortlet .portletItem div:first-child{
 	border: 10px solid white;
 }
+#collage{
+	margin-top: -36px;
+}
 .collage-row .row_1 .block_2 h1{
 	color: #fff;
 	font-size:37px;
@@ -314,12 +358,14 @@ dl.portlet dt a:visited {
 	font-family: 'Asap', sans-serif;
 	font-weight: bold;
 	font-style: italic;
+	margin-left: 44px;
 }
 .collage-row .row_1 .block_2 h2{
 	color: #fff;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
 	font-size: 17px;
+	margin-left: 44px;
 }
 .collage-row .row_2 .portletHeader span{
 	color: #158140;
