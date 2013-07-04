@@ -39,7 +39,17 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
         context = aq_inner(self.context)
         portal_tabs_view = getMultiAdapter((context, self.request),
                                            name='portal_tabs_view')
-        self.portal_tabs = portal_tabs_view.topLevelTabs()
+        self.portal_tabs = []
+        pps = getMultiAdapter((self.context, self.request), name='plone_portal_state')
+        portal = pps.portal()
+        for tab in portal_tabs_view.topLevelTabs():
+            tab['navmenucode'] = u''
+            tab_obj = portal.get(tab['id'], None) 
+ 	    if tab_obj:
+                if hasattr(tab_obj, 'navmenucode'):
+                    tab['navmenucode'] = tab_obj.navmenucode and tab_obj.navmenucode.output or ''
+	    self.portal_tabs.append(tab)
+#        self.portal_tabs = portal_tabs_view.topLevelTabs()
 
         self.selected_tabs = self.selectedTabs(portal_tabs=self.portal_tabs)
         self.selected_portal_tab = self.selected_tabs['portal']
@@ -52,7 +62,6 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
 
         url = request['URL']
         path = url[plone_url_len:]
-
         for action in portal_tabs:
             if not action['url'].startswith(plone_url):
                 # In this case the action url is an external link. Then, we
@@ -66,6 +75,7 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
                 # Make a list of the action ids, along with the path length
                 # for choosing the longest (most relevant) path.
                 valid_actions.append((len(action_path), action['id']))
+                
 
         # Sort by path length, the longest matching path wins
         valid_actions.sort()
