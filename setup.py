@@ -38,6 +38,7 @@ setup(name='bise.theme',
           'BAPDatabase',
           'sc.social.like',
           'bise.biodiversityfactsheet',
+          'cs.editablefooter'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
