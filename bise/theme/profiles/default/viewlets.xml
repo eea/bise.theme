@@ -8,12 +8,19 @@
   <viewlet name="plone.global_sections"/>
   <viewlet name="plone.path_bar"/>
  </order>
+ <order manager="plone.portalfooter" skinname="BISETheme">
+  <viewlet name="cs.editablefooter" insert_before="plone.site_actions"/>
+ </order>
+
  <hidden manager="plone.belowcontenttile" skinname="BISETheme">
     <viewlet name="plone.path_bar"/>
     <viewlet name="plone.app.i18n.locales.languageselector"/>
  </hidden>
  <hidden manager="plone.portalfooter" skinname="BISETheme">
   <viewlet name="plone.colophon"/>
+ </hidden>
+ <hidden manager="plone.portalfooter" skinname="BISETheme">
+  <viewlet name="plone.footer"/>
  </hidden>
  <hidden manager="plone.portalheader" skinname="BISETheme">
   <viewlet name="plone.searchbox"/>
