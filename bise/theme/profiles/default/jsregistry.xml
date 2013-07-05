@@ -26,7 +26,7 @@
     id="bise.theme.js"
     cacheable="False" compression="safe" cookable="False"
     enabled="True" expression=""  inline="False"/>
- <javascript title=""
+ <javascript
     id="http://www.google.com/jsapi"
     cacheable="False" compression="none" cookable="False"
     enabled="1" expression=""  inline="False"/>
