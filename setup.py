@@ -37,6 +37,7 @@ setup(name='bise.theme',
           'collective.uploadify',
           'BAPDatabase',
           'sc.social.like',
+          'bise.biodiversityfactsheet',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
