@@ -261,7 +261,7 @@ a:hover{
 	text-decoration: none;
 }
 #content h1.documentFirstHeading{
-	margin-top: -20px;
+	/*margin-top: -20px;*/
 	color: #168130;
 	border-bottom: 1px solid #168130;
 }
