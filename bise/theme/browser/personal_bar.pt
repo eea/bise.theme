@@ -3,24 +3,24 @@
 
 <p class="hiddenStructure" i18n:translate="heading_personal_tools">Personal tools</p>
 <ul id="searchbar-options">
-  
+
   <li>
     <div id="searchForm" style="width:15em">Loading</div>
-      <script type="text/javascript">  
+      <script type="text/javascript">
         google.load('search', '1', {language : 'en', style : google.loader.themes.ESPRESSO});
         google.setOnLoadCallback(function() {
-    
+
           var customSearchControl = new google.search.CustomSearchControl('010830385418825142702:eacbj0oz1fg');
           customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-    
+
           var options = new google.search.DrawOptions();
-    
+
           /*Indicamos la capa en la que se dibujará el formulario de búsqueda*/
           options.setSearchFormRoot(document.getElementById("searchForm"));
-    
+
           /*Indicamos la URL donde se visualizará el resultado de la búsqueda*/
           options.enableSearchboxOnly('/bise/search','q', false, '?')
-    
+
           /*Primer parámetro: capa en la que se mostrará el resultado de la búsqueda. Ahora en blanco porque los resultados se muestran en otra página del site.*/
           customSearchControl.draw("",options);
         }, true);
@@ -130,7 +130,7 @@
         }
       </style>
   </li>
-  
+
 </ul>
 <dl class="actionMenu deactivated" id="portal-personaltools"
     tal:condition="python:view.user_actions and not view.anonymous">
@@ -185,11 +185,11 @@
   <li>|</li>
   <li>
     <a href="http://www.eea.europa.eu/enquiries">CONTACT US</a>
-  </li> 
-  <li>|</li>  
+  </li>
+  <li>|</li>
   <li>
     <a tal:attributes="href view/sitemap;">SITEMAP</a>
-  </li>  
-  <li>|</li> 
+  </li>
+  <li>|</li>
 </ul>
 </div>
