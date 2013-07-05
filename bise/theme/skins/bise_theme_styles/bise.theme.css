@@ -329,16 +329,18 @@ dl.portlet dt a:visited {
 	color: #168130;
 	border-bottom: 1px solid #BAE2FF;
 }
-#portal-footer{
+#editable-footer{
+	background-color: transparent;
 	background-image: url(Bise-back-footer.jpg);
 	background-position: top center;
 	background-repeat: no-repeat;
 	height: 22em;
 	width: 960px;
 	text-align: center;
-}
-#imgFooterLogos{
 	padding-top: 9em;
+}
+#editable-footer a {
+	padding-right: 3em;
 }
 .portletGalleryPortlet .portletItem{
 	background-image: url(bise-back-gallery.png);

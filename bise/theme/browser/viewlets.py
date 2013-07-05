@@ -21,10 +21,10 @@ class LogoViewlet(common.LogoViewlet):
         self.navigation_root_title = self.portal_state.navigation_root_title()
 
 class PersonalBarViewlet(common.PersonalBarViewlet):
-    
+
     index = ViewPageTemplateFile('personal_bar.pt')
 
-    def update(self): 
+    def update(self):
         super(PersonalBarViewlet, self).update()
         self.home = self.portal_state.navigation_root_url()
         self.about = '/'.join([self.portal_state.navigation_root_url(), "info"])
@@ -47,7 +47,7 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
         portal = pps.portal()
         for tab in portal_tabs_view.topLevelTabs():
             tab['navmenucode'] = u''
-            tab_obj = portal.get(tab['id'], None) 
+            tab_obj = portal.get(tab['id'], None)
  	    if tab_obj:
                 if hasattr(tab_obj, 'navmenucode'):
                     tab['navmenucode'] = tab_obj.navmenucode and tab_obj.navmenucode.output or ''
@@ -78,7 +78,7 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
                 # Make a list of the action ids, along with the path length
                 # for choosing the longest (most relevant) path.
                 valid_actions.append((len(action_path), action['id']))
-                
+
 
         # Sort by path length, the longest matching path wins
         valid_actions.sort()
@@ -86,10 +86,3 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
             return {'portal' : valid_actions[-1][1]}
 
         return {'portal' : default_tab}
-class FooterViewlet(common.FooterViewlet):
-    index = ViewPageTemplateFile('footer.pt')
-
-    def update(self):
-        super(FooterViewlet, self).update()
-
-        
