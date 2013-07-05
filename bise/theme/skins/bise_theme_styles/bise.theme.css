@@ -350,7 +350,7 @@ dl.portlet dt a:visited {
 .portletGalleryPortlet .portletItem div:first-child{
 	border: 10px solid white;
 }
-#collage{
+#content #collage{
 	margin-top: -36px;
 }
 .collage-row .row_1 .block_2 h1{
