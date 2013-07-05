@@ -8,5 +8,7 @@
     <dependency>profile-Products.feedfeeder:default</dependency>
     <dependency>profile-collective.collage.portlets:install</dependency>
     <dependency>profile-se.portlet.gallery:default</dependency>
+    <dependency>profile-cs.editablefooter:default</dependency>
+    <dependency>profile-bise.biodiversityfactsheet:default</dependency>
   </dependencies>
 </metadata>
