@@ -19,9 +19,10 @@
         tal:define="oddrow repeat/obj/odd;
                     useView python:obj.portal_type in viewActions;
                     itemUrl python:useView and obj.getURL() + '/view' or obj.getLink;
-                    normalizeString nocall:plone_view/normalizeString;"
+                    normalizeString nocall:plone_view/normalizeString;
+                    parent python:obj.getObject().aq_parent"
         tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
-    <span class="portletItemDetail" tal:content="python:obj.getObject().aq_parent.Subject()[0]"></span>,
+    <span class="portletItemDetail" tal:content="python:parent.Subject() and parent.Subject()[0] or parent.getId(")></span>,
             <span class="portletItemDetail"
                   tal:condition="view/data/show_dates"
                   tal:content="python:toLocalizedTime(obj.getFeedItemUpdated)">
