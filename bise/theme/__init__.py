@@ -3,3 +3,4 @@
 from zope.i18nmessageid import MessageFactory
 
 themeMessageFactory = MessageFactory('bise.theme')
+import patches
