@@ -419,3 +419,20 @@ dl.portlet dt a:visited {
 	font-weight: bold;
 	font-size: 14px;
 }
+/**
+ * BAP
+ */
+.cleaner {
+	clear:both;
+}
+.clear {
+	clear: both;
+}
+.field {
+	clear: none;
+}
+.field label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 0.3em;
+}
