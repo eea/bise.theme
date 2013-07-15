@@ -21,6 +21,10 @@ a:link {
 a:hover{
 	text-decoration: underline;
 }
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	color: #168130;
+}
 .externalLink {
 	background: url("external-link.png") no-repeat scroll right center transparent;
 	padding-right: 15px;
@@ -293,6 +297,11 @@ body.section-bap .bap-action-holder h1 {
 body.section-networks #content h1.documentFirstHeading {
 	color: #d5dbcd;
 	border-bottom: 1px solid #d5dbcd !important;
+}
+.mainparagraph {
+	background-color: #F0F0F0;
+	border: 1px dotted #BED492;
+	padding: 0.5em 0.7em;
 }
 #content-core h3{
 	border-bottom: 1px solid #e9efcd;
