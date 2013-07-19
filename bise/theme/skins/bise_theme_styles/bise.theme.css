@@ -431,16 +431,16 @@ dl.portlet dt a:visited {
 /**
  * BAP
  */
-.cleaner {
+.section-bap .cleaner {
 	clear:both;
 }
-.clear {
+.section-bap .clear {
 	clear: both;
 }
-.field {
+.section-bap .field {
 	clear: none;
 }
-.field label {
+.section-bap .field label {
 	display: block;
 	font-weight: bold;
 	margin-bottom: 0.3em;
