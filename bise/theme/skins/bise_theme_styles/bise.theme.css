@@ -428,6 +428,13 @@ dl.portlet dt a:visited {
 	font-weight: bold;
 	font-size: 14px;
 }
+.section-chm-network .portletStaticText {
+	font-size: 13px;
+}
+.section-chm-network .collage-row .row_2 dl.portletCollection{
+	background-image: none;
+	padding-bottom: 0px;
+}
 #portal-column-one .portletNavigationTree .portletHeader,
 #portal-column-one .portletStaticText .portletHeader {
 	border-bottom: 1px solid #BAE2FF !important;
