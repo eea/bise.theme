@@ -428,6 +428,41 @@ dl.portlet dt a:visited {
 	font-weight: bold;
 	font-size: 14px;
 }
+#portal-column-one .portletNavigationTree .portletHeader,
+#portal-column-one .portletStaticText .portletHeader {
+	border-bottom: 1px solid #BAE2FF !important;
+	padding-left: 0px;
+}
+#portal-column-one .portletNavigationTree .portletHeader a,
+#portal-column-one .portletStaticText .portletHeader span{
+	font-size: 17px;
+	color: #168130;
+}
+#portal-column-one .portletNavigationTree .portletItem img{
+	display: none;
+}
+#portal-column-one .portletNavigationTree .portletItem .navTreeItem{
+	padding: 0 !important;
+	line-height: 20px !important;
+}
+#portal-column-one .portletStaticText .portletItem {
+	padding: 0px !important;
+}
+#portal-column-one .portletNavigationTree .portletItem a,
+#portal-column-one .portletNavigationTree .portletItem a:link,
+#portal-column-one .portletNavigationTree .portletItem a:hover,
+#portal-column-one .portletNavigationTree .portletItem a:visited{
+	color: #286d4e !important;
+}
+#portal-column-one .portletStaticText .portletItem li{
+	border-bottom: 1px dotted #c5cd85;
+}
+#portal-column-one .portletStaticText .portletItem a,
+#portal-column-one .portletStaticText .portletItem a:link,
+#portal-column-one .portletStaticText .portletItem a:hover,
+#portal-column-one .portletStaticText .portletItem a:visited{
+	color: #286d4e !important;
+}
 /**
  * BAP
  */
