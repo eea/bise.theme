@@ -38,7 +38,8 @@ setup(name='bise.theme',
           'BAPDatabase',
           'sc.social.like',
           'bise.biodiversityfactsheet',
-          'cs.editablefooter'
+          'cs.editablefooter',
+          'collective.js.jqueryui'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
