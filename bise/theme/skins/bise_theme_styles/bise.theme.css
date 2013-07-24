@@ -460,6 +460,10 @@ dl.portlet dt a:visited {
 #portal-column-one .portletNavigationTree .portletItem a:hover,
 #portal-column-one .portletNavigationTree .portletItem a:visited{
 	color: #286d4e !important;
+	background-color: transparent !important;
+	border-left: 0px !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
 #portal-column-one .portletStaticText .portletItem li{
 	border-bottom: 1px dotted #c5cd85;
