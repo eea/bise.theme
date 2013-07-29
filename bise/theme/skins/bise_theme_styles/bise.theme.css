@@ -14,10 +14,7 @@ body.section-index,
 body.section-bise{
 	background-image: url("Bise-back-main.jpg");
 }
-a,
-a:link {
-	border-bottom: 0px !important;
-}
+
 a:hover{
 	text-decoration: underline;
 }
@@ -309,15 +306,12 @@ body.section-networks #content h1.documentFirstHeading {
 #content a,
 #content a:link{
 	color: #286d4e;
-	border-bottom: 0px !important;
 }
 #content a:visited{
 	color: #693;
-	border-bottom: 0px !important;
 }
 #content a:hover{
 	color: #00527c;
-	border-bottom: 0px !important;
 	text-decoration: none;
 }
 #content ul{
