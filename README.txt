@@ -1,6 +1,5 @@
 Introduction
 ============
 
+Theme file for biodiversity.europa.eu
 
-
-This product may contain traces of nuts.

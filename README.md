@@ -1,4 +1,0 @@
-bise.theme
-==========
-
-BISE Theme
