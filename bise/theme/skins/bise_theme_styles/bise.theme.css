@@ -551,3 +551,51 @@ dl.portlet dt a:visited {
 	cursor: pointer; 
 }
 /**END INFOBOX MAP NETWORKS**/
+/** COUNTRY SHEETS */
+.portaltype-biodiversityfactsheet #accordion-header{
+	width: 326px;
+}
+.portaltype-biodiversityfactsheet h2.collapsible {
+	border-bottom: 1px solid #e9efcd;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	cursor: pointer;
+	background: #AE9FCD;
+	padding: 5px;
+	margin-top: 5px;
+}
+.portaltype-biodiversityfactsheet .main-section-content{
+	border-left: 1px solid #AE9FCD;
+	border-bottom: 1px solid #AE9FCD;
+	border-right: 1px solid #AE9FCD;
+	margin-bottom: 10px;
+	margin-top: -6px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.portaltype-biodiversityfactsheet h3.collapsible {
+	color: black;
+	font-weight: bold;
+	padding: 5px;
+	cursor: pointer;
+}
+.portaltype-biodiversityfactsheet .collapsible span.icon{
+	display: block;
+	float: right;
+	padding: 10px;
+}
+.portaltype-biodiversityfactsheet .collapsible.collapse-open .graph{
+	background: url("http://194.30.41.51:9080/images/charts-hide.png") center center no-repeat;
+}
+.portaltype-biodiversityfactsheet .collapsible.collapse-close .graph{
+	background: url("http://194.30.41.51:9080/images/charts.png") center center no-repeat;
+}
+.portaltype-biodiversityfactsheet .collapsible.collapse-open .map{
+	background: url("http://194.30.41.51:9080/images/map_icon_white.png") center center no-repeat;
+}
+.portaltype-biodiversityfactsheet .collapsible.collapse-close .map{
+	background: url("http://194.30.41.51:9080/images/map_icon.png") center center no-repeat;
+}
+/** END COUNTRY SHEETS */
