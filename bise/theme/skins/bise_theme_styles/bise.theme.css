@@ -617,4 +617,13 @@ dl.portlet dt a:visited {
 .portaltype-biodiversityfactsheet .collapsible.collapse-close .map{
 	background: url("country-profile/map_icon.png") center center no-repeat;
 }
+.portaltype-biodiversityfactsheet .fact-contents .data-source{
+	text-align: right;
+
+}
+.portaltype-biodiversityfactsheet .fact-contents .data-source .data-source-title{
+	font-weight: bold;
+
+}
+
 /** END COUNTRY SHEETS */
