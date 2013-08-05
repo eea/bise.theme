@@ -625,5 +625,7 @@ dl.portlet dt a:visited {
 	font-weight: bold;
 
 }
-
+.portaltype-biodiversityfactsheet .fact-contents .legendContainer{
+	left: 748px;
+}
 /** END COUNTRY SHEETS */
