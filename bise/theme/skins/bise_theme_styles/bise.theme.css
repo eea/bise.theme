@@ -623,9 +623,22 @@ dl.portlet dt a:visited {
 }
 .portaltype-biodiversityfactsheet .fact-contents .data-source .data-source-title{
 	font-weight: bold;
-
 }
 .portaltype-biodiversityfactsheet .fact-contents .legendContainer{
 	left: 748px;
+	overflow: auto;
+}
+.portaltype-biodiversityfactsheet .fact-contents .shadow {
+	-webkit-box-shadow: 4px 4px 8px #adadad;
+	-moz-box-shadow: 4px 4px 8px #adadad;
+	-o-box-shadow: 4px 4px 8px #adadad;
+	box-shadow: 4px 4px 8px #adadad;
+}
+.portaltype-biodiversityfactsheet .fact-contents .roundedCorners {
+	border: solid 2px #B8B8B8;
+	-o-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
 }
 /** END COUNTRY SHEETS */
