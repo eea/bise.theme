@@ -628,7 +628,7 @@ dl.portlet dt a:visited {
 	left: 748px;
 	overflow: auto;
 }
-.portaltype-biodiversityfactsheet .fact-contents .shadow {
+/**.portaltype-biodiversityfactsheet .fact-contents .shadow {
 	-webkit-box-shadow: 4px 4px 8px #adadad;
 	-moz-box-shadow: 4px 4px 8px #adadad;
 	-o-box-shadow: 4px 4px 8px #adadad;
@@ -640,5 +640,5 @@ dl.portlet dt a:visited {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
-}
+}*/
 /** END COUNTRY SHEETS */
