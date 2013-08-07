@@ -297,6 +297,12 @@ body.section-networks #content h1.documentFirstHeading {
 	color: #A0A0A0;
 	border-bottom: 1px solid #A0A0A0 !important;
 }
+#viewlet-social-like {
+	text-align: right;
+}
+#viewlet-social-like iframe{
+	width:74px;
+}
 .mainparagraph {
 	background-color: #F0F0F0;
 	border: 1px dotted #BED492;
@@ -334,7 +340,7 @@ dl.portlet dt a:link,
 dl.portlet dt a:hover,
 dl.portlet dt a:visited {
 	color: #168130;
-	border-bottom: 1px solid #BAE2FF;
+	/**border-bottom: 1px solid #BAE2FF;*/
 }
 #editable-footer{
 	background-color: transparent;
