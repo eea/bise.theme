@@ -1,3 +1,4 @@
+from zope.interface import Interface
 from plone.theme.interfaces import IDefaultPloneLayer
 
 class IThemeSpecific(IDefaultPloneLayer):
@@ -6,3 +7,8 @@ class IThemeSpecific(IDefaultPloneLayer):
        "BISETheme" theme, this interface must be its layer
        (in theme/viewlets/configure.zcml).
     """
+class IBISEView(Interface):
+    """ """
+
+    def getColumnsClass():
+        """ Returns the CSS class based on columns presence. """

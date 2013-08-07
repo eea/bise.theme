@@ -21,6 +21,12 @@
     <browser:jbot
         directory="template-overrides"
         layer=".interfaces.IThemeSpecific" />
+    <browser:page
+        for="*"
+        class=".biseView.BISEView"
+        permission="zope.Public"
+        name="main_template"
+        template="main_template.pt"/>        
     <!-- The customized logo -->
     <browser:viewlet
         name="plone.logo"
