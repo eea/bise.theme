@@ -645,6 +645,22 @@ dl.portlet dt a:visited {
 	left: 748px;
 	overflow: auto;
 }
+.portaltype-biodiversityfactsheet .fact-contents table{
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 1px solid lightgray;
+	margin-top: 5px;
+}
+
+.portaltype-biodiversityfactsheet .fact-contents table tr:nth-child(even){
+
+}
+.portaltype-biodiversityfactsheet .fact-contents table tr:nth-child(odd){
+	background: #eee;
+}
+.portaltype-biodiversityfactsheet .fact-contents table tr td{
+	padding: 5px;
+}
 /**.portaltype-biodiversityfactsheet .fact-contents .shadow {
 	-webkit-box-shadow: 4px 4px 8px #adadad;
 	-moz-box-shadow: 4px 4px 8px #adadad;
