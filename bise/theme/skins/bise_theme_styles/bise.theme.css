@@ -645,7 +645,7 @@ dl.portlet dt a:visited {
 	left: 748px;
 	overflow: auto;
 }
-.portaltype-biodiversityfactsheet .fact-contents table{
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts{
 	border-collapse: collapse;
 	border-spacing: 0px;
 	border: 1px solid lightgray;
