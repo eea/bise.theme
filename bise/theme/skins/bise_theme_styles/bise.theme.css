@@ -652,13 +652,13 @@ dl.portlet dt a:visited {
 	margin-top: 5px;
 }
 
-.portaltype-biodiversityfactsheet .fact-contents table tr:nth-child(even){
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(even){
 
 }
-.portaltype-biodiversityfactsheet .fact-contents table tr:nth-child(odd){
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr:nth-child(odd){
 	background: #eee;
 }
-.portaltype-biodiversityfactsheet .fact-contents table tr td{
+.portaltype-biodiversityfactsheet .fact-contents table.basic-facts tr td{
 	padding: 5px;
 }
 /**.portaltype-biodiversityfactsheet .fact-contents .shadow {
