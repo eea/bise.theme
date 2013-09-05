@@ -10,5 +10,6 @@
     <dependency>profile-se.portlet.gallery:default</dependency>
     <dependency>profile-cs.editablefooter:default</dependency>
     <dependency>profile-bise.biodiversityfactsheet:default</dependency>
+    <dependency>profile-Products.Ploneboard:default</dependency>
   </dependencies>
 </metadata>
