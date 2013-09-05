@@ -28,7 +28,7 @@
     </metal:baseslot>
 
 
-    <metal:titleslot define-slot="title">
+    <metal:titleslot define-slot="site_title">
         <div tal:replace="structure provider:bise.htmlheadtitle" />
     </metal:titleslot>
 
