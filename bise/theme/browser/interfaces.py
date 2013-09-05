@@ -1,5 +1,4 @@
 from plone.theme.interfaces import IDefaultPloneLayer
-from zope.interface import Interface
 from zope.viewlet.interfaces import IViewletManager
 
 
@@ -15,3 +14,7 @@ class IHtmlHeadTitle(IViewletManager):
     """A viewlet manager for the title of the page
     """
 
+
+class IPortalHeader(IViewletManager):
+    """A viewlet manager for the breadcrumb
+    """

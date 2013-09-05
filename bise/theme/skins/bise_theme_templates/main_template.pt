@@ -65,6 +65,9 @@
             tal:condition="not:ajax_load">
 <div class="cell width-full position-0">
             <div tal:replace="structure provider:plone.portaltop" />
+            <metal:bread define-slot="custom_breadcrumb">
+                <div tal:replace="structure provider:bise.portalheader" />
+            </metal:bread>
 </div>
         </div>
     <div id="portal-columns" class="row">

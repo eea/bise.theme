@@ -58,7 +58,7 @@
     <!-- The breadcrumbs -->
     <browser:viewlet
         name="plone.path_bar"
-        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        manager=".interfaces.IPortalHeader"
         layer=".interfaces.IThemeSpecific"
         class=".viewlets.PathBarViewlet"
         permission="zope2.View"
@@ -85,6 +85,14 @@
     <browser:viewletManager
         name="bise.htmlheadtitle"
         provides=".interfaces.IHtmlHeadTitle"
+        permission="zope2.View"
+        class="plone.app.viewletmanager.manager.BaseOrderedViewletManager"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <browser:viewletManager
+        name="bise.portalheader"
+        provides=".interfaces.IPortalHeader"
         permission="zope2.View"
         class="plone.app.viewletmanager.manager.BaseOrderedViewletManager"
         layer=".interfaces.IThemeSpecific"
