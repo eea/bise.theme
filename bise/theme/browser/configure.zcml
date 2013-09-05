@@ -84,4 +84,12 @@
         class="plone.app.viewletmanager.manager.BaseOrderedViewletManager"
         />
 
+    <browser:viewlet
+        name="plone.htmlhead.title"
+        manager=".interfaces.IHtmlHeadTitle"
+        class="plone.app.layout.viewlets.common.TitleViewlet"
+        permission="zope2.View"
+        />
+
+
 </configure>
