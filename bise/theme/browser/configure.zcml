@@ -76,7 +76,7 @@
     <browser:page
         name="rss_summary_view"
         permission="zope2.View"
-        for="plone.app.collection.interfaces.ICollection"
+        for="plone.app.contenttypes.interfaces.ICollection"
         template="templates/rss_summary_view.pt"
         layer=".interfaces.IThemeSpecific"
         />
