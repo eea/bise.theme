@@ -39,7 +39,8 @@ setup(name='bise.theme',
           'sc.social.like',
           'bise.biodiversityfactsheet',
           'cs.editablefooter',
-          'collective.js.jqueryui'
+          'collective.js.jqueryui',
+          'Products.Ploneboard'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
