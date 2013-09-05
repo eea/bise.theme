@@ -16,6 +16,15 @@
         name="BISETheme"
         />
 
+    <browser:page
+        for="*"
+        name="sunburstview"
+        class=".sunburstview.SunburstView"
+        permission="zope.Public"
+        allowed_interface="plonetheme.sunburst.browser.interfaces.ISunburstView"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <include package="z3c.jbot" file="meta.zcml" />
 
     <browser:jbot
