@@ -78,6 +78,7 @@
         permission="zope2.View"
         for="plone.app.collection.interfaces.ICollection"
         template="templates/rss_summary_view.pt"
+        layer=".interfaces.IThemeSpecific"
         />
 
 
@@ -86,6 +87,7 @@
         provides=".interfaces.IHtmlHeadTitle"
         permission="zope2.View"
         class="plone.app.viewletmanager.manager.BaseOrderedViewletManager"
+        layer=".interfaces.IThemeSpecific"
         />
 
     <browser:viewlet
@@ -93,6 +95,7 @@
         manager=".interfaces.IHtmlHeadTitle"
         class="plone.app.layout.viewlets.common.TitleViewlet"
         permission="zope2.View"
+        layer=".interfaces.IThemeSpecific"
         />
 
 
