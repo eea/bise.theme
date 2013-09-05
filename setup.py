@@ -40,7 +40,8 @@ setup(name='bise.theme',
           'bise.biodiversityfactsheet',
           'cs.editablefooter',
           'collective.js.jqueryui',
-          'Products.Ploneboard'
+          'Products.Ploneboard',
+          'z3c.unconfigure'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
