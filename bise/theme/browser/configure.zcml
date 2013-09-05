@@ -16,17 +16,29 @@
         name="BISETheme"
         />
 
+    <browser:page
+        for="*"
+        name="sunburstview"
+        class=".sunburstview.SunburstView"
+        permission="zope.Public"
+        allowed_interface="plonetheme.sunburst.browser.interfaces.ISunburstView"
+        layer=".interfaces.IThemeSpecific"
+        />
+
     <include package="z3c.jbot" file="meta.zcml" />
 
     <browser:jbot
         directory="template-overrides"
         layer=".interfaces.IThemeSpecific" />
+<<<<<<< HEAD
     <browser:page
         for="*"
         class=".biseView.BISEView"
         permission="zope.Public"
         name="main_template"
         template="main_template.pt"/>
+=======
+>>>>>>> remove-duplicated-main-template
     <!-- The customized logo -->
     <browser:viewlet
         name="plone.logo"

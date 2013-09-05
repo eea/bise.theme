@@ -11,13 +11,7 @@ class IThemeSpecific(IDefaultPloneLayer):
     """
 
 
-class IBISEView(Interface):
-    """ """
-
-    def getColumnsClass():
-        """ Returns the CSS class based on columns presence. """
-
-
 class IHtmlHeadTitle(IViewletManager):
     """A viewlet manager for the title of the page
     """
+
