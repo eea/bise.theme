@@ -41,7 +41,7 @@ setup(name='bise.theme',
           'cs.editablefooter',
           'collective.js.jqueryui',
           'Products.Ploneboard',
-          'z3c.unconfigure'
+          'z3c.unconfigure',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
