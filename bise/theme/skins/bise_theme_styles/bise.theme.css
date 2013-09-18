@@ -629,9 +629,11 @@ dl.portlet dt a:visited {
 }
 .portaltype-biodiversityfactsheet .collapsible.collapse-open .link{
 	background: url("country-profile/link-hide.png") center center no-repeat;
+	height: 4px;
 }
 .portaltype-biodiversityfactsheet .collapsible.collapse-close .link{
 	background: url("country-profile/link.png") center center no-repeat;
+	height: 4px;
 }
 .portaltype-biodiversityfactsheet .collapsible.collapse-open .map{
 	background: url("country-profile/map_icon_white.png") center center no-repeat;
