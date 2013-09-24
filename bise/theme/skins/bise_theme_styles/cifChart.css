@@ -94,6 +94,9 @@ margin-right:-6px;
   color: white;
   background-color:#9e6d52;
   border:0px;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
 }
 
 .coordinationGroup {
@@ -156,4 +159,18 @@ margin-right:-6px;
   border-right: 60px solid transparent;
   border-top: 15px solid #cc8e6c;
   left: 0px;
+}
+#monitoring{
+  text-align: center;
+  border: 1px solid #cc8e6c;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: #cc8e6c;
+  color: black;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  height: 70px;
+  font-weight: bold;
 }
