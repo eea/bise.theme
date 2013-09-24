@@ -4,8 +4,8 @@ abbr, acronym{
 }
 #cifChart{
   width: 760px;
-  border-collapse: separate;
-  border-spacing: 5px 0px;
+  border-collapse: separate !important;
+  border-spacing: 5px 0px !important;
   margin: 0 auto;
   table-layout: fixed;
 }
