@@ -2,6 +2,13 @@ abbr, acronym{
   border-bottom: .1em dotted;
   cursor: help;
 }
+#cifChart{
+  width: 760px;
+  border-collapse: separate;
+  border-spacing: 5px 0px;
+  margin: 0 auto;
+  table-layout: fixed;
+}
 .horizontal-line{
   background-image: url('dot.gif');
   background-repeat: repeat-x;
