@@ -30,6 +30,10 @@
     id="http://www.google.com/jsapi"
     cacheable="False" compression="none" cookable="False"
     enabled="1" expression=""  inline="False"/>
+ <javascript
+    id="cifChart.js"
+    cacheable="False" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>    
 <!--  <javascript
     id="jquery.collapsible.min.js"
     cacheable="False" compression="safe" cookable="False"
