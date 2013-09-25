@@ -698,3 +698,6 @@ dl.portlet dt a:visited {
 .compare-form-holder{
 	background-color: #DDD2F4 !important;
 }
+.ui-tabs-anchor{
+	color:#693 !important;
+}
