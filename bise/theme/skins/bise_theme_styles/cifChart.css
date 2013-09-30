@@ -9,9 +9,6 @@ abbr, acronym{
   margin: 0 auto;
   table-layout: fixed;
 }
-#cifChart td{
-  padding: 4px;
-}
 .horizontal-line{
   background-image: url('dot.gif');
   background-repeat: repeat-x;

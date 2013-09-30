@@ -701,20 +701,14 @@ dl.portlet dt a:visited {
 .ui-tabs-anchor{
 	color:#693 !important;
 }
-body.section-policy #content table td {
+table.targetDesc td {
     padding: 5px;
 }
-body.section-policy #content table {
+body.section-policy #content table.targetDesc {
     border-collapse:collapse;
 }
-body.section-policy #content table,
-body.section-policy #content th, 
-body.section-policy #content td {
+body.section-policy #content table.targetDesc,
+body.section-policy #content table.targetDesc th, 
+body.section-policy #content table.targetDesc td {
     border: 1px solid #303030;
-}
-
-body.section-policy #content #cifChart,
-body.section-policy #content #cifChart th, 
-body.section-policy #content #cifChart td {
-    border: 0px;
 }
