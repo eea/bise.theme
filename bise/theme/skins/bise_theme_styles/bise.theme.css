@@ -665,6 +665,17 @@ dl.portlet dt a:visited {
 	left: 748px;
 	overflow: auto;
 }
+.esriBasemapIcon {
+  background-image: url("Basemap16.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin: 4px 0 4px 4px;
+}
+.dijitMenuItemIcon {
+	width: 40px;
+}
 .portaltype-biodiversityfactsheet .fact-contents table.basic-facts{
 	border-collapse: collapse;
 	border-spacing: 0px;
