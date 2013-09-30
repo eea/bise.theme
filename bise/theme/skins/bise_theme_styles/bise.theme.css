@@ -701,3 +701,14 @@ dl.portlet dt a:visited {
 .ui-tabs-anchor{
 	color:#693 !important;
 }
+body.section-policy #content table td {
+    padding: 5px;
+}
+body.section-policy #content table {
+    border-collapse:collapse;
+}
+body.section-policy #content table,
+body.section-policy #content th, 
+body.section-policy #content td {
+    border: 1px solid #303030;
+}
