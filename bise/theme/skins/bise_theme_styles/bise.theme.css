@@ -712,3 +712,12 @@ body.section-policy #content th,
 body.section-policy #content td {
     border: 1px solid #303030;
 }
+body.section-policy #content #cifChart td {
+    padding: 0px;
+}
+
+body.section-policy #content #cifChart,
+body.section-policy #content #cifChart th, 
+body.section-policy #content #cifChart td {
+    border: 0px;
+}
