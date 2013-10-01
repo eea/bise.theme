@@ -723,3 +723,9 @@ body.section-policy #content table.targetDesc th,
 body.section-policy #content table.targetDesc td {
     border: 1px solid #303030;
 }
+#socialmedia-viewlet li {
+	list-style: none;
+}
+.action-items li{
+	display: inline ;
+}
