@@ -727,5 +727,5 @@ body.section-policy #content table.targetDesc td {
 	list-style: none;
 }
 .action-items li{
-	display: inline ;
+	display: inline !important;
 }
