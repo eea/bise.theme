@@ -42,6 +42,8 @@ setup(name='bise.theme',
           'collective.js.jqueryui',
           'Products.Ploneboard',
           'z3c.unconfigure',
+          'Products.PloneGlossary',
+          'bise.multilingualglossary',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

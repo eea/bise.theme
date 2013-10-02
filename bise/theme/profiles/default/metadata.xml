@@ -11,5 +11,7 @@
     <dependency>profile-cs.editablefooter:default</dependency>
     <dependency>profile-bise.biodiversityfactsheet:default</dependency>
     <dependency>profile-Products.Ploneboard:default</dependency>
+    <dependency>profile-Products.PloneGlossary:default</dependency>
+    <dependency>profile-bise.multilingualglossary:default</dependency>
   </dependencies>
 </metadata>
