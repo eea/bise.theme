@@ -44,6 +44,8 @@ setup(name='bise.theme',
           'z3c.unconfigure',
           'Products.PloneGlossary',
           'bise.multilingualglossary',
+          'collective.transmogrifier',
+          'plone.app.transmogrifier',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
