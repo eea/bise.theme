@@ -22,7 +22,7 @@
       <div class="sub_terms"
         tal:condition="view/sub_definitions">
         <ul>
-          <li tal:repeat="definition view/definitions">
+          <li tal:repeat="definition view/sub_definitions">
             <a href=""
               tal:attributes="href definition/getURL"
               tal:content="definition/Title">
