@@ -37,4 +37,8 @@
 <order manager="plone.belowcontenttitle" skinname="*">
   <viewlet name="plone.abovecontenttitle.documentactions" insert_before="plone.belowcontenttitle.documentbyline"/>
 </order>
+<hidden manager="plone.belowcontentbody" skinname="*">
+  <viewlet name="eea.socialmedia"/>
+</hidden>
+
 </object>
