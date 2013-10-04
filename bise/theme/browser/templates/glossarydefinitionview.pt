@@ -6,13 +6,6 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="ploneglossary">
 
-  <tal:comment replace="nothing">
-    ########################
-    Glossary definition view
-    ########################
-    $Id$
-  </tal:comment>
-
   <body>
     <metal:desc fill-slot="content-description">
 
@@ -49,9 +42,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr tal:repeat="translation context/term_translations">
+              <tr tal:repeat="translation view/term_translations">
                 <td class="language"
-                  tal:content="python:view.language_name(translation['language'])">
+                  tal:content="translation/language">
                   de
                 </td>
                 <td tal:content="translation/term">
@@ -73,8 +66,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr tal:repeat="translation context/definition_translations">
-              <td tal:content="python:view.language_name(translation['language'])">
+            <tr tal:repeat="translation view/definition_translations">
+              <td tal:content="translation/language">
                 eu
               </td>
               <td tal:content="translation/definition">

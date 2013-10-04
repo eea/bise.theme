@@ -31,3 +31,13 @@ class GlossaryDefinitionView(grok.View):
     def language_name(self, lang_code):
         lang = lang_code.lower().replace('_', '-')
         return self.get_language_dict().get(lang).get(u'name', lang)
+
+    def term_translations(self):
+        context = aq_inner(self.context)
+        trans = context.getField('term_translations').get(context)
+        return [{'term': t['term'], 'language': self.language_name(t['language'])} for t in trans]
+
+    def definition_translations(self):
+        context = aq_inner(self.context)
+        trans = context.getField('definition_translations').get(context)
+        return [{'definition': t['definition'], 'language': self.language_name(t['language'])} for t in trans]
