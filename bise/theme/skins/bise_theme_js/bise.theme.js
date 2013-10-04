@@ -1,14 +1,21 @@
 $(document).ready(function(){
-	$("a[href*='http://']:not([href*='"+location.hostname.replace("www.","")+"'])").each(function() {
-	  $(this).click(function(event) {
-	     event.preventDefault();
-	     event.stopPropagation();
-	     window.open(this.href, '_blank');
-	  })
-	$("a[href*='http://']:not([href*='"+location.hostname.replace("www.","")+"']):not(:has(>img))").addClass('externalLink');
-	});
-
-	
+  $("a[href*='http://']:not([href*='"+location.hostname.replace("www.","")+"'])").each(function() {
+    $(this).click(function(event) {
+       event.preventDefault();
+       event.stopPropagation();
+       window.open(this.href, '_blank');
+    })
+  $("a[href*='http://']:not([href*='"+location.hostname.replace("www.","")+"']):not(:has(>img))").addClass('externalLink');
+  });
+  $("a[href*='https://']:not([href*='"+location.hostname.replace("www.","")+"'])").each(function() {
+    $(this).click(function(event) {
+       event.preventDefault();
+       event.stopPropagation();
+       window.open(this.href, '_blank');
+    })
+  $("a[href*='https://']:not([href*='"+location.hostname.replace("www.","")+"']):not(:has(>img))").addClass('externalLink');
+  });
+  
   $(function () {
     //$('#wrap_menuBise ul').each(function () {
       function showSubMenu(sid){
@@ -201,16 +208,20 @@ $(document).ready(function(){
               }
               var arrowTop = e.pageY - top - 12;
               if (arrowTop < 0) arrowTop = 0;
-              $('#infobox-arrow-border').css({
+              /**$('#infobox-arrow-border').css({
                 'top': arrowTop
               });
               $('#infobox-arrow').css({
                 'top': arrowTop
-              })          
+              }) */ 
               $('#infobox').css({
+                'left': e.pageX - $('#infobox').parent().offset().left + 10,
+                'top': e.pageY - $('#infobox').parent().offset().top - 36
+              }).show(100);  
+              /**$('#infobox').css({
                 'left': e.pageX + 10 - 450,
                 'top': top - 210
-              }).show(100);
+              }).show(100);*/
             });
           })
           $('#infobox-close').click(function(){
