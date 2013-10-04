@@ -70,7 +70,7 @@ class CHMReader(object):
                         item['title'] = element.get('title')
                         item['definition'] = ' '
                         names = []
-                        for name in folder.xpath('name/translation'):
+                        for name in element.xpath('name/translation'):
                             dic = {
                                 'language': name.get('lang'),
                                 'term': name.text
@@ -79,7 +79,7 @@ class CHMReader(object):
 
                         item['term_translations'] = names
                         definitions = []
-                        for definition in folder.xpath('definition/translation'):
+                        for definition in element.xpath('definition/translation'):
                             dic = {
                                 'language': definition.get('lang'),
                                 'definition': definition.text
