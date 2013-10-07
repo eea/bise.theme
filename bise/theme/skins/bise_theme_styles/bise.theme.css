@@ -732,3 +732,26 @@ body.section-policy #content table.targetDesc td {
 #slideshow9270{
 	height: 280px;
 }
+input.search-button {
+    border: 1px solid #999999;
+    background-color: #7FBA46;
+    font-family: inherit;
+	font-size: 11px;
+	font-weight: bold;
+	color: #fff;
+	padding: 0 8px;
+	height: 24px;
+	min-width: 54px;
+}
+input.search-input{
+	outline: none;
+	font-family: inherit;
+	border: 1px solid #D3BCA1;
+	padding: 3px 6px;
+	width: 89px;
+	font-size: 13px;
+	border-color: #7FBA46;
+}
+#searchbar-options{
+	margin-top: 18px;
+}
