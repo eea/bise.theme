@@ -1,5 +1,5 @@
 Introduction
 ============
 
-Theme file for biodiversity.europa.eu
+Theme package for biodiversity.europa.eu
 
