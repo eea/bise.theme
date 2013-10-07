@@ -25,6 +25,7 @@ setup(name='bise.theme',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Products.CMFPlone',
           'z3c.jbot',
           'five.grok',
           'plone.app.dexterity [grok, relations]',
