@@ -5,8 +5,8 @@
 <ul id="searchbar-options">
 
   <li>
-    <form method="post" action="/search">
-      <input autocomplete="off" type="text" size="10" name="search" title="search" dir="ltr" spellcheck="false" class="search-input"/>
+    <form method="get" action="/search">
+      <input autocomplete="off" type="text" size="10" name="q" title="search" dir="ltr" spellcheck="false" class="search-input"/>
       <input type="submit" value="Search" class="search-button" title="search"/>
     </form>
       
