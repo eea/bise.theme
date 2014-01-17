@@ -4,15 +4,16 @@ body {
 	margin: 0 auto;
 	font-family: "Arial", sans-serif;
 	font-family: "Arial", sans-serif;
-	background-image: url(Bise-back-short.jpg);
+	/**background-image: url(Bise-back-short.jpg);
 	background-repeat: no-repeat;
-	background-position: top center;
+	background-position: top center;*/
+	background-color: #EFF5E7;
 	margin: 0 auto;
 	color:#4C4C4C;
 }
 body.section-index,
 body.section-bise{
-	background-image: url("Bise-back-main.jpg");
+	/**background-image: url("Bise-back-main.jpg");*/
 }
 #content p, #content table, #content dl, dl.portlet p, dl.portlet {
   margin-bottom: 0.5em;
@@ -39,6 +40,33 @@ h1 {
 #portal-footer-wrapper{
 	width: 960px;
 	margin: 0 auto;
+}
+#portal-columns{
+	/**background: #FFF url(main-mid.png) 0 0 repeat-y;;*/
+	border-top: 1px solid #D4D9CC;
+	border-left: 1px solid #D4D9CC;
+	border-right: 1px solid #D4D9CC;
+	-moz-box-shadow: 0 0 0px 2px #ccc;
+	-webkit-box-shadow: 0 6px 3px #DFE5D7;
+	box-shadow: 0 0 6px 3px #DFE5D7;
+	background-color: white;
+	margin-left: 9px;
+	width: 943px;
+}
+#portal-footer-wrapper{
+	/**background: url(footer-bg.png) 0 0 no-repeat;*/
+	border-bottom: 1px solid #D4D9CC;
+	border-left: 1px solid #D4D9CC;
+	border-right: 1px solid #D4D9CC;
+	-moz-box-shadow: 0 0 0px 2px #ccc;
+	-webkit-box-shadow: 0 6px 3px #DFE5D7;
+	box-shadow: 0 0 6px 3px #DFE5D7;
+	background-color: white;
+	margin-left: 9px;
+	width: 943px;	
+}
+#portal-footer-wrapper > div{
+	margin-left: -99.875%;
 }
 #portal-header li{
 	display: inline-block;
@@ -98,12 +126,19 @@ h1 {
 }
 #portal-globalnav li div{
 	height: 35px;
-	width: 100%;
+	width: 96%;
 	font-size: 18px;
 	padding-top: 15px;
-	border-left: 1px solid #ccc;
+	/**border-left: 1px solid #ccc;
 	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;*/
+	border: 2px solid white;
+	/**border-left: 2px solid white;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;	*/
+	-moz-box-shadow: 0 0 0px 2px #ccc;
+	-webkit-box-shadow: 0 0 0px 2px #ccc;
+	box-shadow: 0 0 0px 2px #ccc;	
 }
 #portal-globalnav li a,
 #portal-globalnav li a:hover
@@ -120,6 +155,13 @@ h1 {
 #portal-globalnav li div#portaltab-topics {
 	background-image: url(Topics-bg.png);
 	background-repeat: repeat-x;
+
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 #portal-globalnav li div#portaltab-policy {
 	background-image: url(Policy-bg.png);
@@ -140,6 +182,12 @@ h1 {
 #portal-globalnav li div#portaltab-networks {
 	background-image: url(Networks-bg.png);
 	background-repeat: repeat-x;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;	
 }
 
 .portalsubtabs{
@@ -157,10 +205,11 @@ h1 {
 	display: none;
 }
 #portalsubtabs-topics {
-	border: 1px solid #ecca5a;
+	border: 1px solid #147F2D;
+	/**border: 1px solid #ecca5a;
 	-moz-box-shadow: 1px 1px 5px #ecca5a;
 	-webkit-box-shadow: 1px 1px 5px #ecca5a;
-	box-shadow: 1px 1px 5px #ecca5a;
+	box-shadow: 1px 1px 5px #ecca5a;*/
 }
 #portalsubtabs-policy {
 	border: 1px solid #e5bcb6;
@@ -252,6 +301,12 @@ h1 {
 	font-style: italic;
 	color: gray;
 	font-size: 12px;
+}
+#portal-breadcrumbs {
+	/**background-image: url(main-top.png);*/
+	padding-top:  0px;
+	padding-left: 0px;
+	/**background-repeat: no-repeat;*/
 }
 #portal-breadcrumbs a,
 #portal-breadcrumbs a:link{
@@ -359,7 +414,7 @@ dl.portlet dt a:visited {
 	background-position: top center;
 	background-repeat: no-repeat;
 	height: 12em;
-	width: 960px;
+	width: 942px;
 	text-align: center;
 	padding-top: 9em;
 }
