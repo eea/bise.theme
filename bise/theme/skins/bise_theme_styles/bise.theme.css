@@ -3,19 +3,8 @@ body {
 	width: 960px;
 	margin: 0 auto;
 	font-family: "Arial", sans-serif;
-	/**background-image: url(Bise-back-short.jpg);
-	background-repeat: no-repeat;
-	background-position: top center;*/
-	background: #ffffff; /* Old browsers */
-	background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 20%, #ffffff 20%, #eff5e7 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(20%,#ffffff), color-stop(20%,#ffffff), color-stop(100%,#eff5e7)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 20%,#ffffff 20%,#eff5e7 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #ffffff 0%,#ffffff 20%,#ffffff 20%,#eff5e7 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #ffffff 0%,#ffffff 20%,#ffffff 20%,#eff5e7 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 5%,#ffffff 5%,#eff5e7 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eff5e7',GradientType=0 ); /* IE6-9 */
-
-	/**background-color: #EFF5E7;*/
+	background-image: url(bg.png);
+	background-repeat: repeat-x;
 	margin: 0 auto;
 	color:#4C4C4C;
 }
@@ -433,7 +422,7 @@ dl.portlet dt a:visited {
 	background-image: url(Bise-back-footer.jpg);
 	background-position: top center;
 	background-repeat: no-repeat;
-	height: 12em;
+	height: 100px;
 	width: 942px;
 	text-align: center;
 	padding-top: 9em;
@@ -461,8 +450,9 @@ dl.portlet dt a:visited {
 	box-shadow: 0 0 6px 7px #DFE5D7;
 	background-color: white;
 	margin-left: -13px !important;
-	width: 103% !important;
+	width: 102% !important;
 	margin-top: 20px;
+	padding-left: 10px;
 }
 .collage-row .row_1 .block_2 h1{
 	color: #15802e;
@@ -474,7 +464,7 @@ dl.portlet dt a:visited {
 	margin-left: 44px;
 }
 .collage-row .row_1 .block_2 h2{
-	color: #fff;
+	color: #000;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
 	font-size: 17px;
@@ -490,6 +480,9 @@ dl.portlet dt a:visited {
 .portlet-collection-news-europe .portletHeader span,
 .portlet-collection-news-world .portletHeader span{
 	margin-left: 16px;
+}
+.collage-row .row_2{
+	padding-top: 10px;
 }
 .collage-row .row_2 .portletItem ul{
 	font-size: 14px;
