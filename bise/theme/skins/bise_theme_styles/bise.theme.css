@@ -134,7 +134,7 @@ body.section-index #portal-footer-wrapper{
 	width: 16.4%;
 }
 #portal-globalnav li div{
-	height: 35px;
+	height: 33px;
 	width: 96%;
 	font-size: 18px;
 	padding-top: 15px;
@@ -162,8 +162,8 @@ body.section-index #portal-footer-wrapper{
 	text-decoration: none;
 }
 #portal-globalnav li div#portaltab-topics {
-	background-image: url(Topics-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-01.png);
+	
 
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-bottom-left-radius: 5px;
@@ -173,24 +173,19 @@ body.section-index #portal-footer-wrapper{
 	border-bottom-left-radius: 5px;
 }
 #portal-globalnav li div#portaltab-policy {
-	background-image: url(Policy-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-02.png);
 }
 #portal-globalnav li div#portaltab-data {
-	background-image: url(Data-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-03.png);
 }
 #portal-globalnav li div#portaltab-research {
-	background-image: url(Research-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-04.png);
 }
 #portal-globalnav li div#portaltab-countries_and_networks {
-	background-image: url(Countries-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-05.png);
 }
 #portal-globalnav li div#portaltab-networks {
-	background-image: url(Networks-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-06.png);
 	-webkit-border-top-right-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
 	-moz-border-radius-topright: 5px;
