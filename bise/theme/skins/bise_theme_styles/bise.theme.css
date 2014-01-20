@@ -3,16 +3,14 @@ body {
 	width: 960px;
 	margin: 0 auto;
 	font-family: "Arial", sans-serif;
-	font-family: "Arial", sans-serif;
-	background-image: url(Bise-back-short.jpg);
-	background-repeat: no-repeat;
-	background-position: top center;
+	background-image: url(bg.png);
+	background-repeat: repeat-x;
 	margin: 0 auto;
 	color:#4C4C4C;
 }
 body.section-index,
 body.section-bise{
-	background-image: url("Bise-back-main.jpg");
+	/**background-image: url("Bise-back-main.jpg");*/
 }
 #content p, #content table, #content dl, dl.portlet p, dl.portlet {
   margin-bottom: 0.5em;
@@ -39,6 +37,45 @@ h1 {
 #portal-footer-wrapper{
 	width: 960px;
 	margin: 0 auto;
+}
+#portal-columns{
+	/**background: #FFF url(main-mid.png) 0 0 repeat-y;;*/
+	border-top: 1px solid #D4D9CC;
+	border-left: 1px solid #D4D9CC;
+	border-right: 1px solid #D4D9CC;
+	-moz-box-shadow: 0 0 6px 7px #DFE5D7;
+	-webkit-box-shadow: 0 6px 7px #DFE5D7;
+	box-shadow: 0 0 6px 7px #DFE5D7;
+	background-color: white;
+	margin-left: 9px;
+	width: 943px;
+}
+body.section-index #portal-columns {
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+	background-color: transparent;
+}
+#portal-footer-wrapper{
+	/**background: url(footer-bg.png) 0 0 no-repeat;*/
+	border-bottom: 1px solid #D4D9CC;
+	border-left: 1px solid #D4D9CC;
+	border-right: 1px solid #D4D9CC;
+	/**-moz-box-shadow: 0 0 0px 2px #ccc;
+	-webkit-box-shadow: 0 6px 3px #DFE5D7;
+	box-shadow: 0 0 6px 3px #DFE5D7;*/
+	box-shadow: 0px 6px 3px #dfe5d7, -6px 6px 3px #dfe5d7, 6px 6px 3px #dfe5d7;
+	background-color: white;
+	margin-left: 9px;
+	width: 943px;	
+}
+body.section-index #portal-footer-wrapper{
+	margin-top: -26px;
+	margin-left: 10px;
+}
+#portal-footer-wrapper > div{
+	margin-left: -99.875%;
 }
 #portal-header li{
 	display: inline-block;
@@ -97,20 +134,27 @@ h1 {
 	width: 16.4%;
 }
 #portal-globalnav li div{
-	height: 35px;
-	width: 100%;
+	height: 33px;
+	width: 99%;
 	font-size: 18px;
 	padding-top: 15px;
-	border-left: 1px solid #ccc;
+	/**border-left: 1px solid #ccc;
 	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;*/
+	border: 1px solid #168130;
+	/**border-left: 2px solid white;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;	*/
+	/**-moz-box-shadow: 0 0 0px 2px #ccc;
+	-webkit-box-shadow: 0 0 0px 2px #ccc;
+	box-shadow: 0 0 0px 2px #ccc;	*/
 }
 #portal-globalnav li a,
 #portal-globalnav li a:hover
 {
 	padding: 0px;
 	width: 100%;
-	color: #000;
+	color: #fff;
 	text-align: center;
 	font-size: 18px;
 	background: none;
@@ -118,28 +162,36 @@ h1 {
 	text-decoration: none;
 }
 #portal-globalnav li div#portaltab-topics {
-	background-image: url(Topics-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-01.png);
+	
+
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 #portal-globalnav li div#portaltab-policy {
-	background-image: url(Policy-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-02.png);
 }
 #portal-globalnav li div#portaltab-data {
-	background-image: url(Data-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-03.png);
 }
 #portal-globalnav li div#portaltab-research {
-	background-image: url(Research-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-04.png);
 }
 #portal-globalnav li div#portaltab-countries_and_networks {
-	background-image: url(Countries-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-05.png);
 }
 #portal-globalnav li div#portaltab-networks {
-	background-image: url(Networks-bg.png);
-	background-repeat: repeat-x;
+	background-image: url(BISE-Tabs-06.png);
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;	
 }
 
 .portalsubtabs{
@@ -155,46 +207,12 @@ h1 {
 	color: #000;
 	font-size: 12px;
 	display: none;
+	border: 2px solid #d4d9cc;
 }
-#portalsubtabs-topics {
-	border: 1px solid #ecca5a;
-	-moz-box-shadow: 1px 1px 5px #ecca5a;
-	-webkit-box-shadow: 1px 1px 5px #ecca5a;
-	box-shadow: 1px 1px 5px #ecca5a;
-}
-#portalsubtabs-policy {
-	border: 1px solid #e5bcb6;
-	-moz-box-shadow: 1px 1px 5px #e5bcb6;
-	-webkit-box-shadow: 1px 1px 5px #e5bcb6;
-	box-shadow: 1px 1px 5px #e5bcb6;
-}
-#portalsubtabs-data {
-	border: 1px solid #b9e784;
-	-moz-box-shadow: 1px 1px 5px #b9e784;
-	-webkit-box-shadow: 1px 1px 5px #b9e784;
-	box-shadow: 1px 1px 5px #b9e784;
-}
-#portalsubtabs-research {
-	border: 1px solid #3fafdb;
-	-moz-box-shadow: 1px 1px 5px #3fafdb;
-	-webkit-box-shadow: 1px 1px 5px #3fafdb;
-	box-shadow: 1px 1px 5px #3fafdb;
-}
-#portalsubtabs-countries_and_networks {
-	border: 1px solid #c5bfd5;
-	-moz-box-shadow: 1px 1px 5px #c5bfd5;
-	-webkit-box-shadow: 1px 1px 5px #c5bfd5;
-	box-shadow: 1px 1px 5px #c5bfd5;
-}
-#portalsubtabs-networks {
-	border: 1px solid #d5dbcd;
-	-moz-box-shadow: 1px 1px 5px #d5dbcd;
-	-webkit-box-shadow: 1px 1px 5px #d5dbcd;
-	box-shadow: 1px 1px 5px #d5dbcd;
-}
+
 .portalsubtabs .column {
 	float: left;
-	width: 290px;
+	width: 289px;
 	padding: 5px;
 }
 .portalsubtabs .first-level {
@@ -205,30 +223,20 @@ h1 {
 	font-weight: bold;
 	list-style-position: inside;
 }
-#portalsubtabs-topics .list-title{
+.portalsubtabs .list-title{
 	background-image: url(Topics-bg.png);
 	background-repeat: repeat-x;
+	background: #84bf02;
+	background: -moz-linear-gradient(top,  #84bf02 0%, #366617 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84bf02), color-stop(100%,#366617));
+	background: -webkit-linear-gradient(top,  #84bf02 0%,#366617 100%);
+	background: -o-linear-gradient(top,  #84bf02 0%,#366617 100%);
+	background: -ms-linear-gradient(top,  #84bf02 0%,#366617 100%);
+	background: linear-gradient(to bottom,  #84bf02 0%,#366617 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84bf02', endColorstr='#366617',GradientType=0 );
+
 }
-#portalsubtabs-policy .list-title{
-	background-image: url(Policy-bg.png);
-	background-repeat: repeat-x;
-}
-#portalsubtabs-data .list-title{
-	background-image: url(Data-bg.png);
-	background-repeat: repeat-x;
-}
-#portalsubtabs-research .list-title{
-	background-image: url(Research-bg.png);
-	background-repeat: repeat-x;
-}
-#portalsubtabs-countries_and_networks .list-title{
-	background-image: url(Countries-bg.png);
-	background-repeat: repeat-x;
-}
-#portalsubtabs-networks .list-title{
-	background-image: url(Networks-bg.png);
-	background-repeat: repeat-x;
-}
+
 .portalsubtabs .second-level {
 	list-style-image: url('bise-submenu-second-level.gif');
 	padding-left: 25px;
@@ -253,6 +261,12 @@ h1 {
 	color: gray;
 	font-size: 12px;
 }
+#portal-breadcrumbs {
+	/**background-image: url(main-top.png);*/
+	padding-top:  0px;
+	padding-left: 0px;
+	/**background-repeat: no-repeat;*/
+}
 #portal-breadcrumbs a,
 #portal-breadcrumbs a:link{
 	color: #286d4e;
@@ -271,44 +285,18 @@ h1 {
 	color: #168130;
 	border-bottom: 1px solid #168130;
 }
-body.section-topics #content h1.documentFirstHeading {
-	color: #f4b409;
-	border-bottom: 1px solid #f4b409 !important;
-}
-body.section-policy #content h1.documentFirstHeading {
-	color: #ef7153;
-	border-bottom: 1px solid #ef7153 !important;
-}
-body.section-data #content h1.documentFirstHeading {
-	color: #7fba46;
-	border-bottom: 1px solid #7fba46 !important;
-}
-body.section-research #content h1.documentFirstHeading {
-	color: #3fafdb;
-	border-bottom: 1px solid #3fafdb !important;
-}
-body.section-countries_and_networks #content h1.documentFirstHeading {
-	color: #8F68DA;
-	border-bottom: 1px solid #8F68DA !important;
-}
+
 body.section-bap .bap-action-holder h1 {
-	color: #8F68DA;
-	border-bottom: 1px solid #8F68DA !important;
+	color: #168130;
+	border-bottom: 1px solid #168130 !important;
 	margin-bottom: 5px;
 }
 body.section-bap h1 {
-	color: #8F68DA;
-	border-bottom: 1px solid #8F68DA !important;
+	color: #168130;
+	border-bottom: 1px solid #168130 !important;
 	margin-bottom: 5px;
 }
-body.section-networks #content h1.documentFirstHeading {
-    color: #A0A0A0;
-    border-bottom: 1px solid #A0A0A0 !important;
-}
-body.section-chm-network #content h1.documentFirstHeading {
-	color: #A0A0A0;
-	border-bottom: 1px solid #A0A0A0 !important;
-}
+
 #viewlet-social-like {
 	text-align: right;
 }
@@ -358,8 +346,8 @@ dl.portlet dt a:visited {
 	background-image: url(Bise-back-footer.jpg);
 	background-position: top center;
 	background-repeat: no-repeat;
-	height: 12em;
-	width: 960px;
+	height: 100px;
+	width: 942px;
 	text-align: center;
 	padding-top: 9em;
 }
@@ -377,8 +365,24 @@ dl.portlet dt a:visited {
 #content #collage{
 	margin-top: -36px;
 }
+.section-chm-network #content #collage{
+	margin-top: -8px;
+}
+.collage-row {
+	border-top: 1px solid #D4D9CC;
+	border-left: 1px solid #D4D9CC;
+	border-right: 1px solid #D4D9CC;
+	-moz-box-shadow: 0 0 6px 7px #DFE5D7;
+	-webkit-box-shadow: 0 0 6px 7px #DFE5D7;
+	box-shadow: 0 0 6px 7px #DFE5D7;
+	background-color: white;
+	margin-left: -13px !important;
+	width: 102% !important;
+	margin-top: 20px;
+	padding-left: 10px;
+}
 .collage-row .row_1 .block_2 h1{
-	color: #fff;
+	color: #15802e;
 	font-size:37px;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
@@ -387,7 +391,7 @@ dl.portlet dt a:visited {
 	margin-left: 44px;
 }
 .collage-row .row_1 .block_2 h2{
-	color: #fff;
+	color: #000;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
 	font-size: 17px;
@@ -403,6 +407,9 @@ dl.portlet dt a:visited {
 .portlet-collection-news-europe .portletHeader span,
 .portlet-collection-news-world .portletHeader span{
 	margin-left: 16px;
+}
+.collage-row .row_2{
+	padding-top: 10px;
 }
 .collage-row .row_2 .portletItem ul{
 	font-size: 14px;
@@ -442,6 +449,11 @@ dl.portlet dt a:visited {
 	text-align: right;
 	font-weight: bold;
 	font-size: 14px;
+}
+.section-chm-network .collage-row {
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 .section-chm-network .portletStaticText {
 	font-size: 13px;
