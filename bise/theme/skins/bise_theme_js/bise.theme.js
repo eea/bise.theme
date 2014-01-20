@@ -66,7 +66,7 @@ $(document).ready(function(){
                 }
                 $('#portalsubtabs-' + sid).css({
                   'position': 'absolute',
-                  'top': 158,
+                  'top': 155,
                   'left': left,
                   'display': 'block'
                 }).animate({
