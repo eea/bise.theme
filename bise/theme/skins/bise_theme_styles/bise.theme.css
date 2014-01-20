@@ -365,6 +365,9 @@ dl.portlet dt a:visited {
 #content #collage{
 	margin-top: -36px;
 }
+.section-chm-network #content #collage{
+	margin-top: -8px;
+}
 .collage-row {
 	border-top: 1px solid #D4D9CC;
 	border-left: 1px solid #D4D9CC;
@@ -446,6 +449,11 @@ dl.portlet dt a:visited {
 	text-align: right;
 	font-weight: bold;
 	font-size: 14px;
+}
+.section-chm-network .collage-row {
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 .section-chm-network .portletStaticText {
 	font-size: 13px;
