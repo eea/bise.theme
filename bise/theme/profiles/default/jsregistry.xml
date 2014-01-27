@@ -34,6 +34,10 @@
     id="cifChart.js"
     cacheable="False" compression="safe" cookable="False"
     enabled="True" expression=""  inline="False"/>    
+ <javascript
+    id="strategyPlan.js"
+    cacheable="False" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/>     
 <!--  <javascript
     id="jquery.collapsible.min.js"
     cacheable="False" compression="safe" cookable="False"
