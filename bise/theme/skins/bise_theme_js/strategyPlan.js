@@ -104,6 +104,31 @@
 			$(".aichiTargetsDiv > div:first-child").show();  			
   		});
 
+  		$(".cifGroupsDiv").css("cursor", "pointer");
+  		$(".cifGroupsDiv").click(function(){
+  			if (!$(this).parent().hasClass("expanded")){
+				$(".cifGroupsDiv").css("cursor", "auto");
+
+	  			$(".targetBack").css("height", "20px");
+
+	  			$(".targetDiv").toggleClass("collapsed");
+	  			$(this).parent().toggleClass("collapsed");
+	  			$(this).parent().toggleClass("expanded");  
+	  			$(".actionsDiv").hide();
+	  			$(".indicatorsDiv").hide();
+	  			$(".aichiTargetsDiv").hide();  		
+	  			$(".cifGroupsDiv").hide();
+
+	  			$(this).show();	
+	  			$(this).children().first().hide();
+	  			$(this).css("height", (totalHeight - 270));	
+	  			$(this).parent().find(".cifGroup").show();
+	  			$(this).parent().find(".cifGroup").css("width", totalWidth);
+	  			var indicatorHeight = (totalHeight - 270);
+	  			$(this).parent().find(".action").css("height", indicatorHeight);  	
+	  		}		
+  		});
+
   		$(".indicatorsDiv").css("cursor", "pointer");
   		$(".indicatorsDiv").click(function(){
   			if (!$(this).parent().hasClass("expanded")){
