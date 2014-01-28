@@ -13,6 +13,10 @@
 			box-sizing: border-box;
 			line-height: normal;
 		}	
+		#strategyPlan ul{
+			margin-top: 20px;
+			margin-left: 50px;
+		}
 		#strategyPlan li{
 			line-height: normal;
 			margin-bottom: 0px;
