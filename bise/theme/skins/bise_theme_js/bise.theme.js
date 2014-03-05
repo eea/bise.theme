@@ -16,6 +16,20 @@ $(document).ready(function(){
   $("a[href*='https://']:not([href*='"+location.hostname.replace("www.","")+"']):not(:has(>img))").addClass('externalLink');
   });
   
+  $('.scrollingtext').bind('marquee', function() {
+      var ob = $(this);
+      var tw = ob.width();
+      var ww = ob.parent().width();
+      ob.parent().css({overflow: "hidden"});
+      ob.parent().css({position: "relative"});
+      ob.css({position: "absolute"});
+      ob.css({whiteSpace:"nowrap"});
+      ob.css({ right: -tw });
+      ob.animate({ right: tw }, 20000, 'linear', function() {
+          ob.trigger('marquee');
+      });
+  }).trigger('marquee');
+
   $(function () {
     //$('#wrap_menuBise ul').each(function () {
       function showSubMenu(sid){
