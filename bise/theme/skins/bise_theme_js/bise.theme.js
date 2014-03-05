@@ -107,7 +107,7 @@ $(document).ready(function(){
     showSubMenu('policy');
     showSubMenu('data');
     showSubMenu('research');
-    showSubMenu('countries_and_networks');
+    showSubMenu('countries');
     showSubMenu('networks');
     //});
   });
