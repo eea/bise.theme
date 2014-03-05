@@ -381,7 +381,7 @@ dl.portlet dt a:visited {
 	margin-top: 20px;
 	padding-left: 10px;
 }
-.collage-row .row_1 .block_2 h1{
+.collage-row .block_2 h1{
 	color: #15802e;
 	font-size:37px;
 	text-align: left;
@@ -390,14 +390,14 @@ dl.portlet dt a:visited {
 	font-style: italic;
 	margin-left: 44px;
 }
-.collage-row .row_1 .block_2 h2{
+.collage-row .block_2 h2{
 	color: #000;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
 	font-size: 17px;
 	margin-left: 44px;
 }
-.collage-row .row_2 .portletHeader span{
+.collage-row .portletHeader span{
 	color: #158140;
 	font-family: 'Asap', sans-serif;
 	font-weight: bold;
@@ -408,25 +408,25 @@ dl.portlet dt a:visited {
 .portlet-collection-news-world .portletHeader span{
 	margin-left: 16px;
 }
-.collage-row .row_2{
+.collage-row {
 	padding-top: 10px;
 }
-.collage-row .row_2 .portletItem ul{
+.collage-row .portletItem ul{
 	font-size: 14px;
 	list-style-image: url(Bise-bullet.png) !important;
 	margin-left: 0px !important;
 	padding-left: 0px !important;
 }
-.collage-row .row_2 .portletItem{
+.collage-row .portletItem{
 	font-size: 14px;
 }
-.collage-row .row_2 dl.portletCollection{
+.collage-row dl.portletCollection{
 	background-image: url(Bise-bak-news.png);
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	padding-bottom: 0px;
 }
-.collage-row .row_2 dl.portletCollection dd.portletItem{
+.collage-row dl.portletCollection dd.portletItem{
 	border-bottom: 1px dotted #c5cd85;
 	padding-bottom: 0px;
 	padding-top: 0px;
@@ -436,16 +436,16 @@ dl.portlet dt a:visited {
 	padding-right: 0px;
 	margin-right: 25px;
 }
-.collage-row .row_2 dl.portletCollection dd.portletItem span:first-child{
+.collage-row dl.portletCollection dd.portletItem span:first-child{
 	background: url(Bise-bullet.png)  no-repeat scroll left center transparent;
 	padding-left: 15px;
 }
-.collage-row .row_2 dl.portletCollection dd.portletItem a{
+.collage-row dl.portletCollection dd.portletItem a{
 	padding-left: 15px;
 	display: block;
 }
-.collage-row .row_2 .block_2 .portletStaticText,
-.collage-row .row_2 .block_3 .portletStaticText {
+.collage-row .block_2 .portletStaticText,
+.collage-row .block_3 .portletStaticText {
 	text-align: right;
 	font-weight: bold;
 	font-size: 14px;
@@ -458,7 +458,7 @@ dl.portlet dt a:visited {
 .section-chm-network .portletStaticText {
 	font-size: 13px;
 }
-.section-chm-network .collage-row .row_2 dl.portletCollection{
+.section-chm-network .collage-row dl.portletCollection{
 	background-image: none;
 	padding-bottom: 0px;
 }
