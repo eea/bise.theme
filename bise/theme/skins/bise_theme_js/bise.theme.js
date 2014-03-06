@@ -20,11 +20,14 @@ $(document).ready(function(){
       var ob = $(this);
       var tw = ob.width();
       var ww = ob.parent().width();
+      ob.closest(".collage-row").css({backgroundColor: "rgb(117, 173, 10)"});
+      ob.find("a").css({color: "white"});
       ob.parent().css({overflow: "hidden"});
       ob.parent().css({position: "relative"});
       ob.css({position: "absolute"});
       ob.css({whiteSpace:"nowrap"});
       ob.css({ right: -tw });
+      ob.css({ top: 0 });
       ob.animate({ right: tw }, 20000, 'linear', function() {
           ob.trigger('marquee');
       });
