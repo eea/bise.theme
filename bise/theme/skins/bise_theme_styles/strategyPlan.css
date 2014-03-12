@@ -1,7 +1,14 @@
 		#strategyPlan{
 			width:930px;height:720px;position:relative;
 			margin-left:-7px;
+			color: #2a2a2a;
 		}
+		#strategyPlan a{
+			color: #2a2a2a !important;
+		}
+		#strategyPlan a:hover{
+			color: #2a2a2a !important;
+		}		
 		#strategyPlan div{
 			font-family: Arial;
 			-webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out;
@@ -87,7 +94,7 @@
 			display: none;
 		}
 		.target1Bg{
-			background-color:#db846d;
+			background-color:#e9927a;
 		}
 		.target2Bg{
 			background-color:#e4b067;
@@ -99,10 +106,10 @@
 			background-color:#aaddd6;
 		}
 		.target5Bg{
-			background-color:#8b5f75;
+			background-color:#b88ba1;
 		}
 		.target6Bg{
-			background-color:#96b0ca;
+			background-color:#adc4dc;
 		}										
 		.cell{
 			/**display: table-cell;*/
@@ -133,6 +140,9 @@
 			border-bottom: 1px solid white;
 			padding: 10px;
 			display:none;
+		}
+		.aichiTarget img{
+			margin-top: 25px;
 		}
 		.targetBack{
 			width: 155px;
@@ -170,6 +180,19 @@
 		.indicator{
 			display: none;
 		}
+		.indicator div{
+			margin-left: 24px;
+			margin-top: 20px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.indicator ul{
+			margin-left: 130px !important;
+		}
+		.indicator ul ul {
+			margin-left: 30px !important;
+			margin-top: 0px !important;
+		}
 		.cifGroupsDiv {
 			height:112.5px;
 			border:1px solid white;
@@ -184,6 +207,15 @@
 		.cifGroup{
 			display: none;
 		}
+		.cifGroup div{
+			margin-left: 24px;
+			margin-top: 20px;
+			font-size: 16px;
+			font-weight: bold;
+		}	
+		.cifGroup ul{
+			margin-left: 130px !important;
+		}			
 		.aichiTargetsDiv{
 			height:112.5px;
 			border:1px solid white;
@@ -194,6 +226,16 @@
 			height:115px;
 			text-align:center;
 			margin-top: 32px;
+		}
+		.aichiTargetTitle{
+			text-align: center;
+			width: 120px;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		.aichiTargetDesc {
+			margin-left: 145px;
+			margin-top: -60px;
 		}
 		.targetsBack{
 			position:absolute;
