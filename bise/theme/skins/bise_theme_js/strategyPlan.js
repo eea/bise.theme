@@ -1,10 +1,58 @@
+
+/* - strategyPlan.js - */
 	var totalHeight = 720;
 	var totalWidth = 930;
 	$(function() {
 		$(".actionsDiv").css("cursor", "pointer");
+		$(".targetId").css("cursor", "pointer");
+		$(".targetId").click(function(){
+			if (!$(this).parent().hasClass("expanded")){
+				$(".targetId").css("cursor", "auto");
+
+				$(".targetBack").css("height", "20px");
+				$(".targetDiv").toggleClass("collapsed");
+		  		$(this).parent().toggleClass("collapsed");
+		  		$(this).parent().toggleClass("expanded");  
+
+	  			$(".indicatorsDiv").hide();
+	  			$(".cifGroupsDiv").hide();
+	  			$(".actionsDiv").hide();
+	  			$(".aichiTargetsDiv").hide();	
+	  			
+	  			$(this).parent().find(".targetDesc").css("width", totalWidth);
+	  			$(this).parent().find(".targetDesc").css("height", totalHeight - 120);
+	  			$(this).parent().find(".targetDesc").show();
+	  		}
+		});
   		$(".actionsDiv").click(function(){
   			if (!$(this).parent().hasClass("expanded")){
-	  			$(".targetBack").css("height", "20px");
+  				$(".targetId").css("cursor", "auto");
+
+				$(".actionsDiv").css("cursor", "auto");
+
+				$(".targetBack").css("height", "20px");
+
+	  			$(".targetDiv").toggleClass("collapsed");
+	  			$(this).parent().toggleClass("collapsed");
+	  			$(this).parent().toggleClass("expanded");  
+	  			$(".targetDesc").hide();
+	  			$(".indicatorsDiv").hide();
+	  			$(".cifGroupsDiv").hide();
+	  			$(".actionsDiv").hide();
+	  			$(".aichiTargetsDiv").hide();
+
+	  			$(this).show();
+	  			$(this).children().first().hide();
+	  			$(this).css("height", (totalHeight - 120));
+	  			$(this).parent().find(".action").show();
+	  			$(this).parent().find(".action").css("width", totalWidth);
+	  			var actionCount = $(this).children().length - 1;
+	  			var actionHeight = (totalHeight - 120) / actionCount;
+	  			$(this).parent().find(".action").css("height", actionHeight);
+	  			$(this).parent().find(".actionDesc").show();
+
+
+	  			/**$(".targetBack").css("height", "20px");
 
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
@@ -23,10 +71,10 @@
 	  			var actionCount = $(this).children().length - 1;
 	  			var actionHeight = (totalHeight - 270) / actionCount;
 	  			$(this).parent().find(".action").css("height", actionHeight);
-	  			$(this).parent().find(".action").css("padding-top", (actionHeight/2)-10);
+	  			$(this).parent().find(".action").css("padding-top", (actionHeight/2)-10);*/
 	  		}
   		});
-  		$('body').on('click', '.expanded .action', function () {
+  		/**$('body').on('click', '.expanded .action', function () {
   			if (!$(this).parent().parent().hasClass("actionsExpanded")){
 	  			$(".actionBack").css("height", "40px")
 	  			//$(".actionBack").removeClass().addClass("actionBack").addClass("target2Bg");
@@ -42,7 +90,7 @@
 	  			$(this).parent().find(".actionDesc").show();
 	  			$(this).parent().parent().toggleClass("actionsExpanded");
 	  		}
-		});
+		});*/
 		$(".actionBack").css("cursor", "pointer");
 		$(".actionBack").click(function(){
 			$(".actionBack").css("height", "0px")
@@ -65,16 +113,18 @@
 
   			$(".actionBack").css("height", "0px")
   			//$(".targetId").show();
-  			$(".targetId").css("height", "270px")
+  			//$(".targetId").css("height", "270px")
      		//$(".targetDesc").hide();
 
   			$(".targetDiv").removeClass("collapsed");
   			$(".targetDiv").removeClass("expanded");
   			$(".targetDiv").removeClass("actionsExpanded");
 
+			$(".targetDesc").hide();
+
 			var divHeight = (totalHeight - 270) / 4;
 
-			$(".action").css("cursor", "pointer");
+			$(".targetId").css("cursor", "pointer");
 
   			$(".actionsDiv").show();
   			$(".actionsDiv").css("cursor", "pointer");
@@ -107,6 +157,7 @@
   		$(".cifGroupsDiv").css("cursor", "pointer");
   		$(".cifGroupsDiv").click(function(){
   			if (!$(this).parent().hasClass("expanded")){
+  				$(".targetId").css("cursor", "auto");
 				$(".cifGroupsDiv").css("cursor", "auto");
 
 	  			$(".targetBack").css("height", "20px");
@@ -114,6 +165,7 @@
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
 	  			$(this).parent().toggleClass("expanded");  
+	  			$(".targetDesc").hide();
 	  			$(".actionsDiv").hide();
 	  			$(".indicatorsDiv").hide();
 	  			$(".aichiTargetsDiv").hide();  		
@@ -121,10 +173,10 @@
 
 	  			$(this).show();	
 	  			$(this).children().first().hide();
-	  			$(this).css("height", (totalHeight - 270));	
+	  			$(this).css("height", (totalHeight - 120));	
 	  			$(this).parent().find(".cifGroup").show();
 	  			$(this).parent().find(".cifGroup").css("width", totalWidth);
-	  			var indicatorHeight = (totalHeight - 270);
+	  			var indicatorHeight = (totalHeight - 120);
 	  			$(this).parent().find(".action").css("height", indicatorHeight);  	
 	  		}		
   		});
@@ -132,6 +184,7 @@
   		$(".indicatorsDiv").css("cursor", "pointer");
   		$(".indicatorsDiv").click(function(){
   			if (!$(this).parent().hasClass("expanded")){
+  				$(".targetId").css("cursor", "auto");
 				$(".indicatorsDiv").css("cursor", "auto");
 
 	  			$(".targetBack").css("height", "20px");
@@ -139,6 +192,7 @@
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
 	  			$(this).parent().toggleClass("expanded");  
+	  			$(".targetDesc").hide();
 	  			$(".actionsDiv").hide();
 	  			$(".cifGroupsDiv").hide();
 	  			$(".aichiTargetsDiv").hide();  		
@@ -146,16 +200,17 @@
 
 	  			$(this).show();	
 	  			$(this).children().first().hide();
-	  			$(this).css("height", (totalHeight - 270));	
+	  			$(this).css("height", (totalHeight - 120));	
 	  			$(this).parent().find(".indicator").show();
 	  			$(this).parent().find(".indicator").css("width", totalWidth);
-	  			var indicatorHeight = (totalHeight - 270);
+	  			var indicatorHeight = (totalHeight - 120);
 	  			$(this).parent().find(".action").css("height", indicatorHeight);  	
 	  		}		
   		});
   		$(".aichiTargetsDiv").css("cursor", "pointer");
   		$(".aichiTargetsDiv").click(function(){
   			if (!$(this).parent().hasClass("expanded")){
+  				$(".targetId").css("cursor", "auto");
 				$(".aichiTargetsDiv").css("cursor", "auto");
 
 				$(".targetBack").css("height", "20px");
@@ -163,6 +218,7 @@
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
 	  			$(this).parent().toggleClass("expanded");  
+	  			$(".targetDesc").hide();
 	  			$(".indicatorsDiv").hide();
 	  			$(".cifGroupsDiv").hide();
 	  			$(".actionsDiv").hide();
@@ -170,11 +226,11 @@
 
 	  			$(this).show();
 	  			$(this).children().first().hide();
-	  			$(this).css("height", (totalHeight - 270));
+	  			$(this).css("height", (totalHeight - 120));
 	  			$(this).parent().find(".aichiTarget").show();
 	  			$(this).parent().find(".aichiTarget").css("width", totalWidth);
 	  			var aichiTargetCount = $(this).children().length - 1;
-	  			var aichiTargetHeight = (totalHeight - 270) / aichiTargetCount;
+	  			var aichiTargetHeight = (totalHeight - 120) / aichiTargetCount;
 	  			$(this).parent().find(".aichiTarget").css("height", aichiTargetHeight);
 	  		}
   		});  		
