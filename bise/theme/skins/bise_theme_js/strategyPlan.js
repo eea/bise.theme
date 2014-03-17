@@ -1,5 +1,3 @@
-
-/* - strategyPlan.js - */
 	var totalHeight = 720;
 	var totalWidth = 930;
 	$(function() {
@@ -9,7 +7,8 @@
 			if (!$(this).parent().hasClass("expanded")){
 				$(".targetId").css("cursor", "auto");
 
-				$(".targetBack").css("height", "20px");
+				showBackBar($(this).parent());
+
 				$(".targetDiv").toggleClass("collapsed");
 		  		$(this).parent().toggleClass("collapsed");
 		  		$(this).parent().toggleClass("expanded");  
@@ -30,7 +29,7 @@
 
 				$(".actionsDiv").css("cursor", "auto");
 
-				$(".targetBack").css("height", "20px");
+				showBackBar($(this).parent());
 
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
@@ -52,7 +51,7 @@
 	  			$(this).parent().find(".actionDesc").show();
 
 
-	  			/**$(".targetBack").css("height", "20px");
+	  			/**$(".targetsBack").css("height", "20px");
 
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
@@ -93,7 +92,7 @@
 		});*/
 		$(".actionBack").css("cursor", "pointer");
 		$(".actionBack").click(function(){
-			$(".actionBack").css("height", "0px")
+			hideBackBar();
   			//$(".targetId").show();
      		//$(".targetDesc").show();	
      		$(".actionDesc").hide();	
@@ -107,9 +106,9 @@
 
      		$(".targetDiv").removeClass("actionsExpanded");	
 		});		
-  		$(".targetBack").css("cursor", "pointer");
-  		$(".targetBack").click(function(){
-  			$(".targetBack").css("height", "0px");
+  		$(".targetsBack").css("cursor", "pointer");
+  		$(".targetsBack").click(function(){
+  			hideBackBar();
 
   			$(".actionBack").css("height", "0px")
   			//$(".targetId").show();
@@ -160,7 +159,7 @@
   				$(".targetId").css("cursor", "auto");
 				$(".cifGroupsDiv").css("cursor", "auto");
 
-	  			$(".targetBack").css("height", "20px");
+	  			showBackBar($(this).parent());
 
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
@@ -187,7 +186,7 @@
   				$(".targetId").css("cursor", "auto");
 				$(".indicatorsDiv").css("cursor", "auto");
 
-	  			$(".targetBack").css("height", "20px");
+	  			showBackBar($(this).parent());
 
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
@@ -213,7 +212,7 @@
   				$(".targetId").css("cursor", "auto");
 				$(".aichiTargetsDiv").css("cursor", "auto");
 
-				$(".targetBack").css("height", "20px");
+				showBackBar($(this).parent());
 
 	  			$(".targetDiv").toggleClass("collapsed");
 	  			$(this).parent().toggleClass("collapsed");
@@ -233,5 +232,32 @@
 	  			var aichiTargetHeight = (totalHeight - 120) / aichiTargetCount;
 	  			$(this).parent().find(".aichiTarget").css("height", aichiTargetHeight);
 	  		}
-  		});  		
+  		});  	
+  		function showBackBar(target)	{
+  			$(".targetsBack").show();
+			$(".targetsBack").css("height", "25px");
+			if (target.hasClass("target1Bg")){
+				$(".targetsBack").addClass("target1Backbg");
+			}else if (target.hasClass("target2Bg")){
+				$(".targetsBack").addClass("target2Backbg");
+			}else if (target.hasClass("target3Bg")){
+				$(".targetsBack").addClass("target3Backbg");
+			}else if (target.hasClass("target4Bg")){
+				$(".targetsBack").addClass("target4Backbg");
+			}else if (target.hasClass("target5Bg")){
+				$(".targetsBack").addClass("target5Backbg");
+			}else if (target.hasClass("target6Bg")){
+				$(".targetsBack").addClass("target6Backbg");
+			}
+  		}
+  		function hideBackBar(){
+  			$(".targetsBack").hide();
+  			$(".targetsBack").css("height", "0px");
+  			$(".targetsBack").removeClass("target1Backbg");
+			$(".targetsBack").removeClass("target2Backbg");
+			$(".targetsBack").removeClass("target3Backbg");
+			$(".targetsBack").removeClass("target4Backbg");
+			$(".targetsBack").removeClass("target5Backbg");
+			$(".targetsBack").removeClass("target6Backbg");
+  		}
 	});
