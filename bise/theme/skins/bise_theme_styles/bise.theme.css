@@ -1,7 +1,5 @@
 /* Add here your CSS commands */
 body {
-	width: 960px;
-	margin: 0 auto;
 	font-family: "Arial", sans-serif;
 	background-image: url(bg.png);
 	background-repeat: repeat-x;
@@ -30,7 +28,8 @@ h1 {
 	padding-right: 15px;
 }
 #visual-portal-wrapper{
-	width: 100%;
+	width: 960px;
+	margin: 0 auto;
 }
 #portal-top,
 #portal-columns,
@@ -390,11 +389,14 @@ dl.portlet dt a:visited {
 	font-style: italic;
 	margin-left: 0px;
 }
+.collage-row .block_2 h1:nth-child(2){
+	font-size: 30px;
+}
 .collage-row .block_2 h2{
 	color: #000;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
-	font-size: 17px;
+	font-size: 10px;
 	margin-left: 0px;
 }
 .collage-row .portletHeader span{
