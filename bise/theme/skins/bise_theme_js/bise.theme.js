@@ -15,6 +15,9 @@ $(document).ready(function(){
     })
   $("a[href*='https://']:not([href*='"+location.hostname.replace("www.","")+"']):not(:has(>img))").addClass('externalLink');
   });
+
+  jQuery('body').bugme({remember:false});
+
   
   $('.scrollingtext').bind('marquee', function() {
       var ob = $(this);
