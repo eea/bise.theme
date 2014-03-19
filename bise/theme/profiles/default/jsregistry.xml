@@ -47,5 +47,8 @@
     id="http://www.google.com/jsapi"
     cacheable="True" compression="safe" cookable="True"
     enabled="1" expression=""/-->
-
+ <javascript
+    id="jquery.bugme.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"/> 
 </object>
