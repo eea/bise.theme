@@ -383,19 +383,19 @@ dl.portlet dt a:visited {
 }
 .collage-row .block_2 h1{
 	color: #15802e;
-	font-size:37px;
+	font-size: 35px;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
 	font-weight: bold;
 	font-style: italic;
-	margin-left: 44px;
+	margin-left: 0px;
 }
 .collage-row .block_2 h2{
 	color: #000;
 	text-align: left;
 	font-family: 'Asap', sans-serif;
 	font-size: 17px;
-	margin-left: 44px;
+	margin-left: 0px;
 }
 .collage-row .portletHeader span{
 	color: #158140;
