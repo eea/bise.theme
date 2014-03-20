@@ -365,7 +365,13 @@ dl.portlet dt a:visited {
 	margin-top: -36px;
 }
 .section-chm-network #content #collage{
-	margin-top: -8px;
+	margin-top: -20px;
+}
+.section-chm-network .portletItem.odd{
+	padding: 0px !important;
+}
+.section-chm-network .collage-row{
+	padding-top: 0px !important;
 }
 .collage-row {
 	border-top: 1px solid #D4D9CC;
