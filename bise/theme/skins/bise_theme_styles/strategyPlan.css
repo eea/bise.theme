@@ -72,15 +72,18 @@
 		.expanded .targetId>:first-child{
 			margin-top: 30px;
 		}
-		.targetId>:nth-child(2){
+		/**.targetId:nth-child(2){*/
+		.targetId>:first-child + div{
 			font-size: 70px;
 			width: 100%;
 			text-align: center;
 		}
-		.expanded .targetId>:nth-child(2){
+		/**.expanded .targetId:nth-child(2){*/
+		.expanded .targetId>:first-child + div{			
 			margin-top: -10px;
 		}
-		.targetId>:nth-child(3){
+		/**.targetId:nth-child(3){*/
+		.targetId>:first-child + div + div{			
 			font-size: 16px;
 			font-weight: bold;
 			width: 100%;
