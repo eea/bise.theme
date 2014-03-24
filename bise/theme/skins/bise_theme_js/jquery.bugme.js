@@ -28,7 +28,7 @@
         var msg = "<div style='padding-left:18px'>";
         msg = msg + "<img src='logoCommEU.png' alt='European Commission' style='float:left'/>";
         msg = msg + "<div style='float:left;padding-left:20px'>";
-        msg = msg + "<span style='font-weight:bold'>High-Level Conference on Mapping and Assessment of <br/> Ecosystem and their services (MAES) in Europe </span><br/>"
+        msg = msg + "<a href='/maes/high-level-conference-on-mapping-and-assessment-of-ecosystems-and-their-services-maes-in-europe' style='font-weight:bold'>High-Level Conference on Mapping and Assessment of <br/> Ecosystem and their services (MAES) in Europe </a><br/>"
         msg = msg + "<span style='color:black'>Brussels, 22 May 2014</span></div>";
         msg = msg + "<a href='https://scic.ec.europa.eu/fmi/MAES2014/start.php' target='_blank'><div class='registration'>Online registration open</div></a>";
         msg = msg + "</div>";
