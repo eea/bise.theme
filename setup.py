@@ -49,6 +49,7 @@ setup(name='bise.theme',
           'collective.transmogrifier',
           'plone.app.transmogrifier',
           'Products.RedirectionTool',
+          'plone.api',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
