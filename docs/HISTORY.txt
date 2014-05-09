@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.8 (2014-5-9)
+----------------
+
+- Install versioning and staging support [erral]
+
 1.7 (2014-4-11)
 -----------------
 
