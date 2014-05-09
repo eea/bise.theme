@@ -34,4 +34,5 @@ def upgrade_to_1002(context, logger=None):
 
     setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
     setup.runImportStepFromProfile(PROFILE_ID, 'repositorytool')
+    setup.runImportStepFromProfile(PROFILE_ID, 'plone-difftool')
     logger.info('Upgrade steps executed')
