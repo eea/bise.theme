@@ -775,3 +775,10 @@ input.search-input{
 #searchbar-options{
 	margin-top: 18px;
 }
+.portaltype-folderishpage #content-core a img{
+  padding: 10px !important;
+}
+#portal-globalnav {
+  height: 50px !important;
+  overflow: hidden;
+}
