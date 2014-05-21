@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.4'
+version = '1.9'
 
 setup(name='bise.theme',
       version=version,
@@ -48,6 +48,9 @@ setup(name='bise.theme',
           'bise.multilingualglossary',
           'collective.transmogrifier',
           'plone.app.transmogrifier',
+          'Products.RedirectionTool',
+          'plone.api',
+          'plone.app.stagingbehavior'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

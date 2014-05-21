@@ -3,5 +3,6 @@
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="behaviors" purge="False">
   <element value="bise.theme.behaviors.sources.IExtraFolderishPage"/>
+  <element value="plone.app.stagingbehavior.interfaces.IStagingSupport"/>
  </property>
 </object>
