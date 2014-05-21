@@ -51,3 +51,21 @@ def upgrade_to_1003(context, logger=None):
     setup.runImportStepFromProfile(PROFILE_ID, 'workflow')
     wtool.updateRoleMappings()
     logger.info('Upgrade steps executed')
+
+
+def upgrade_to_1004(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1004')
+
+    setup = getToolByName(context, 'portal_setup')
+
+    wtool = getToolByName(context, 'portal_workflow')
+    wtool.manage_delObjects([
+        'simple_publication_workflow',
+        ])
+    setup.runImportStepFromProfile(PROFILE_ID, 'propertiestool')
+    setup.runImportStepFromProfile(PROFILE_ID, 'actions')
+    setup.runImportStepFromProfile(PROFILE_ID, 'placeful_workflow')
+    setup.runImportStepFromProfile(PROFILE_ID, 'workflow')
+    wtool.updateRoleMappings()
+    logger.info('Upgrade steps executed')

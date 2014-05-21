@@ -50,7 +50,10 @@ setup(name='bise.theme',
           'plone.app.transmogrifier',
           'Products.RedirectionTool',
           'plone.api',
-          'plone.app.stagingbehavior'
+          'plone.app.iterate',
+          'plone.app.versioningbehavior',
+          'plone.app.stagingbehavior',
+          'plone.app.referenceablebehavior',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
