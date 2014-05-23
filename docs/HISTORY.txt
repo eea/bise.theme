@@ -1,7 +1,9 @@
 Changelog
 =========
-1.9 (UNRELEEASEd)
+1.9 (2014-05-23)
 ------------------
+
+- Remove MAES banner [msantamaria]
 
 1.8 (2014-5-9)
 ----------------
