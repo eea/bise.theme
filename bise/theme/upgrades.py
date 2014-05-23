@@ -69,3 +69,13 @@ def upgrade_to_1004(context, logger=None):
     setup.runImportStepFromProfile(PROFILE_ID, 'workflow')
     wtool.updateRoleMappings()
     logger.info('Upgrade steps executed')
+
+
+def upgrade_to_1005(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1005')
+
+    js_registry = getToolByName(context, 'portal_javascripts')
+    resource = js_registry.getResource('jquery.bugme.js')
+    resource.setEnabled(False)
+    logger.info('Upgraded')
