@@ -23,8 +23,8 @@
  *
  */
 (function ($) {
-    jQuery('body').bugme({remember:false});
-    
+    $('body').bugme({remember:false});
+
     $.fn.bugme = function (options) {
         var msg = "<div style='padding-left:18px'>";
         msg = msg + "<img src='logoCommEU.png' alt='European Commission' style='float:left'/>";
