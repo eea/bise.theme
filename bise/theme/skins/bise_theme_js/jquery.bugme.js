@@ -166,5 +166,4 @@
            bugMe(); 
         });
     };
-    jQuery('body').bugme({remember:false});
 })(jQuery);
