@@ -23,7 +23,7 @@
  *
  */
 (function ($) {
-    $('body').bugme({remember:false});
+
 
     $.fn.bugme = function (options) {
         var msg = "<div style='padding-left:18px'>";
@@ -166,5 +166,5 @@
            bugMe(); 
         });
     };
-    //jQuery('body').bugme({remember:false});
+    jQuery('body').bugme({remember:false});
 })(jQuery);
