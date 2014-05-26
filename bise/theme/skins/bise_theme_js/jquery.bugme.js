@@ -23,14 +23,15 @@
  *
  */
 (function ($) {
-
+    jQuery('body').bugme({remember:false});
+    
     $.fn.bugme = function (options) {
         var msg = "<div style='padding-left:18px'>";
         msg = msg + "<img src='logoCommEU.png' alt='European Commission' style='float:left'/>";
         msg = msg + "<div style='float:left;padding-left:20px'>";
         msg = msg + "<a href='/maes/high-level-conference-on-mapping-and-assessment-of-ecosystems-and-their-services-maes-in-europe' style='font-weight:bold'>High-Level Conference on Mapping and Assessment of <br/> Ecosystem and their services (MAES) in Europe </a><br/>"
         msg = msg + "<span style='color:black'>Brussels, 22 May 2014</span></div>";
-        msg = msg + "<a href='http://ec.europa.eu/environment/nature/knowledge/ecosystem_assessment/index_en.htm' target='_blank'><div class='registration'>Webstreaming available</div></a>";
+        msg = msg + "<a href='http://ec.europa.eu/environment/nature/knowledge/ecosystem_assessment/index_en.htm' target='_blank'><div class='registration'>Recorded sessions available here</div></a>";
         msg = msg + "</div>";
         var defaults = {
             target: jQuery(this), // target of where you want the bugme bar to go
