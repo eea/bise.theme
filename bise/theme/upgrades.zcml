@@ -55,6 +55,14 @@
      handler=".upgrades.upgrade_to_1005"
       />
 
+  <genericsetup:upgradeStep
+     source="1005"
+     destination="1006"
+     profile="bise.theme:default"
+     title="Enable JS"
+     handler=".upgrades.upgrade_to_1006"
+      />
+
 
 
 

@@ -79,3 +79,13 @@ def upgrade_to_1005(context, logger=None):
     resource = js_registry.getResource('jquery.bugme.js')
     resource.setEnabled(False)
     logger.info('Upgraded')
+
+
+def upgrade_to_1006(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1006')
+
+    js_registry = getToolByName(context, 'portal_javascripts')
+    resource = js_registry.getResource('jquery.bugme.js')
+    resource.setEnabled(True)
+    logger.info('Upgraded')
