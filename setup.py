@@ -54,6 +54,8 @@ setup(name='bise.theme',
           'plone.app.versioningbehavior',
           'plone.app.stagingbehavior',
           'plone.app.referenceablebehavior',
+          'requests',
+          'z3c.formwidget.optgroup',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
