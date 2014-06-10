@@ -89,3 +89,12 @@ def upgrade_to_1006(context, logger=None):
     resource = js_registry.getResource('jquery.bugme.js')
     resource.setEnabled(True)
     logger.info('Upgraded')
+
+
+def upgrade_to_1007(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1007')
+
+    setup = getToolByName(context, 'portal_setup')
+    setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
+    logger.info('Upgraded')

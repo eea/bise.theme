@@ -63,6 +63,14 @@
      handler=".upgrades.upgrade_to_1006"
       />
 
+  <genericsetup:upgradeStep
+     source="1006"
+     destination="1007"
+     profile="bise.theme:default"
+     title="Enable behavior for Folderish Pages"
+     handler=".upgrades.upgrade_to_1007"
+      />
+
 
 
 
