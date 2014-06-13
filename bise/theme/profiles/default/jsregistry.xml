@@ -51,4 +51,8 @@
     id="jquery.bugme.js"
     cacheable="True" compression="safe" cookable="False"
     enabled="True" expression=""  inline="False"/> 
+ <javascript
+    id="chosen.jquery.min.js"
+    cacheable="True" compression="safe" cookable="False"
+    enabled="True" expression=""  inline="False"  authenticated="True"/>     
 </object>
