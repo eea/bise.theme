@@ -18,7 +18,10 @@ $(document).ready(function(){
 
   jQuery('body').bugme({remember:false});
 
-  
+  if ($("#form-widgets-ICatalogueTags-cataloguetags").length){
+    $("#form-widgets-ICatalogueTags-cataloguetags").chosen({width: "100%", placeholder_text_multiple: "Select tags"});
+  }
+
   $('.scrollingtext').bind('marquee', function() {
       var ob = $(this);
       var tw = ob.width();

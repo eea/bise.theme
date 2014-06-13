@@ -782,3 +782,11 @@ input.search-input{
   height: 50px !important;
   overflow: hidden;
 }
+
+.chosen-container ul{
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+}
+.chosen-container-multi .chosen-choices li.search-choice{
+	line-height: 13px !important;
+}
