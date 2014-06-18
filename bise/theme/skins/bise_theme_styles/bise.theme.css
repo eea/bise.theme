@@ -790,3 +790,12 @@ input.search-input{
 .chosen-container-multi .chosen-choices li.search-choice{
 	line-height: 13px !important;
 }
+body:not(.userrole-manager) #plone-contentmenu-workflow,
+body:not(.userrole-manager) #contentview-upload,
+body:not(.userrole-manager) #contentview-redirection,
+body:not(.userrole-manager) #plone-contentmenu-display,
+body:not(.userrole-manager) #plone-contentmenu-actions-faceted.search.enable,
+body:not(.userrole-manager) #contentview-contentrules,
+body:not(.userrole-manager) #contentview-local_roles{
+	display: none !important;
+}
