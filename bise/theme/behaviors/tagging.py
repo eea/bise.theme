@@ -32,7 +32,7 @@ class ICatalogueTags(form.Schema):
         )
     )
 
-    form.widget(targets=CheckBoxFieldWidget)
+    form.widget(targets=OptgroupFieldWidget)
     targets = schema.List(
         title=_(u"Target "),
         required=False,
@@ -41,7 +41,7 @@ class ICatalogueTags(form.Schema):
         )
     )
 
-    form.widget(actions=CheckBoxFieldWidget)
+    form.widget(actions=OptgroupFieldWidget)
     actions = schema.List(
         title=_(u"Target and actions"),
         required=False,
@@ -109,10 +109,11 @@ class TargetVocabulary(object):
             target_title = target.get('title')
             target_id = target.get('id')
             terms.append(
-                SimpleTerm(
+                OptgroupTerm(
                     value=target_title,
                     token=target_title,
-                    title=target_title
+                    title=target_title,
+                    optgroup=u'EU Biodiversity Strategy to 2020'
                 )
             )
 
@@ -137,13 +138,14 @@ class ActionVocabulary(object):
             for action in target.get('strategy_actions'):
                 action_title = action.get('title')
                 terms.append(
-                    SimpleTerm(
+                    OptgroupTerm(
                         value=action_title,
                         token=action_title,
-                        title=action_title
+                        title=action_title,
+                        optgroup=target_title
                     )
                 )
-
+      
         return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.title, y.title)))
 
 grok.global_utility(

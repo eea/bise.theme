@@ -22,6 +22,14 @@ $(document).ready(function(){
     $("#form-widgets-ICatalogueTags-cataloguetags").chosen({width: "100%", placeholder_text_multiple: "Select tags"});
   }
 
+  if ($("#form-widgets-ICatalogueTags-actions").length){
+    $("#form-widgets-ICatalogueTags-actions").chosen({width: "100%", placeholder_text_multiple: "Select actions"});
+  }  
+
+  if ($("#form-widgets-ICatalogueTags-targets").length){
+    $("#form-widgets-ICatalogueTags-targets").chosen({width: "100%", placeholder_text_multiple: "Select targets"});
+  } 
+
   $('.scrollingtext').bind('marquee', function() {
       var ob = $(this);
       var tw = ob.width();
