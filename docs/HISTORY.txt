@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.11 (2014-06-19)
+------------------
+
+- Styling changes [msantamaria]
+
+- New behavior fields for target and actions [erral]
+
 1.10 (2014-05-27)
 -------------------
 
