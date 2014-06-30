@@ -17,8 +17,8 @@ import json
 import requests
 
 
-def _cache_key(*args):
-    return time() // (20 * 60)
+def _cache_key(fun, *args):
+    return (fun.__name__, time() // (20 * 60),)
 
 
 class ICatalogueTags(form.Schema):
@@ -57,14 +57,14 @@ class CatalogueTagVocabulary(object):
     grok.implements(IVocabularyFactory)
 
     @ram.cache(_cache_key)
-    def get_contents(self):
+    def get_tags(self):
         url = 'http://termite.eea.europa.eu/api/v1/shared_tags'
         data = requests.get(url)
         items = json.loads(data.content)
         return items
 
     def __call__(self, context):
-        items = self.get_contents()
+        items = self.get_tags()
         terms = []
         i = 0
         for tagitem in items:
@@ -91,7 +91,7 @@ grok.global_utility(
 
 
 @ram.cache(_cache_key)
-def get_contents():
+def get_shared_targets():
     url = 'http://termite.eea.europa.eu/api/v1/shared_targets'
     data = requests.get(url)
     items = json.loads(data.content)
@@ -102,20 +102,25 @@ class TargetVocabulary(object):
     grok.implements(IVocabularyFactory)
 
     def __call__(self, context):
-        targets = get_contents()
+        targets = get_shared_targets()
         terms = []
         for targetdict in targets:
-            target = targetdict.get('target')
-            target_title = target.get('title')
-            target_id = target.get('id')
-            terms.append(
-                OptgroupTerm(
-                    value=target_title,
-                    token=target_title,
-                    title=target_title,
-                    optgroup=u'EU Biodiversity Strategy to 2020'
+            target = targetdict.get('target', {})
+            if target:
+                target_title = target.get('title', '')
+                target_id = target.get('id', '')
+                terms.append(
+                    OptgroupTerm(
+                        value=target_title,
+                        token=target_title,
+                        title=target_title,
+                        optgroup=u'EU Biodiversity Strategy to 2020'
+                    )
                 )
-            )
+            else:
+                from logging import getLogger
+                log = getLogger(__name__)
+                log.info('Target value emtpy: {0}'.format(targetdict))
 
         return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.title, y.title)))
 
@@ -129,7 +134,7 @@ class ActionVocabulary(object):
     grok.implements(IVocabularyFactory)
 
     def __call__(self, context):
-        targets = get_contents()
+        targets = get_shared_targets()
         terms = []
         for targetdict in targets:
             target = targetdict.get('target')
@@ -145,7 +150,7 @@ class ActionVocabulary(object):
                         optgroup=target_title
                     )
                 )
-      
+
         return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.title, y.title)))
 
 grok.global_utility(
