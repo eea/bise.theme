@@ -30,7 +30,7 @@
         msg = msg + "<img src='logoCommEU.png' alt='European Commission' style='float:left'/>";
         msg = msg + "<div style='float:left;padding-left:20px;font-weight:bold'>";
         msg = msg + "Public consultation on the future EU initiative <br/> on No Net Loss of biodiversity and ecosystem services<br/>"
-        msg = msg + "<span style='color:black;font-weight:normal'>Open to 26/09/2014</span></div>";
+        msg = msg + "<span style='color:black;font-weight:normal'>Open to 17/10/2014</span></div>";
         msg = msg + "<a href='http://ec.europa.eu/environment/consultations/nnl_en.htm' target='_blank'><div class='registration'>Access the consultation here</div></a>";
         msg = msg + "</div>";
         var defaults = {
