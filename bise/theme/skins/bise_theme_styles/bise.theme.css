@@ -799,3 +799,22 @@ body:not(.userrole-manager) #contentview-contentrules,
 body:not(.userrole-manager) #contentview-local_roles{
 	display: none !important;
 }
+#counter {
+	display: none;
+	background-color: green;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	color: white;
+	/* height: 89px; */
+	padding: -2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#daysLeft{
+	float: left;
+	font-family: 'Asap', sans-serif;
+	font-weight: bold;
+	font-size: 34px;
+	padding: 10px 20px;
+}

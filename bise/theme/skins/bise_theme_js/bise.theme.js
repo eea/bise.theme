@@ -49,6 +49,16 @@ $(document).ready(function(){
       });
   }).trigger('marquee');
 
+  if($("#counter").length){
+    var oneDay = 24*60*60*1000; 
+    var firstDate = new Date(2020,11,31,23,59);
+    var secondDate = new Date();
+
+    var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+    $("#daysLeft").html(diffDays);
+    $("#counter").show();
+  }
+
   $(function () {
     //$('#wrap_menuBise ul').each(function () {
       function showSubMenu(sid){
