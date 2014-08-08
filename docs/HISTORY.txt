@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.12 (UNRELEASED)
+--------------------
+
+- Update banner and add counter for biodiversity targets [MikelS]
+
 1.11.1 (2014-06-30)
 --------------------
 
