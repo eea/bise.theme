@@ -801,7 +801,7 @@ body:not(.userrole-manager) #contentview-local_roles{
 }
 #counter {
 	display: none;
-	background-color: green;
+	background-color: #67924d;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
