@@ -61,7 +61,7 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
       // Run QUERY by default
       this.queryparams.indexes = Object.keys(this.bise_indexes);
       this.runQuery()
-      this._renderStatistics()
+      // this._renderStatistics()
     },
 
     // Minor fix to allow Object.keys in IE8
@@ -297,18 +297,18 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
 
     // ------------------------  Cloud ----------------------------------------
 
-    _renderStatistics: function(){
-      $.get("http://bise.catalogue.dev/api/v1/stats.json", function( data ) {
-        $('.catalogue-cloud-tags').jQCloud(data.tags);
-        console.log(data)
+    // _renderStatistics: function(){
+    //   $.get("http://bise.catalogue.dev/api/v1/stats.json", function( data ) {
+    //     $('.catalogue-cloud-tags').jQCloud(data.tags);
+    //     console.log(data)
 
-        for (var i=0; i < data.last.length ; i++) {
-          console.log(data.last[i])
-          $('.catalogue-last-added').append( $('<li>').html(data.last[i].title))
-        };
+    //     for (var i=0; i < data.last.length ; i++) {
+    //       console.log(data.last[i])
+    //       $('.catalogue-last-added').append( $('<li>').html(data.last[i].title))
+    //     };
 
-      });
-    },
+    //   });
+    // },
 
     // ------------------------  FACETS ----------------------------------------
 
