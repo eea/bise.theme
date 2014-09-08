@@ -46,6 +46,7 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
                 'mergeFacet', 'removeFacet', 'isFacetSelected',
                 'enableAdvancedSearch', 'enableBiseSearch')
 
+      $.support.cors = true;
       this._checkIE();
 
       // Add main template
