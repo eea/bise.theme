@@ -46,6 +46,8 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
                 'mergeFacet', 'removeFacet', 'isFacetSelected',
                 'enableAdvancedSearch', 'enableBiseSearch')
 
+      this._checkIE();
+
       // Add main template
       $(this.$el.selector).append(this.mainTemplate)
 
@@ -59,6 +61,20 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
       // Run QUERY by default
       this.queryparams.indexes = Object.keys(this.bise_indexes);
       this.runQuery()
+      this._renderStatistics()
+    },
+
+    // Minor fix to allow Object.keys in IE8
+    _checkIE: function(){
+      if (!Object.keys) {
+        Object.keys = function(obj) {
+          var keys = [];
+          for (var i in obj) {
+            if (obj.hasOwnProperty(i)) keys.push(i);
+          }
+          return keys;
+        };
+      }
     },
 
     getEndpoint: function(){
@@ -267,7 +283,6 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
     _showNoResults: function(){
       this.$('.catalogue-no-results').show()
       this.$('.catalogue-content').hide()
-      this._renderCloud()
       // if (this.queryparams.query && this.queryparams.query.length > 0)
       //   this.$('.catalogue-no-results').html('No results found.')
       // else
@@ -282,19 +297,17 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
 
     // ------------------------  Cloud ----------------------------------------
 
-    _renderCloud: function(){
-      var word_array = [
-        {text: "Lorem", weight: 12},
-        {text: "Ipsum", weight: 19, link: "http://biodiversity.europa.eu/"},
-        {text: "Biodiversity", weight: 16, html: {title: "I can haz any html attribute"}},
-        {text: "Green", weight: 17},
-        {text: "Nature", weight: 17},
-        {text: "Artic", weight: 17},
-        {text: "Foo", weight: 17},
-        {text: "Canis", weight: 17},
-        {text: "Climate Change", weight: 15}
-      ];
-      $(".catalogue-cloud-tags").jQCloud(word_array);
+    _renderStatistics: function(){
+      $.get("http://bise.catalogue.dev/api/v1/stats.json", function( data ) {
+        $('.catalogue-cloud-tags').jQCloud(data.tags);
+        console.log(data)
+
+        for (var i=0; i < data.last.length ; i++) {
+          console.log(data.last[i])
+          $('.catalogue-last-added').append( $('<li>').html(data.last[i].title))
+        };
+
+      });
     },
 
     // ------------------------  FACETS ----------------------------------------
