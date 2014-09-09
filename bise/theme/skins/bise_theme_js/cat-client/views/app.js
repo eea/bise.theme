@@ -95,7 +95,7 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
     },
 
     fillQueryAndRun: function(e){
-      console.log(':: fillQueryAndRun')
+      //console.log(':: fillQueryAndRun')
       e.preventDefault()
       var q = $('#catalogue-search-form #query').val()
       if (q=='') q = this.$('#catalogue-queries li').html()
