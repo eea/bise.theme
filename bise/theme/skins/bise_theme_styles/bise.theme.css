@@ -817,3 +817,6 @@ body:not(.userrole-manager) #contentview-local_roles{
 	font-size: 34px;
 	padding: 10px 15px;
 }
+#counterText{
+	font-size: 13px;
+}
