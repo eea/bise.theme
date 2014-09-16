@@ -29,6 +29,7 @@ class PersonalBarViewlet(common.PersonalBarViewlet):
         self.home = self.portal_state.navigation_root_url()
         self.about = '/'.join([self.portal_state.navigation_root_url(), "info"])
         self.sitemap = '/'.join([self.portal_state.navigation_root_url(), "sitemap"])
+        self.help = '/'.join([self.portal_state.navigation_root_url(), "help"])
 
 class PathBarViewlet(common.PathBarViewlet):
     index = ViewPageTemplateFile('path_bar.pt')

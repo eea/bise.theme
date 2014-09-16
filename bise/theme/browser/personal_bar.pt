@@ -72,5 +72,9 @@
     <a tal:attributes="href view/sitemap;">SITEMAP</a>
   </li>
   <li>|</li>
+  <li tal:condition="python:not view.anonymous">
+    <a tal:attributes="href view/help;">HELP</a>
+  </li>
+  <li tal:condition="python:not view.anonymous">|</li>  
 </ul>
 </div>
