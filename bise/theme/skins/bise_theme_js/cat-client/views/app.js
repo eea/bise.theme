@@ -95,7 +95,6 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
     },
 
     fillQueryAndRun: function(e){
-      console.log(':: fillQueryAndRun')
       e.preventDefault()
       var q = $('#catalogue-search-form #query').val()
       if (q=='') q = this.$('#catalogue-queries li').html()
@@ -109,7 +108,6 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
     },
 
     runQuery: function(){
-      console.log(':: runQuery..')
       this.Results.fetch({ data: $.param(this.queryparams) })
     },
 
@@ -319,7 +317,6 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
     // ------------------------  Cloud ----------------------------------------
 
     _renderStatistics: function(){
-      console.log("http://"+this.host+"/api/v1/stats.json")
       $.get("http://"+this.host+"/api/v1/stats.json", function( data ) {
         // Show cloud tags
 
@@ -372,7 +369,6 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
     // ------------------------  RENDER ----------------------------------------
 
     render: function() {
-      console.log(':: render...')
       this._drawSearches();
       this._drawCount();
       this._drawCategories();
