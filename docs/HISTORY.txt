@@ -4,13 +4,14 @@ Changelog
 1.14 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add help link  [MikelS]
+- Fix jquery compatibility issue  [MikelS]
 
 
 1.13 (2014-09-15)
 -----------------
 
-- Add catalogue client library
+- Add catalogue client library [MikelS]
 
 
 1.12 (2014-08-08)
