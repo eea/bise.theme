@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.14 (unreleased)
------------------
+1.14.1 (2014-09-17)
+-------------------
 
 - Add help link  [MikelS]
 - Fix jquery compatibility issue  [MikelS]
