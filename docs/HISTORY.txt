@@ -4,7 +4,7 @@ Changelog
 1.14.4 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Style improvements
 
 
 1.14.3 (2014-09-17)
