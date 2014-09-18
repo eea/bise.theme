@@ -151,7 +151,7 @@ class ActionVocabulary(object):
                     )
                 )
 
-        return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.title, y.title)))
+        return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.optgroup, y.optgroup)))
 
 grok.global_utility(
     ActionVocabulary,
