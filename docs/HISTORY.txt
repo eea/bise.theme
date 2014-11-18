@@ -4,7 +4,7 @@ Changelog
 1.16 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Remove banner.
 
 
 1.15 (2014-09-23)
