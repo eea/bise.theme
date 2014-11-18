@@ -18,7 +18,7 @@ $(document).ready(function(){
 
   $("a[href*='@@iterate_diff']").hide();
 
-  jQuery('body').bugme({remember:false});
+  //jQuery('body').bugme({remember:false});
 
   if ($("#form-widgets-ICatalogueTags-cataloguetags").length){
     $("#form-widgets-ICatalogueTags-cataloguetags").chosen({width: "100%", placeholder_text_multiple: "Select tags"});

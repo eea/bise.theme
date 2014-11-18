@@ -820,3 +820,13 @@ body:not(.userrole-manager) #contentview-local_roles{
 #counterText{
 	font-size: 13px;
 }
+.portaltype-folderishpage #content-core a img{
+  	padding: 10px !important;
+}
+#portal-globalnav {
+  	height: 50px !important;
+  	overflow: hidden;
+}
+#mapSelector>div{
+  	padding-right:2px !important;
+}
