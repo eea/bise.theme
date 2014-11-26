@@ -4,8 +4,7 @@ Changelog
 1.17 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
+- Revert catalogue client
 
 1.16 (2014-11-18)
 -----------------
