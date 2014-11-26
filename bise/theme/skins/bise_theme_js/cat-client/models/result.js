@@ -26,7 +26,12 @@ define(['underscore', 'backbone'], function(_, Backbone) {
       source_url           : "",
       title                : "",
       updated_at           : ""
+    },
+
+    initialize: function() {
+
     }
+
   });
   return ResultModel;
 });
