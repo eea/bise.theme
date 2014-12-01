@@ -603,16 +603,16 @@ dl.portlet dt a:visited {
 	font-weight: bold;
 	margin-bottom: 5px;
 	cursor: pointer;
-	background: #AE9FCD;
+	background: #333333;
 	padding: 5px;
 	margin-top: 5px;
 	height: 19px;
 }
 .portaltype-biodiversityfactsheet .section-content .description{
 	margin-top: -6px;
-	border-left: 1px solid #AE9FCD;
-	border-right: 1px solid #AE9FCD;
-	border-bottom: 1px solid #AE9FCD;
+	border-left: 1px solid #333333;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
 	padding-left: 4px;
 }
 .portaltype-biodiversityfactsheet h2.collapsible .collapse-icon{
@@ -829,4 +829,47 @@ body:not(.userrole-manager) #contentview-local_roles{
 }
 #mapSelector>div{
   	padding-right:2px !important;
+}
+#targetFilter .targetLabel{
+	width:13%;
+	float:left;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+}
+.targetSmallLabel{
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;	
+	padding: 2px;
+	margin: 5px;
+	font-weight: normal;
+	font-size: 10px;	
+}
+.target1Label{
+	background-color: #e8917b;
+	border: 1px solid #d4775d;
+}
+.target2Label{
+	background-color: #e3b068;
+	border: 1px solid #c9924b;
+}
+.target3Label{
+	background-color: #e3e2c3;
+	border: 1px solid #b8b588;
+}
+.target4Label{
+	background-color: #a9dbd4;
+	border: 1px solid #79b3aa;
+}
+.target5Label{
+	background-color: #b88ca1;
+	border: 1px solid #9c6e85;
+}
+.target6Label{
+	background-color: #adc4db;
+	border: 1px solid #86a2bf;
 }
