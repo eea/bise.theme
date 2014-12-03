@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.18 (unreleased)
------------------
+1.17.1 (2014-12-03)
+-------------------
 
 - Minor fixes in catalogue client
 

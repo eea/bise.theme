@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.18.dev0'
+version = '1.17.1'
 
 setup(name='bise.theme',
       version=version,
