@@ -97,7 +97,8 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
     fillQueryAndRun: function(e){
       e.preventDefault()
       var q = $('#catalogue-search-form #query').val()
-      if (q=='') q = this.$('#catalogue-queries li').html()
+      if (q === 'undefined') q = ''
+      if (q === '') q = this.$('#catalogue-queries li').html()
       this.queryparams = {
         indexes: this._getSelectedCategories(),
         query: q.replace(/(<([^>]+)>)/ig,""),
