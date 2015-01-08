@@ -1,25 +1,24 @@
-define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections/results', 'views/results', 'views/facet', 'text!template/main.html'],
-  function($, _, Backbone, jQCloud, Bootstrap, ResultsCollection, ResultView, FacetView, mainTemplate){
+define([
+  'jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap',
+  'collections/results', 'views/results',
+  'views/library', 'views/facet', 'text!template/main.html'],
+  function($, _, Backbone, jQCloud, Bootstrap,
+    ResultsCollection, ResultView,
+    LibraryView, FacetView, mainTemplate){
 
   var AppView = Backbone.View.extend({
 
+    searchType: null,
     host: null,
     el: $("#catalogue-app"),
     mainTemplate: _.template(mainTemplate),
 
     bise_indexes: {
-      documents: 'Documents',
-      links: 'Links',
-      articles: 'Web Pages'
+      documents: 'Documents', links: 'Links', articles: 'Web Pages'
     },
-
     all_indexes: {
-      documents: 'Documents',
-      links: 'Links',
-      articles: 'Web Pages',
-      species: 'Species',
-      habitats: 'Habitat types',
-      protected_areas: 'Sites'
+      documents: 'Documents', links: 'Links', articles: 'Web Pages',
+      species: 'Species Info', habitats: 'Habitat Types Info', protected_areas: 'Sites Info'
     },
 
     // Structure to query backend
@@ -32,19 +31,15 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
 
     events: {
       "submit #catalogue-search-form"  : "fillQueryAndRun",
-      // "change #catalogue-area"         : "setCategories",
       "click #catalogue-sort li a"     : "setSorting",
       "click #catalogue-per-page li a" : "setPerPage",
       "click .pager .p"                : "goPrevPage",
-      "click .pager .n"                : "goNextPage",
-      "click .switch .bise-search"     : "enableBiseSearch",
-      "click .switch .advn-search"     : "enableAdvancedSearch"
+      "click .pager .n"                : "goNextPage"
     },
 
     initialize: function(options) {
       _.bindAll(this, 'addOne', 'addAll', 'render',
-                'mergeFacet', 'removeFacet', 'isFacetSelected',
-                'enableAdvancedSearch', 'enableBiseSearch')
+                'mergeFacet', 'removeFacet', 'isFacetSelected')
 
       // Fix for IE8
       $.support.cors = true;
@@ -52,68 +47,63 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
 
       // Add main template
       $(this.$el.selector).append(this.mainTemplate)
-      this.queryparams.indexes = Object.keys(this.bise_indexes);
 
+      // Options
       this.host = options['host']
-      this.refreshEndpoint()
 
-      // Retrieve data-query attr if present
+      // Check search type
+      if (this.$el.data('type') === 'advanced'){
+        this.searchType = 'advanced'
+        this.queryparams.indexes = Object.keys(this.all_indexes);
+      } else {
+        this.searchType = 'bise'
+        this.queryparams.indexes = Object.keys(this.bise_indexes);
+      }
+
+      // Get query
       q = this.$el.data('query')
       if (q != 'undefined' && q != '') this.queryparams.query = q
 
-      // Run QUERY by default
+      // If CORS not enabled in IE8, show message to activate it
+      if (this._isIE() === 8){
+        $('.catalogue-ie-msg').show()
+      }
+
+      this.refreshEndpoint()
       this.runQuery()
     },
 
-    // Minor fix to allow Object.keys in IE8
-    _checkIE: function(){
-      if (!Object.keys) {
-        Object.keys = function(obj) {
-          var keys = [];
-          for (var i in obj) {
-            if (obj.hasOwnProperty(i)) keys.push(i);
-          }
-          return keys;
-        };
-      }
-    },
+    /***************************************************************************
+     * Catalogue methods
+     **************************************************************************/
 
-    getEndpoint: function(){
-      if ($('#advanced-search').attr('checked') === 'checked'){
-        this.url = 'http://' + this.host + '/api/v1/search'
-      } else {
-        this.url = 'http://' + this.host + '/api/v1/bise_search'
-      }
-      return this.url;
-    },
-
+    // Refresh data from endpoint
     refreshEndpoint: function(){
-      this.Results = new ResultsCollection(this.getEndpoint())
+      this.Results = new ResultsCollection(this._getEndpoint())
       this.Results.bind('add', this.addOne)
       this.Results.bind('reset', this.addAll)
       this.Results.bind('all', this.render)
+    },
+
+    runQuery: function(){
+      $('.catalogue-loading .gif').show()
+      this.Results.fetch({ data: $.param(this.queryparams) })
     },
 
     fillQueryAndRun: function(e){
       e.preventDefault()
       var q = $('#catalogue-search-form #query').val()
       if (q === 'undefined') q = ''
-      if (q === '') q = this.$('#catalogue-queries li').html()
+      $('#catalogue-search-form input').val('')
       this.queryparams = {
         indexes: this._getSelectedCategories(),
         query: q.replace(/(<([^>]+)>)/ig,""),
         page: 1, per: 10
       }
-      $('#catalogue-search-form input').val('')
       this.runQuery()
     },
 
-    runQuery: function(){
-      this.Results.fetch({ data: $.param(this.queryparams) })
-    },
-
-    // ----------------------- SEARCH OPTIONS ----------------------------------
-
+    // Search Options
     setSorting: function(e){
       this.queryparams.sort = $('#catalogue-sort select').val()
       this.runQuery()
@@ -135,30 +125,40 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
         this.runQuery()
       }
     },
-    enableBiseSearch: function(e){
-      var selected_in_bise = _.reject(this.queryparams.indexes, function(index){
-        return _.contains(this.bise_indexes, index)
-      });
-      if (selected_in_bise.length == 0) selected_in_bise = Object.keys(this.bise_indexes)
-      $('.advn-search').removeClass('selected')
-      $(e.currentTarget).addClass('selected')
-      $('#advanced-search').removeAttr('checked');
-      $('#bise-search').attr('checked', 'checked');
-      this.refreshEndpoint()
-      this.runQuery()
-    },
-    enableAdvancedSearch: function(e){
-      $('.bise-search').removeClass('selected')
-      $(e.currentTarget).addClass('selected')
-      $('#bise-search').removeAttr('checked');
-      $('#advanced-search').attr('checked', 'checked');
-      this.refreshEndpoint()
-      this.runQuery()
+
+
+    /*
+     * PRIVATE METHODS
+     */
+
+    // Minor fix to allow Object.keys in IE8
+    _checkIE: function(){
+      if (!Object.keys) {
+        Object.keys = function(obj) {
+          var keys = [];
+          for (var i in obj) {
+            if (obj.hasOwnProperty(i)) keys.push(i);
+          }
+          return keys;
+        };
+      }
     },
 
+    // Returns IE version or false
+    _isIE: function() {
+      var myNav = navigator.userAgent.toLowerCase();
+      return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+    },
 
-    // -------------------------- INTERNALS ----------------------------------
+    // Returns API endpoint (BISE or Advanced Search)
+    _getEndpoint: function(){
+      this.url = 'http://'+this.host+'/api/v1/'
+      if (this.searchType === 'advanced') this.url += 'search'
+      else this.url += 'bise_search'
+      return this.url;
+    },
 
+    // Returns array of selected indexes
     _getSelectedCategories: function(){
       var array = _.map(this.$('#catalogue-categories input:checked'), function (x){
         return $(x).val()
@@ -169,8 +169,9 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
       return array
     },
 
+    // Render the pagination with Bootstrap style
     _drawPagination: function(){
-      this.$el.find('.catalogue-status').html(this.queryparams.page + '/' + this._getLastPage())
+      this.$el.find('.catalogue-status').html(this.queryparams.page+'/'+this._getLastPage())
 
       if (this.queryparams.page == 1) this.$('.p').parent().addClass('disabled')
       else this.$('.p').parent().removeClass('disabled')
@@ -186,81 +187,67 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
         pages += 1;
       return pages;
     },
+
+    // Renders the performed search information
     _drawSearches: function(){
-      if (this.queryparams.query != ''){
-        li = $('<li>').append(this.queryparams.query)
-        this.$('#catalogue-queries ul').html(li)
+      var text = '';
+      if (this.queryparams.query != '' && this.queryparams.query != undefined)
+        text = text.concat('for <em>' + this.queryparams.query + '</em>. ')
+      if (this.Results.total != undefined)
+        text = text.concat('<small>(' + this.Results.total + ' results)</small>')
+      this.$('.catalogue-query').html(text)
+    },
+
+    // Renders Library filters
+    _drawLibraries: function(){
+      if (_.has(this.Results.facets, 'site')){
+        facet = this.Results.facets['site']
+
+        this.$('.catalogue-libraries').html('')
+        m = new Backbone.Model(facet)
+        this.$(".catalogue-libraries").append( $('<ul>') )
+        new LibraryView({
+          el: this.$('.catalogue-libraries ul'),
+          model: m
+        }).render()
       } else {
-        this.$('#catalogue-queries ul').html('')
+        console.log(':: no facet for libraries...')
       }
     },
-    _drawCount: function(){
-      if (this.Results.total == undefined)
-        this.$('#results-count').html("No search")
-      else
-        this.$('#results-count').html('<strong>' + this.Results.total + '</strong> results.')
-    },
+
+    // Renders available categories
     _drawCategories: function(){
       this.$("#catalogue-categories").html('');
-
-      var input;
-      if ($('#advanced-search').attr('checked') === 'checked'){
-        for (var k in this.all_indexes){
-          var checked = _.contains(this.queryparams.indexes, k)
-          if (this.queryparams.indexes.length == 0) checked = true;
-          input = $('<input>').attr({
-            type: 'checkbox',
-            id:   k,
-            name: k,
-            value: k,
-            checked: checked
-          });
-          this._addWrappedCategory(input, k)
-        }
-      } else {
-        for (var k in this.bise_indexes){
-          var checked = _.contains(this.queryparams.indexes, k)
-          if (this.queryparams.indexes.length == 0) checked = true;
-          input = $('<input>').attr({
-            type: 'checkbox',
-            id:   k,
-            name: k,
-            value: k,
-            checked: checked
-          })
-          this._addWrappedCategory(input, k)
-        }
-      }
-      this.$('#catalogue-categories input').on('change', $.proxy(this.fillQueryAndRun, this))
-      // this.$('#catalogue-categories input').iCheck({
-      //   checkboxClass: 'icheckbox_flat',
-      //   radioClass: 'iradio_flat'
-      // })
+      if (this.searchType === 'advanced')
+        for (var k in this.all_indexes) this._addWrappedCategory(k)
+      else for (var k in this.bise_indexes) this._addWrappedCategory(k)
+      this.$('#catalogue-categories input').on(
+        'change', $.proxy(this.fillQueryAndRun, this));
     },
-
-    _addWrappedCategory: function(input, key){
+    _addWrappedCategory: function(key, checked){
+      var checked = _.contains(this.queryparams.indexes, key)
+      if (this.queryparams.indexes.length == 0) checked = true;
+      var input = $('<input>').attr({
+        type: 'checkbox', id: key, name: key, value: key, checked: checked
+      });
       var label = $('<label>').append(input).append(this.all_indexes[key])
-      // var inputWrapper = $('<div>');
-      // inputWrapper.append(input).append($('<label>'));
-      // inputWrapper.append(label);
-      // this.$("#catalogue-categories").append(inputWrapper)
-      this.$("#catalogue-categories").append(label).append('<br>')
-      // this.$("#catalogue-categories").append(label).append($('<br>'))
+      var category = $('<div class="catalogue-category">').append(label)
+      if (checked) category.addClass('checked')
+      this.$("#catalogue-categories").append(category)
     },
 
+    // Renders facets on sidebar
     _drawFacets: function(){
-      // Clean facets
       this.$("#catalogue-facets").html('')
-      // Draw facets
       if (this.Results.total > 0){
-        facet_names = Object.keys(this.Results.facets)
-        for (var i=0; i<facet_names.length; i++){
+        facet_names = Object.keys(_.omit(this.Results.facets, 'site'))
+        for (var i=0; i < facet_names.length; i++){
           title = facet_names[i]
           facet = this.Results.facets[title]
-          if ((typeof(facet.terms) != 'undefined' &&
-              facet.terms.length > 0) ||
-              (typeof(facet.entries) != 'undefined' &&
-              facet.entries.length > 0)){
+
+          if ((typeof(facet.terms) != 'undefined' && facet.terms.length > 0) ||
+              (typeof(facet.entries) != 'undefined' && facet.entries.length > 0)){
+
             m = new Backbone.Model(facet)
             m.title = title
 
@@ -270,59 +257,51 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
               el: this.$('.catalogue-facet.'+title),
               model: m
             }).render()
-
-            // var view = new FacetView({model: m})
-            // this.$("#catalogue-facets").append(view.render().el)
           }
         }
       }
     },
 
+    // TODO: Add suggestions for searches
     _drawSuggestions: function(){
-      // TODO: Implement suggestions from ElasticSearch
-      // if (this.Results.suggestions){
-      //   var opts = this.Results.suggestions[1];
-      //   if (opts.length > 0){
-      //     opts = opts[0]
-      //     $('.catalogue-suggestions ul').html('')
-      //     for (var i=0; i < opts.options.length; i++){
-      //       var suggestion = opts.options[i];
-      //       var li = $('<li>').html(suggestion.text + ' with '+suggestion.score+'score')
-      //       $('.catalogue-suggestions').append(li)
-      //     }
-      //   }
-      // }
+
     },
 
+    // Show / Hide different sections when results found or not.
     _showResults: function(){
+      this.$('.catalogue-libraries').show()
       this.$('.catalogue-container').show()
+      this.$('.catalogue-navigation-bar').show()
+
       this.$('.catalogue-no-results').hide()
       this.$('.catalogue-statistics').hide()
       this.$('.catalogue-available-content').hide()
       this._drawPagination()
     },
-
     _showNoResults: function(){
+      this.$('.catalogue-libraries').hide()
       this.$('.catalogue-container').hide()
+      this.$('.catalogue-navigation-bar').hide()
+
       this.$('.catalogue-no-results').show()
       this.$('.catalogue-statistics').show()
       this.$('.catalogue-available-content').show()
       this._renderStatistics()
-      // if (this.queryparams.query && this.queryparams.query.length > 0)
-      //   this.$('.catalogue-no-results').html('No results found.')
-      // else
-      //   this.$('.catalogue-no-results h1').html('')
+      // Reset categories, if nothing found
+      if (this.$el.data('type') === 'advanced')
+        this.queryparams.indexes = Object.keys(this.all_indexes);
+      else
+        this.queryparams.indexes = Object.keys(this.bise_indexes);
     },
 
 
-    // ------------------------  Cloud ----------------------------------------
-
+    // Renders statistics if no results found...
     _renderStatistics: function(){
       $.get("http://"+this.host+"/api/v1/stats.json", function( data ) {
         // Show cloud tags
-
-        if (!$('.catalogue-cloud-tags').hasClass('jqcloud'))
+        if (!$('.catalogue-cloud-tags').hasClass('jqcloud')){
           $('.catalogue-cloud-tags').jQCloud(data.tags);
+        }
 
         // Render last added content
         _.each(data.last, function(item){
@@ -337,15 +316,16 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
           $('.catalogue-last-added').append(cell)
         });
 
-        // Render statistics
+        // Render count of iterms in the catalogue
         _.each(data.counts, function(count, item){
           $('.catalogue-available-content .span2.'+item+' > h1').html(count)
         });
       });
     },
 
-    // ------------------------  FACETS ----------------------------------------
-
+    /***************************************************************************
+     * FACETS
+     **************************************************************************/
     mergeFacet: function(key, value){
       this.queryparams[key] = value
       this.queryparams['page'] = 1
@@ -361,21 +341,28 @@ define(['jquery', 'underscore', 'backbone', 'jqcloud', 'bootstrap', 'collections
       return false
     },
     isFacetSelected: function(key, value){
+      // If no value passed, will check if exist on queryparams
+      if (value === undefined && !this.queryparams.hasOwnProperty(key))
+        return true
+      // Checks if key present and contains value
       if (_.has(this.queryparams, key))
         if (this.queryparams[key] == value)
           return true
       return false
     },
 
-    // ------------------------  RENDER ----------------------------------------
-
+    /***************************************************************************
+     * Backbone
+     **************************************************************************/
     render: function() {
       this._drawSearches();
-      this._drawCount();
+      this._drawLibraries();
       this._drawCategories();
       this._drawFacets();
       this._drawSuggestions();
-      if (this.Results.total == 0) this._showNoResults(); else this._showResults();
+      if (this.Results.total == 0)
+        this._showNoResults(); else this._showResults();
+      $('.catalogue-loading .gif').hide()
     },
     addOne: function(result) {
       var view = new ResultView({model: result})
