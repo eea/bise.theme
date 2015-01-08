@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.18 (unreleased)
+1.18 (2015-01-08)
 -----------------
 
 - Catalog client changes [arriejon]
