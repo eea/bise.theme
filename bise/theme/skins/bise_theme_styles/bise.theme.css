@@ -830,6 +830,9 @@ body:not(.userrole-manager) #contentview-local_roles{
 #mapSelector>div{
   	padding-right:2px !important;
 }
+#targetFilter {
+	display: none;
+}
 #targetFilter .targetLabel{
 	width:13%;
 	float:left;
