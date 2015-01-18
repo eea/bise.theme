@@ -2,17 +2,6 @@
      i18n:domain="plone">
 
 <p class="hiddenStructure" i18n:translate="heading_personal_tools">Personal tools</p>
-<ul id="searchbar-options">
-
-  <li>
-    <form method="get" action="/search">
-      <input autocomplete="off" type="text" size="10" name="q" title="search" dir="ltr" spellcheck="false" class="search-input"/>
-      <input type="submit" value="Search" class="search-button" title="search"/>
-    </form>
-      
-  </li>
-
-</ul>
 <dl class="actionMenu deactivated" id="portal-personaltools"
     tal:condition="python:view.user_actions and not view.anonymous">
   <tal:block condition="not: view/anonymous">
@@ -55,6 +44,17 @@
     </tal:actions>
   </li>
 </ul>
+<ul id="searchbar-options">
+
+  <li>
+    <form method="get" action="/search">
+      <input autocomplete="off" type="text" size="10" name="q" title="search" dir="ltr" spellcheck="false" class="search-input"/>
+      <input type="submit" value="Search" class="search-button" title="search"/>
+    </form>
+      
+  </li>
+
+</ul>
 <ul id="personalbar-options">
   <li>
     <a tal:attributes="href view/home;">HOME</a>
@@ -71,7 +71,6 @@
   <li>
     <a tal:attributes="href view/sitemap;">SITEMAP</a>
   </li>
-  <li>|</li>
   <li tal:condition="python:not view.anonymous">
     <a tal:attributes="href view/help;">HELP</a>
   </li>
