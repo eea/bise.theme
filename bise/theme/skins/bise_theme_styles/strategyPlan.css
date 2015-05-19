@@ -11,7 +11,6 @@
 		}		
 		#strategyPlan div{
 			font-family: Arial;
-			-webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out;
 			-moz-transition:width 300ms ease-in-out, height 300ms ease-in-out;
 			-o-transition:width 300ms ease-in-out, height 300ms ease-in-out;
 			transition:width 300ms ease-in-out, height 300ms ease-in-out;
