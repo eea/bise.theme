@@ -1,10 +1,10 @@
 Changelog
 =========
 
-1.20 (unreleased)
+1.20 (2015-09-04)
 -----------------
 
-- Nothing changed yet.
+- Fix link to termite in shared tags api.
 
 
 1.19 (2015-01-18)

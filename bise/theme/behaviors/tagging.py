@@ -58,8 +58,10 @@ class CatalogueTagVocabulary(object):
 
     @ram.cache(_cache_key)
     def get_tags(self):
-        url = 'http://termite.eea.europa.eu/api/v1/shared_tags'
+        url = 'http://catalogue.biodiversity.europa.eu/api/v1/shared_tags'
         data = requests.get(url)
+        if data.status_code != 200:
+            return []
         items = json.loads(data.content)
         return items
 
@@ -92,8 +94,10 @@ grok.global_utility(
 
 @ram.cache(_cache_key)
 def get_shared_targets():
-    url = 'http://termite.eea.europa.eu/api/v1/shared_targets'
+    url = 'http://catalogue.biodiversity.europa.eu/api/v1/shared_targets'
     data = requests.get(url)
+    if data.status_code != 200:
+        return []
     items = json.loads(data.content)
     return items
 
