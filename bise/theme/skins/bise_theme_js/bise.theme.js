@@ -123,7 +123,8 @@ $(document).ready(function(){
               
               return false;
             }
-          }, 1000, 'sid', 'time', 'hideDelay', 'hideDelayTimer', 'beingShown', 'shown')
+          }, 1, 'sid', 'time', 'hideDelay', 'hideDelayTimer', 'beingShown', 'shown');
+          //}, 1000, 'sid', 'time', 'hideDelay', 'hideDelayTimer', 'beingShown', 'shown');
           }
         }).mouseleave(function () {
           $(this).removeClass("hasFocus");

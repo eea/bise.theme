@@ -6,6 +6,8 @@ Changelog
 
 - Added the missing ajax-loader.gif image
 - Fix styling in catalogue search, it would hide the search results when authenticated
+- Bug fix: override columns.css to fix a bug in Chrome rendering
+[tiberich https://taskman.eionet.europa.eu/issues/69697 ]
 
 1.20.1 (2015-09-04)
 -----------------
