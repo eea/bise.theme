@@ -1,10 +1,12 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.21.dev0'
+NAME = 'bise.theme'
+PATH = NAME.split('.') + ['version.txt']
+VERSION = open(os.path.join(*PATH)).read().strip()
 
-setup(name='bise.theme',
-      version=version,
+setup(name=NAME,
+      version=VERSION,
       description="Installable theme: bise.theme",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
