@@ -1,0 +1,801 @@
+/* - strategyPlan.css - */
+/* http://biodiversity.europa.eu/portal_css/strategyPlan.css?original=1 */
+/* */
+#strategyPlan {
+width: 930px;
+height: 718px;
+position: relative;
+margin-left: -7px;
+color: #2a2a2a;
+}
+#strategyPlan a {
+color: #2a2a2a !important;
+}
+#strategyPlan a:hover {
+color: #2a2a2a !important;
+}
+#strategyPlan div {
+font-family: Arial;
+-webkit-transition: width 300ms ease-in-out, height 300ms ease-in-out;
+-moz-transition: width 300ms ease-in-out, height 300ms ease-in-out;
+-o-transition: width 300ms ease-in-out, height 300ms ease-in-out;
+transition: width 300ms ease-in-out, height 300ms ease-in-out;
+-webkit-box-sizing: border-box; /* */
+-moz-box-sizing: border-box; /* */
+box-sizing: border-box;
+line-height: normal;
+}
+#strategyPlan ul {
+margin-top: 20px;
+margin-left: 50px;
+}
+#strategyPlan li {
+line-height: normal;
+margin-bottom: 0px;
+}
+.targetDiv {
+width: 155px;
+height: 718px;
+float: left;
+}
+.targetDiv.collapsed {
+width: 0px;
+height: 0px;
+float: left;
+}
+.targetDiv.collapsed * {
+display: none;
+}
+.targetDiv.expanded {
+width: 930px;
+height: 718px;
+float: left;
+}
+.targetDiv.expanded .targetId {
+border-right-color: transparent !important;
+float: left;
+height: 120px;
+}
+.targetDiv.expanded .targetIdDesc {
+display: none;
+}
+.targetId {
+height: 270px;
+border: 1px solid white;
+width: 155px;
+position: relative;
+}
+.targetDiv.expanded.actionsExpanded .targetId {
+display: none;
+}
+.targetId > :first-child {
+font-size: 25px;
+line-height: 20px;
+width: 100%;
+text-align: center;
+margin-top: 20px;
+}
+.expanded .targetId > :first-child {
+margin-top: 30px;
+}
+.targetId > :first-child + div {
+font-size: 70px;
+width: 100%;
+text-align: center;
+}
+.expanded .targetId > :first-child + div {
+margin-top: -10px;
+}
+.targetId > :first-child + div + div {
+font-size: 16px;
+font-weight: bold;
+width: 100%;
+text-align: center;
+position: absolute;
+bottom: 10px;
+}
+.targetDescTitle {
+display: none;
+border: 1px solid white;
+width: 100%;
+height: 270px;
+padding-left: 156px;
+padding-top: 55px;
+font-weight: bold;
+font-size: 20px;
+}
+.targetDiv .targetDesc {
+display: none;
+border: 1px solid white;
+padding: 50px;
+}
+.targetDiv.expanded .targetDescTitle {
+display: block;
+height: 120px
+}
+.targetDiv.expanded.actionsExpanded .targetDescTitle {
+display: none;
+}
+.target0Bg {
+background-color: #81B056;
+}
+.target1Bg {
+background-color: #e9927a;
+}
+.target2Bg {
+background-color: #e4b067;
+}
+.target3Bg {
+background-color: #e4e3c4;
+}
+.target4Bg {
+background-color: #aaddd6;
+}
+.target5Bg {
+background-color: #b88ba1;
+}
+.target6Bg {
+background-color: #adc4dc;
+}
+.cell {
+vertical-align: middle;
+}
+.actionsDiv {
+height: 112.5px;
+border: 1px solid white;
+}
+.actionsDiv > :first-child {
+font-size: 18px;
+width: 155px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.action {
+display: none;
+border-bottom: 1px solid white;
+border-top: 1px solid white;
+}
+.action > :first-child {
+float: left;
+margin-left: 35px;
+margin-top: 20px;
+}
+.aichiTarget {
+border-top: 1px solid white;
+border-bottom: 1px solid white;
+padding: 10px;
+display: none;
+}
+.aichiTarget img {
+margin-top: 25px;
+}
+.actionBack {
+width: 930px;
+height: 0px;
+border-left: 1px solid white;
+border-right: 1px solid white;
+}
+.actionTitle {
+font-weight: bold;
+padding-left: 156px;
+}
+.actionDesc {
+font-size: 9pt;
+display: none;
+padding-right: 6px;
+margin-left: 156px;
+}
+.indicatorsDiv {
+height: 112.5px;
+border: 1px solid white;
+}
+.indicatorsDiv > :first-child {
+font-size: 18px;
+width: 155px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.indicator {
+display: none;
+}
+.indicator div {
+margin-left: 24px;
+margin-top: 20px;
+font-size: 16px;
+font-weight: bold;
+}
+.indicator ul {
+margin-left: 130px !important;
+}
+.indicator ul ul {
+margin-left: 30px !important;
+margin-top: 0px !important;
+}
+.cifGroupsDiv {
+height: 112.5px;
+border: 1px solid white;
+}
+.cifGroupsDiv > :first-child {
+font-size: 18px;
+width: 155px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.cifGroup {
+display: none;
+}
+.cifGroup div {
+margin-left: 24px;
+margin-top: 20px;
+font-size: 16px;
+font-weight: bold;
+}
+.cifGroup ul {
+margin-left: 130px !important;
+}
+.aichiTargetsDiv {
+height: 112.5px;
+border: 1px solid white;
+}
+.aichiTargetsDiv > :first-child {
+font-size: 18px;
+width: 155px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.aichiTargetTitle {
+text-align: center;
+width: 120px;
+margin-top: 10px;
+font-weight: bold;
+}
+.aichiTargetDesc {
+margin-left: 145px;
+margin-top: -60px;
+}
+.targetsBack {
+position: absolute;
+z-index: 3;
+border: 1px solid white;
+width: 100%;
+display: none;
+}
+.targetBack {
+width: 155px;
+height: 0px;
+float: left;
+border: 1px solid white;
+}
+.actionsBack {
+position: absolute;
+z-index: 2
+}
+.target1Backbg {
+background-color: #fbe9e4;
+}
+.target2Backbg {
+background-color: #faefe1;
+}
+.target3Backbg {
+background-color: #faf9f3;
+}
+.target4Backbg {
+background-color: #eef8f7;
+}
+.target5Backbg {
+background-color: #f1e8ec;
+}
+.target6Backbg {
+background-color: #eff3f8;
+}
+#targetsBackImg {
+margin-left: 24px;
+}
+#backImg {
+margin-left: 20px;
+}
+.targetsBack span {
+line-height: 25px;
+vertical-align: top;
+}
+/* */
+.strategyPlan2 .targetDiv {
+width: 12.5%;
+height: 718px;
+float: left;
+}
+.strategyPlan2 .targetDiv.collapsed {
+width: auto;
+}
+.strategyPlan2 .targetDiv.expanded {
+width: 100%;
+}
+.strategyPlan2 .targetDiv.expanded .targetId {
+border-right-color: transparent !important;
+float: left;
+height: 160px;
+max-width: 115px;
+}
+.strategyPlan2 .targetId {
+height: 113px;
+border: 1px solid white;
+width: 100%;
+position: relative;
+}
+.strategyPlan2 .targetDiv.expanded .targetDescTitle {
+display: block;
+height: 160px
+}
+.strategyPlan2 .actionsDiv > :first-child {
+font-size: 18px;
+width: 115px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.strategyPlan2 .indicatorsDiv > :first-child {
+font-size: 18px;
+width: 115px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.strategyPlan2 .cifGroupsDiv > :first-child {
+font-size: 18px;
+width: 115px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.strategyPlan2 .aichiTargetsDiv > :first-child {
+font-size: 18px;
+width: 115px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.strategyPlan2 .targetBack {
+width: 115px;
+height: 0px;
+float: left;
+border: 1px solid white;
+}
+.overviewsDiv {
+height: 112.5px;
+border: 1px solid white;
+}
+.overviewsDiv > :first-child {
+font-size: 18px;
+width: 115px;
+height: 115px;
+text-align: center;
+margin-top: 22px;
+}
+.overviewsDiv img {
+width: 70px;
+height: 70px;
+margin-left: auto;
+margin-right: auto;
+}
+.midtermsDiv {
+height: 112.5px;
+border: 1px solid white;
+}
+.midtermsDiv > :first-child {
+font-size: 18px;
+width: 115px;
+height: 115px;
+text-align: center;
+margin-top: 32px;
+}
+.midtermsWhiteDiv {
+height: 112.5px;
+border: 1px solid white;
+background-color: #CFCFCF;
+}
+.midtermsWhiteDiv > :first-child {
+font-size: 18px;
+width: 115px;
+height: 115px;
+text-align: center;
+margin-top: 16px;
+}
+[data-tooltip] {
+position: relative;
+z-index: 2;
+cursor: pointer;
+}
+/* */
+[data-tooltip]:before,
+[data-tooltip]:after {
+visibility: hidden;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+opacity: 0;
+pointer-events: none;
+}
+/* */
+[data-tooltip]:before {
+position: absolute;
+bottom: 101%;
+left: 50%;
+margin-bottom: 5px;
+margin-left: -80px;
+padding: 7px;
+width: 160px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background-color: #000;
+background-color: hsla(0, 0%, 20%, 0.9);
+color: #fff;
+content: attr(data-tooltip);
+text-align: center;
+font-size: 14px;
+line-height: 1.2;
+}
+/* */
+[data-tooltip]:after {
+position: absolute;
+bottom: 101%;
+left: 50%;
+margin-left: -5px;
+width: 0;
+border-top: 5px solid #000;
+border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+border-right: 5px solid transparent;
+border-left: 5px solid transparent;
+content: " ";
+font-size: 0;
+line-height: 0;
+}
+/* */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+visibility: visible;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+opacity: 1;
+}
+.target0 td, a.target0 {
+background-color: #81B056;
+}
+.target1 td, a.target1 {
+background-color: #e9927a;
+}
+.target2 td, a.target2 {
+background-color: #e4b067;
+}
+.target3 td, a.target3 {
+background-color: #d6d5b8;
+}
+.target4 td, a.target4 {
+background-color: #aaddd6;
+}
+.target5 td, a.target5 {
+background-color: #b88ba1;
+}
+.target6 td, a.target6 {
+background-color: #adc4dc;
+}
+.overview td {
+border-right: 4px solid white;
+padding: 10px 15px 10px 15px;
+}
+.overview tr {
+border-bottom: 3px solid white;
+}
+.overview-title h1 {
+color: #ffffff;
+font-size: 22px;
+text-align: center;
+}
+#content table.review {
+border-collapse: separate;
+}
+.review td {
+padding: 3px 3px 3px 3px;
+}
+.target0-descr td:first-child {
+background-color: #A3D674;
+}
+.target1-descr td:first-child {
+background-color: #f5d1c6;
+}
+.target2-descr td:first-child {
+background-color: #F0CD9C;
+}
+.target3-descr td:first-child {
+background-color: #F0EFE1;
+}
+.target4-descr td:first-child {
+background-color: #B9F0E8;
+}
+.target5-descr td:first-child {
+background-color: #E0AFC7;
+}
+.target6-descr td:first-child {
+background-color: #BFD8F2;
+}
+.overview-description td {
+padding: 25px 15px 0px 15px;
+}
+.target0-action td:first-child {
+background-color: #C7F2A0;
+font-size: 14px;
+}
+.target1-action td:first-child {
+background-color: #fbe8e3;
+font-size: 14px;
+}
+.target2-action td:first-child {
+background-color: #FFE6C2;
+font-size: 14px;
+}
+.target3-action td:first-child {
+background-color: #F5F4E6;
+font-size: 14px;
+}
+.target4-action td:first-child {
+background-color: #C1F5EE;
+font-size: 14px;
+}
+.target5-action td:first-child {
+background-color: #F0C5DA;
+font-size: 14px;
+}
+.target6-action td:first-child {
+background-color: #DEECFA;
+font-size: 14px;
+}
+.overview-description a {
+float: right;
+font-size: 14px;
+padding: 10px 10px 10px 10px;
+color: #ffffff !important;
+margin-bottom: 10px;
+border-radius: 10px;
+}
+.overview-description p {
+padding-top: 10px;
+font-size: 14px;
+}
+.overview h2 {
+color: #2a2a2a;
+font-size: 24px;
+}
+.review-title h2 {
+color: #4a4a4a;
+font-size: 22px;
+}
+.review-title td {
+padding-left: 10px;
+padding-right: 10px;
+border-bottom: 20px solid white;
+}
+.review-title a {
+float: right;
+font-size: 14px;
+padding: 10px 10px 10px 10px;
+color: #ffffff !important;
+border-radius: 10px;
+}
+.review-title > td:nth-child(2) {
+border: none;
+}
+.review-text p {
+padding-top: 10px;
+font-size: 20px;
+}
+.review-text td {
+padding: 10px 15px 10px 15px;
+border: 1px solid #222222;
+}
+.target0-title td {
+background-color: #C7F2A0;
+}
+.target1-title td {
+background-color: #f5d1c6;
+}
+.target2-title td {
+background-color: #F0CD9C;
+}
+.target3-title td {
+background-color: #F5F4E6;
+}
+.target4-title td {
+background-color: #B9F0E8;
+}
+.target5-title td {
+background-color: #E0AFC7;
+}
+.target6-title td {
+background-color: #BFD8F2;
+}
+.progress-image {
+width: 130px;
+height: 130px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+.smiley-image {
+width: 70px;
+height: 70px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+#tdBack {
+padding: 0;
+}
+#tdBack img#targetsBackImg, #tdBack img#backImg {
+padding: 0 !important;
+}
+body.subsection-countries #content li {
+list-style-image: none;
+list-style-type: square;
+}
+.listing td {
+padding: 0.75em 1.5em !important;
+}
+.country-table td:first-child + td {
+text-align: justify;
+padding: 15px;
+}
+#document-action-download_pdf { display: none !important; }
+.floatingHeader {
+position: fixed;
+top: 0;
+visibility: hidden;
+min-height: 115px;
+}
+.country-table ol > li {
+list-style-type: decimal !important;
+}
+.country-table td {
+border: none;
+border-bottom: solid LightGray 1.0pt;
+}
+
+.mtrTargetDiv {
+width: 14.28% !important;
+height: 450px !important;
+}
+
+
+
+.targetDiv.expanded .mtrTargetId {
+border-right-color: transparent !important;
+float: left;
+height: 120px;
+}
+
+.mtrTargetId {
+height: 270px;
+border: 1px solid white;
+width: 155px;
+position: relative;
+}
+.targetDiv.expanded.actionsExpanded .mtrTargetId {
+display: none;
+}
+.mtrTargetId > :first-child {
+font-size: 16px;
+line-height: 20px;
+width: 100%;
+text-align: center;
+margin-top: 20px;
+}
+.expanded .mtrTargetId > :first-child {
+margin-top: 30px;
+}
+.mtrTargetId > :first-child + div {
+font-size: 50px;
+width: 100%;
+text-align: center;
+}
+.expanded .mtrTargetId > :first-child + div {
+margin-top: -10px;
+}
+.mtrTargetId > :first-child + div + div {
+font-size: 16px;
+font-weight: bold;
+width: 100%;
+text-align: center;
+position: absolute;
+bottom: 10px;
+}
+
+.strategyPlan2 .targetDiv.expanded .mtrTargetId {
+border-right-color: transparent !important;
+float: left;
+height: 160px;
+max-width: 115px;
+}
+.strategyPlan2 .mtrTargetId {
+height: 113px;
+border: 1px solid white;
+width: 100%;
+position: relative;
+}
+
+
+.headlineTarget {
+    height: 40px;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.headlineTarget p {
+    padding-top: 10px;
+}
+
+.headlineTarget div {
+    display: inline-block;
+    height: 54px;
+    line-height: 54px;
+}
+
+.headlineTarget img {
+    height: 100%;
+    position: relative;
+    top: -11px;
+}
+
+.mtrMemberState {
+    background-color: #C7F2A0;
+    border: 1px solid white;
+    position: static;
+    height: 490px;
+    font-size: 22px;
+    text-align: center;
+    padding-top: 455px;
+}
+
+.mtrHorizontalMeasures {
+    background-color: #A3D674;
+    border: 1px solid white;
+    position: static;
+    font-size: 22px;
+    height: 40px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.mtrConclusions {
+    background-color: #81b056;
+    border: 1px solid white;
+    position: static;
+    font-size: 22px;
+    height: 40px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.strategyPlan3 {
+    height: 620px !important;
+}
+
+.mtrAssesment {
+height: 112.5px;
+border: 1px solid white;
+font-size: 18px;
+text-align: center;
+padding-top: 32px;
+}
+
+#mtrGo {
+padding: 0;
+}
+#mtrGo img#targetsBackImg, #mtrGo img#backImg {
+padding: 0 !important;
+}
+
+
+

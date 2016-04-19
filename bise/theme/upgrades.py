@@ -98,3 +98,12 @@ def upgrade_to_1007(context, logger=None):
     setup = getToolByName(context, 'portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
     logger.info('Upgraded')
+
+
+def upgrade_to_1008(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1008')
+
+    setup = getToolByName(context, 'portal_setup')
+    setup.runImportStepFromProfile(PROFILE_ID, 'skins')
+    logger.info('Upgraded')

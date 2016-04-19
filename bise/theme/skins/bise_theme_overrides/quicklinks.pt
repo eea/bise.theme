@@ -1,0 +1,7 @@
+<tal:block define="countries python:[v for v in context.values() if v.portal_type=='FolderishPage']">
+<ul>
+ <li tal:repeat="country countries">
+  <a class="internal-link state-published" target="_self" tal:attributes="href country/absolute_url"><span tal:content="python:country.title_or_id().split('-')[0].strip()"></span></a>
+ </li>
+</ul>
+</tal:block>

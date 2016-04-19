@@ -28,6 +28,9 @@
  <object name="bise_theme_js"
     meta_type="Filesystem Directory View"
     directory="bise.theme:skins/bise_theme_js"/>
+ <object name="bise_theme_overrides"
+    meta_type="Filesystem Directory View"
+    directory="bise.theme:skins/bise_theme_overrides"/>
 
 
  <!-- A skin-path in this file corresponds to a Skin Selection in the
@@ -51,6 +54,8 @@
      insert-after="bise_theme_templates"/>
   <layer name="bise_theme_js"
      insert-after="bise_theme_styles"/>
+  <layer name="bise_theme_overrides"
+     insert-after="custom"/>
  </skin-path>
 
 </object>
