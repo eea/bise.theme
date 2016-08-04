@@ -71,7 +71,12 @@
      handler=".upgrades.upgrade_to_1007"
       />
 
-
-
+  <genericsetup:upgradeStep
+     source="1007"
+     destination="1008"
+     profile="bise.theme:default"
+     title="Add the overrides skins folder"
+     handler=".upgrades.upgrade_to_1008"
+      />
 
 </configure>

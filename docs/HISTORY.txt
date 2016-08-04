@@ -1,10 +1,15 @@
 Changelog
 =========
 
-2.1.dev0 - (unreleased)
+2.2.dev0 - (unreleased)
 -----------------------
+
+2.1 - (2016-04-19)
+------------------
 - Bug fix: customized pdf.footer template from eea.converter, to fix the bottom footer unicode problem
 [tiberich https://taskman.eionet.europa.eu/issues/29648 ]
+- Change: added files customized in the "custom" folder of portal_skins in Production server
+[tiberich https://taskman.eionet.europa.eu/issues/71501 ]
 
 2.0 - (2016-03-29)
 ------------------
