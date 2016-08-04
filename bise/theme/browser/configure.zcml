@@ -106,5 +106,12 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <browser:page
+        name="pdf.header"
+        for="zope.interface.Interface"
+        class=".pdf.Header"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope.Public"
+        />
 
 </configure>

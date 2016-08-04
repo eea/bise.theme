@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal">
+<head>
+    <style>
+        .pull-left { float: left; }
+        .pull-right { float: right; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        div {
+            border-bottom: 1px solid #CCC; width: 100%; text-align: right; color: #999;
+            font-size: 9pt; font-family: Verdana; padding-bottom: 20pt; font-weight: bold;
+        }
+        .logo {
+            width: 56pt;
+	    }
+        .headerlink {
+           font-size: 7pt; font-family: Verdana; font-weight: normal;
+        }
+        .headerlink span {
+           text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/pdf_custom_fixes.css" media="all" /></head>
+<body style="border:0; margin: 0;">
+<div tal:attributes="class string:pdf-header">
+    <img class="pull-left logo" src="http://bise-portal.edw.ro/BiseLogo.png" />
+    <span class="subsection" tal:content="view/body"></span><br/>
+    <span class="headerlink">
+    Downloaded from: <span tal:content="view/doc_url"></span>
+    <br />
+    Last modified: <span tal:replace="view/modified" />
+    </span>
+</div>
+</body>
+</html>
