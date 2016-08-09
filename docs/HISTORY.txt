@@ -3,6 +3,8 @@ Changelog
 
 2.2.dev0 - (unreleased)
 -----------------------
+- Bug fix: fix bise.theme.js loading of CHM map, it was broken by API changes in Yahoo API
+  [tiberich #74930]
 
 2.1 - (2016-04-19)
 ------------------
