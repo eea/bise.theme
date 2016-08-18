@@ -3,6 +3,8 @@ Changelog
 
 2.2.dev0 - (unreleased)
 -----------------------
+- Bug fix: fix loading of FeedFeederItems, they used BeautifulSoup, we now have bs4
+  [tiberich #75155]
 - Bug fix: fix bise.theme.js loading of CHM map, it was broken by API changes in Yahoo API
   [tiberich #74930]
 

@@ -31,3 +31,32 @@ def new_extendedDateTime(dt):
 
 import Products.feedfeeder.extendeddatetime
 Products.feedfeeder.extendeddatetime.extendedDateTime = new_extendedDateTime
+
+
+# fake BeautifulSoup module to fix some pickles in db broken by migration to bs4
+
+class NavigableString(unicode):
+    def __new__(cls):
+        return unicode.__new__(cls)
+
+    def __getstate__(self):
+        return self.__dict__
+
+
+class Tag(object):
+    def __getstate__(self):
+        return self.__dict__
+
+
+class BeautifulSoup(object):
+    def __getstate__(self):
+        return self.__dict__
+
+
+class fake_bs3(object):
+    NavigableString = NavigableString
+    Tag = Tag
+    BeautifulSoup = BeautifulSoup
+
+import sys
+sys.modules['BeautifulSoup'] = fake_bs3
