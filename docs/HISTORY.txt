@@ -3,6 +3,8 @@ Changelog
 
 2.3.dev0 - (unreleased)
 -----------------------
+* Bug fix: get rid of fake BeautifulSoup, we will now depend on BeautifulSoup explicitely
+  [tiberich #75509]
 
 2.2 - (2016-08-18)
 ------------------
