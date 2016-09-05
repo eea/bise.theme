@@ -1,6 +1,9 @@
 Changelog
 =========
 
+2.4.dev0 - (unreleased)
+-----------------------
+
 2.3 - (2016-09-05)
 ------------------
 * Bug fix: get rid of fake BeautifulSoup, we will now depend on BeautifulSoup explicitely
