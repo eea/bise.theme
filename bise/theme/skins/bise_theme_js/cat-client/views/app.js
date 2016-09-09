@@ -191,8 +191,9 @@ define([
     // Renders the performed search information
     _drawSearches: function(){
       var text = '';
+      var esc = new Backbone.Model({text:this.queryparams.query});
       if (this.queryparams.query != '' && this.queryparams.query != undefined)
-        text = text.concat('for <em>' + this.queryparams.query + '</em>. ')
+        text = text.concat('for <em>' + esc.escape('text') + '</em>. ')
       if (this.Results.total != undefined)
         text = text.concat('<small>(' + this.Results.total + ' results)</small>')
       this.$('.catalogue-query').html(text)
