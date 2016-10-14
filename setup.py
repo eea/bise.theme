@@ -59,6 +59,7 @@ setup(name=NAME,
           'requests',
           'z3c.formwidget.optgroup',
           # -*- Extra requirements: -*-
+          'BeautifulSoup',
       ],
       entry_points="""
       # -*- Entry points: -*-
