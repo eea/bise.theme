@@ -1,11 +1,10 @@
-
 <div class="catalogue-toolbar">
-    <form id="catalogue-search-form">
-        <input id="query" name="query" type="text"
-               class="input-medium search-query"
-               placeholder="Search..." autofocus="true">
-        <button type="submit">&nbsp;&nbsp;Search</button>
-    </form>
+  <form id="catalogue-search-form">
+    <input id="query" name="query" type="text"
+    class="input-medium search-query"
+    placeholder="Search..." autofocus="true">
+    <button type="submit">&nbsp;&nbsp;Search</button>
+  </form>
 </div>
 
 <div class="catalogue-ie-msg" style="display:none">
@@ -63,7 +62,7 @@
   <div class="row-fluid">
     <div class="span6">
       <h3 class="widget-heading">Popular Terms</h3>
-      <div class="catalogue-cloud-tags"/>
+      <div class="catalogue-cloud-tags"></div>
     </div>
     <div class="span6">
       <h3 class="widget-heading">Last Added</h3>
@@ -71,7 +70,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="catalogue-loading">
   <div class="gif"></div>
@@ -83,50 +81,48 @@
   <span class="catalogue-query">
   </span>
   <div class="catalogue-options" style="float:right">
-      <div class="btn-group">
-          <a class="btn dropdown-toggle" data-toggle="dropdown">
-              Per Page
-              <span class="caret"></span>
-          </a>
-          <ul id="catalogue-per-page" class="dropdown-menu">
-              <li>
-                  <a>10</a>
-              </li>
-              <li>
-                  <a>20</a>
-              </li>
-              <li>
-                  <a>30</a>
-              </li>
-          </ul>
-      </div>
+    <div class="btn-group">
+      <a class="btn dropdown-toggle" data-toggle="dropdown">
+        Per Page
+        <span class="caret"></span>
+      </a>
+      <ul id="catalogue-per-page" class="dropdown-menu">
+        <li>
+          <a>10</a>
+        </li>
+        <li>
+          <a>20</a>
+        </li>
+        <li>
+          <a>30</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
 <div class="catalogue-container" style="display:none">
 
-    <div class="catalogue-content span8" style="">
+  <div class="catalogue-content span8" style="">
 
-        <ul id="catalogue-results" style=""></ul>
+    <ul id="catalogue-results" style=""></ul>
 
-        <div class="row-fluid" style="margin-bottom: 20px">
-            <div class="span4"></div>
-            <div class="span4 catalogue-status"></div>
-            <div class="span4" style="padding-top: 8px">
-                <ul class="pager">
-                    <li><a class="p">Prev</a></li>
-                    <li><a class="n">Next</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="row-fluid" style="margin-bottom: 20px">
+      <div class="span4"></div>
+      <div class="span4 catalogue-status"></div>
+      <div class="span4" style="padding-top: 8px">
+        <ul class="pager">
+          <li><a class="p">Prev</a></li>
+          <li><a class="n">Next</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <div class="catalogue-sidebar">
-        <div id="catelogue-categories-menu">Categories</div>
-        <div id="catalogue-categories"></div>
-        <div id="catalogue-facets"></div>
-    </div>
+  <div class="catalogue-sidebar">
+    <div id="catelogue-categories-menu">Categories</div>
+    <div id="catalogue-categories"></div>
+    <div id="catalogue-facets"></div>
+  </div>
 
 </div>
-
-

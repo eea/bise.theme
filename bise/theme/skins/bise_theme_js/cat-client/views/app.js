@@ -52,13 +52,15 @@ define([
       this.host = options['host']
 
       // Check search type
-      if (this.$el.data('type') === 'advanced'){
-        this.searchType = 'advanced'
-        this.queryparams.indexes = Object.keys(this.all_indexes);
-      } else {
-        this.searchType = 'bise'
-        this.queryparams.indexes = Object.keys(this.bise_indexes);
-      }
+      // if (this.$el.data('type') === 'advanced'){
+      //   this.searchType = 'advanced'
+      //   this.queryparams.indexes = Object.keys(this.all_indexes);
+      // } else {
+      //   this.searchType = 'bise'
+      //   this.queryparams.indexes = Object.keys(this.bise_indexes);
+      // }
+      this.searchType = 'advanced'
+      this.queryparams.indexes = Object.keys(this.all_indexes);
 
       // Get query
       q = this.$el.data('query')

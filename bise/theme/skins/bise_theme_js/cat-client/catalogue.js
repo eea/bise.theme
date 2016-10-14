@@ -41,7 +41,8 @@ require.config({
 
 require(['views/app'], function(AppView){
     window.Catalogue = new AppView({
-        host: 'catalogue.biodiversity.europa.eu'
+        // host: 'catalogue.biodiversity.europa.eu'
+	host: window.catalogue_host
         // host: 'termite.eea.europa.eu'
         // host: 'bise.catalogue.dev'
     })
