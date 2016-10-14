@@ -194,11 +194,14 @@ define([
     _drawSearches: function(){
       var text = '';
       var esc = new Backbone.Model({text:this.queryparams.query});
-      if (this.queryparams.query != '' && this.queryparams.query != undefined)
-        text = text.concat('for <em>' + esc.escape('text') + '</em>. ')
-      if (this.Results.total != undefined)
-        text = text.concat('<small>(' + this.Results.total + ' results)</small>')
-      this.$('.catalogue-query').html(text)
+      if (this.queryparams.query != '' && this.queryparams.query != undefined) {
+        this.$('#query').val(this.queryparams.query);
+        text = text.concat('for <em>' + esc.escape('text') + '</em>. ');
+      }
+      if (this.Results.total != undefined) {
+        text = text.concat('<small>(' + this.Results.total + ' results)</small>');
+      }
+      this.$('.catalogue-query').html(text);
     },
 
     // Renders Library filters

@@ -9,12 +9,13 @@
   <li>
     <% if (Catalogue.isFacetSelected('site', t.term )){ %>
       <a class="library active" data-facet="site" data-value="<%= t.term %>">
-        <%= t.term+' ('+t.count+')' %>
+        <%= t.term %>
       </a>
     <% } else { %>
       <a class="library" data-facet="site" data-value="<%= t.term %>">
-        <%= t.term+' ('+t.count+')' %>
+        <%= t.term %>
       </a>
     <% } %>
+    <span class="count"> <%= t.count %> </span>
   </li>
 <% }) %>
