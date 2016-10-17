@@ -80,25 +80,74 @@
 <div class="catalogue-navigation-bar" style="display:none">
   <span class="catalogue-query">
   </span>
-  <div class="catalogue-options" style="float:right">
-    <div class="btn-group">
-      <a class="btn dropdown-toggle" data-toggle="dropdown">
-        Per Page
-        <span class="caret"></span>
-      </a>
-      <ul id="catalogue-per-page" class="dropdown-menu">
-        <li>
-          <a>10</a>
-        </li>
-        <li>
-          <a>20</a>
-        </li>
-        <li>
-          <a>30</a>
-        </li>
-      </ul>
+  <div class="catalogue-options" style="float:right; display: flex">
+    <div id="catalogue-sort">
+      Sort by
+      <select>
+        <option value="">Relevance</option>
+        <option value="alphabetic">Alphabetic</option>
+        <option value="publish_date">Publish date</option>
+        <option value="approve_date">Added date</option>
+      </select>
+    </div>
+    <div id="catalogue-per-page">
+      Per page
+      <select>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+      </select>
     </div>
   </div>
+</div>
+
+  <!-- <div class="catalogue&#45;options dropdown" style="float:right"> -->
+  <!--   <div class="btn&#45;group"> -->
+  <!--  -->
+  <!--     <a class="btn dropdown&#45;toggle" data&#45;toggle="dropdown"> -->
+  <!--       Sorted by <span id="sort_on_label">relevance</span> -->
+  <!--       <span class="caret"></span> -->
+  <!--     </a> -->
+  <!--     <ul class="dropdown&#45;menu"> -->
+  <!--       <li> -->
+  <!--         <a data&#45;val="">Relevance</a> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <a data&#45;val="alphabetic">Alphabetic</a> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <a data&#45;val="publish_date">Publish date</a> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <a data&#45;val="approve_date">Added date</a> -->
+  <!--       </li> -->
+  <!--     </ul> -->
+  <!--     <div id="catalogue&#45;sort" style="display:none"> -->
+  <!--       <select> -->
+  <!--         <option value="">Relevance</option> -->
+  <!--         <option value="alphabetic">Alphabetic</option> -->
+  <!--         <option value="publish_date">Publish date</option> -->
+  <!--         <option value="approve_date">Added date</option> -->
+  <!--       </select> -->
+  <!--     </div> -->
+  <!--  -->
+  <!--     <a class="btn dropdown&#45;toggle" data&#45;toggle="dropdown"> -->
+  <!--       Per Page -->
+  <!--       <span class="caret"></span> -->
+  <!--     </a> -->
+  <!--     <ul id="catalogue&#45;per&#45;page" class="dropdown&#45;menu"> -->
+  <!--       <li> -->
+  <!--         <a>10</a> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <a>20</a> -->
+  <!--       </li> -->
+  <!--       <li> -->
+  <!--         <a>30</a> -->
+  <!--       </li> -->
+  <!--     </ul> -->
+  <!--   </div> -->
+  <!-- </div> -->
 </div>
 
 <div class="catalogue-container" style="display:none">

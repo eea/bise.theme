@@ -26,15 +26,18 @@ define([
       indexes: [],
       query: '',
       page: 1,
-      per: 10
+      per: 10,
+      sort_on: 'alphabetic'
     },
 
     events: {
-      "submit #catalogue-search-form"  : "fillQueryAndRun",
-      "click #catalogue-sort li a"     : "setSorting",
-      "click #catalogue-per-page li a" : "setPerPage",
-      "click .pager .p"                : "goPrevPage",
-      "click .pager .n"                : "goNextPage"
+      "submit #catalogue-search-form":     "fillQueryAndRun",
+      // "click #catalogue-sort li a"     : "setSorting",
+      // "click #catalogue-per-page li a" : "setPerPage",
+      "change #catalogue-sort select":     "setSorting",
+      "change #catalogue-per-page select": "setPerPage",
+      "click .pager .p":                   "goPrevPage",
+      "click .pager .n":                   "goNextPage"
     },
 
     initialize: function(options) {
@@ -107,12 +110,13 @@ define([
 
     // Search Options
     setSorting: function(e){
-      this.queryparams.sort = $('#catalogue-sort select').val()
+      this.queryparams.sort_on = $('#catalogue-sort select').val()
       this.runQuery()
     },
     setPerPage: function(e){
       this.queryparams.page = 1
-      this.queryparams.per = parseInt($(e.target).html());
+      this.queryparams.per = $('#catalogue-per-page select').val()
+		// this.queryparams.per = parseInt($(e.target).html());
       this.runQuery()
     },
     goPrevPage: function(e){
