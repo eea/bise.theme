@@ -1,21 +1,16 @@
 <li>
-  <% if (Catalogue.isFacetSelected('site', undefined )){ %>
-    <a class="all active">All Libraries</a>
-  <% } else { %>
-    <a class="all">All Libraries</a>
-  <% } %>
+  <% selected = Catalogue.isFacetSelected('site', undefined ) %>
+  <a class="all <% if (selected) print('active') %>">All Libraries</a>
 </li>
+
 <% _.each(terms, function(t){ %>
   <li>
-    <% if (Catalogue.isFacetSelected('site', t.term )){ %>
-      <a class="library active" data-facet="site" data-value="<%= t.term %>">
-        <%= t.term %>
-      </a>
-    <% } else { %>
-      <a class="library" data-facet="site" data-value="<%= t.term %>">
-        <%= t.term %>
-      </a>
-    <% } %>
+    <% selected = Catalogue.isFacetSelected('site', t.term ) %>
+    <a class="library <% if (selected) print('active') %>"
+       data-facet="site"
+       data-value="<%= t.term %>">
+      <%= t.term %>
+    </a>
     <span class="count"> <%= t.count %> </span>
   </li>
 <% }) %>

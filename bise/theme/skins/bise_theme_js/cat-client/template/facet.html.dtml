@@ -1,59 +1,64 @@
-<div class="facet-header closed">
-  <legend><%= this.titleFor(title) %></legend>
-  <div class="triangle"></div>
-</div>
-
-<% if (typeof(terms) != 'undefined' ){ %>
-  <ul>
-      <% _.each(terms, function(t) { %>
-        <% if (t.term != ''){ %>
-          <li class="facet-item">
-            <% if (Catalogue.isFacetSelected(title, t.term )){ %>
-              <a class="facet-remove" data-facet="<%= title %>" data-value="<%= t.term %>">
-                Remove
-              </a>
-            <% } else { %>
-              <span class="facet-count">
-                <%= t.count %>
-              </span>
-            <% } %>
-            <a class="facet-link" data-facet="<%= title %>" data-value="<%= t.term %>">
-              <%= t.term %>
-            </a>
-          </li>
-        <% } %>
-      <% }) %>
+<fieldset class="facet">
+  <div class="facet-header" title="Expand/Collapse filter">
+    <h5 class="facet-legend"><%= this.titleFor(title) %></h5>
+    <span class="facet-toggle toggle-collapse">
+      <span class="sr-only">Expand/Collapse filter</span>
+    </span>
+  </div>
+  <div class="facet-body">
+    <% if (typeof(terms) != 'undefined' ){ %>
+      <ul>
+        <% _.each(terms, function(t, index) { %>
+          <% if (t.term != ''){ %>
+            <% selected = Catalogue.isFacetSelected(title, t.term) %>
+            <li class="facet-item">
+              <input type="checkbox"
+                     name="<%= title %>"
+                     value="<%= t.term %>"
+                     class="facet-input hidden-input"
+                     id="<% print(title + index) %>"
+                     <% if (selected) print('checked') %>
+              />
+              <label for="<% print(title + index) %>">
+                <%= t.term %>
+                <small class="count"><%= t.count %></small>
+              </label>
+            </li>
+          <% } %>
+        <% }) %>
+      </ul>
       <% if (terms.length > 5){ %>
-        <li class="show-more">
-          <a>
-            -- Show/Hide more... --
-          </a>
-        </li>
+        <button type="button" class="btn btn-link facet-showmore">
+          More&hellip;
+        </button>
       <% } %>
-  </ul>
-<% } else { %>
-  <ul>
-    <% _.each(entries.reverse(), function(e) { %>
-      <li class="facet-item">
-        <% d = new Date(e.time) %>
-        <% if (Catalogue.isFacetSelected(title, d.getFullYear() )){ %>
-          <a class="facet-remove" data-facet="<%= title %>" data-value="<%= d.getFullYear() %>">
-            Remove
-          </a>
-        <% } else { %>
-          <span class="facet-count">
-            <%= e.count %>
-          </span>
-        <% } %>
-        <a class="facet-link" data-facet="<%= title %>" data-value="<%= d.getFullYear() %>"><%= d.getFullYear() %></a>
-      </li>
-    <% }) %>
-    <% if (entries.length > 5){ %>
-      <li class="show-more">
-        <a>
-          -- Show/Hide more... --
-        </a>
-      </li>
+    <% } else { %>
+      <ul>
+        <% _.each(entries.reverse(), function(e, index) { %>
+          <li class="facet-item">
+            <% d = new Date(e.time) %>
+            <% selected = Catalogue.isFacetSelected(title, d.getFullYear()) %>
+
+            <input type="checkbox"
+                   name="<%= title %>"
+                   value="<%= d.getFullYear() %>"
+                   class="facet-input hidden-input"
+                   id="<% print(title + index) %>"
+                   <% if (selected) print('checked') %>
+            />
+            <label for="<% print(title + index) %>">
+              <%= d.getFullYear() %>
+              <small class="count"><%= e.count %></small>
+            </label>
+          </li>
+        <% }) %>
+      </ul>
+
+      <% if (entries.length > 5){ %>
+        <button type="button" class="btn btn-link facet-showmore">
+          More&hellip;
+        </button>
+      <% } %>
     <% } %>
-  </ul>
-<% } %>
+  </div>
+</fieldset>

@@ -97,9 +97,10 @@ define([
 
     fillQueryAndRun: function(e){
       e.preventDefault()
-      var q = $('#catalogue-search-form #query').val()
+      $searchEl = $('#catalogue-search-input');
+      var q = $searchEl.val()
       if (q === 'undefined') q = ''
-      $('#catalogue-search-form input').val('')
+      $searchEl.val('');
       this.queryparams = {
         indexes: this._getSelectedCategories(),
         query: q.replace(/(<([^>]+)>)/ig,""),
@@ -110,12 +111,12 @@ define([
 
     // Search Options
     setSorting: function(e){
-      this.queryparams.sort_on = $('#catalogue-sort select').val()
+      this.queryparams.sort_on = $('#catalogue-sort').val()
       this.runQuery()
     },
     setPerPage: function(e){
       this.queryparams.page = 1
-      this.queryparams.per = $('#catalogue-per-page select').val()
+      this.queryparams.per = $('#catalogue-per-page').val()
 		// this.queryparams.per = parseInt($(e.target).html());
       this.runQuery()
     },
@@ -175,17 +176,27 @@ define([
       return array
     },
 
-    // Render the pagination with Bootstrap style
+    // Render the pagination
     _drawPagination: function(){
-      this.$el.find('.catalogue-status').html(this.queryparams.page+'/'+this._getLastPage())
+      this.$el.find('.catalogue-status').html(
+        'Page ' + this.queryparams.page +
+        ' of ' + this._getLastPage()
+      );
 
-      if (this.queryparams.page == 1) this.$('.p').parent().addClass('disabled')
-      else this.$('.p').parent().removeClass('disabled')
+      next = this.$('.catalogue-next')[0];
+      prev = this.$('.catalogue-previous')[0];
 
+      // next
       if (this.queryparams.page == this._getLastPage())
-        this.$('.n').parent().addClass('disabled')
+        next.setAttribute('disabled', 'disabled');
       else
-        this.$('.n').parent().removeClass('disabled')
+        next.removeAttribute('disabled', 'disabled');
+
+      // prev
+      if (this.queryparams.page == 1)
+        prev.setAttribute('disabled', 'disabled');
+      else
+        prev.removeAttribute('disabled', 'disabled');
     },
     _getLastPage: function(){
       var pages = Math.floor(this.Results.total / this.queryparams.per)
@@ -198,13 +209,16 @@ define([
     _drawSearches: function(){
       var text = '';
       var esc = new Backbone.Model({text:this.queryparams.query});
-      if (this.queryparams.query != '' && this.queryparams.query != undefined) {
-        this.$('#query').val(this.queryparams.query);
-        text = text.concat('for <em>' + esc.escape('text') + '</em>. ');
-      }
       if (this.Results.total != undefined) {
-        text = text.concat('<small>(' + this.Results.total + ' results)</small>');
+        text = text.concat(
+          this.Results.total + ' ' +
+          (this.Results.total === 1 ? 'result' : 'results')
+        );
       }
+      // if (this.queryparams.query != '' && this.queryparams.query != undefined) {
+      //   $('#catalogue-search-input').val(this.queryparams.query);
+      //   text = text.concat('for <em>' + esc.escape('text') + '</em>');
+      // }
       this.$('.catalogue-query').html(text);
     },
 
@@ -227,23 +241,37 @@ define([
 
     // Renders available categories
     _drawCategories: function(){
-      this.$("#catalogue-categories").html('');
-      if (this.searchType === 'advanced')
-        for (var k in this.all_indexes) this._addWrappedCategory(k)
-      else for (var k in this.bise_indexes) this._addWrappedCategory(k)
-      this.$('#catalogue-categories input').on(
-        'change', $.proxy(this.fillQueryAndRun, this));
+      this.$("#catalogue-categories .facet-body").html('');
+
+      var categoryFacet = $('<ul>');
+
+      for (var k in this.all_indexes) {
+        item = this._addWrappedCategory(k);
+        categoryFacet.append(item);
+      }
+      
+      categoryFacet.find('input').on('change', $.proxy(this.fillQueryAndRun, this));
+
+      this.$("#catalogue-categories .facet-body").append(categoryFacet);
     },
     _addWrappedCategory: function(key, checked){
       var checked = _.contains(this.queryparams.indexes, key)
       if (this.queryparams.indexes.length == 0) checked = true;
-      var input = $('<input>').attr({
-        type: 'checkbox', id: key, name: key, value: key, checked: checked
+      var input = $('<input>', {
+        'type': 'checkbox', 
+        'id': key, 
+        'name': key, 
+        'value': key,
+        'class': 'facet-input hidden-input',
+        'checked': checked
       });
-      var label = $('<label>').append(input).append(this.all_indexes[key])
-      var category = $('<div class="catalogue-category">').append(label)
-      if (checked) category.addClass('checked')
-      this.$("#catalogue-categories").append(category)
+      var label = $('<label>', {
+        'for': key,
+        'text': this.all_indexes[key]
+      });
+      return $('<li>', {
+        'class': 'facet-item'
+      }).append(input, label);
     },
 
     // Renders facets on sidebar
@@ -261,12 +289,12 @@ define([
             m = new Backbone.Model(facet)
             m.title = title
 
-            var n = $('<div>').addClass('catalogue-facet '+title)
-            this.$("#catalogue-facets").append(n)
-            new FacetView({
-              el: this.$('.catalogue-facet.'+title),
+            var facet = new FacetView({
+              // el: this.$('.facet'),
               model: m
-            }).render()
+            }).render();
+
+            $("#catalogue-facets").append(facet.el);
           }
         }
       }

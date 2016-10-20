@@ -1,11 +1,4 @@
-<div class="catalogue-toolbar">
-  <form id="catalogue-search-form">
-    <input id="query" name="query" type="text"
-    class="input-medium search-query"
-    placeholder="Search..." autofocus="true">
-    <button type="submit">&nbsp;&nbsp;Search</button>
-  </form>
-</div>
+
 
 <div class="catalogue-ie-msg" style="display:none">
   <strong>NOTE:</strong>
@@ -58,48 +51,7 @@
   </div>
 </div>
 
-<div class="catalogue-statistics widget" style="display:none">
-  <div class="row-fluid">
-    <div class="span6">
-      <h3 class="widget-heading">Popular Terms</h3>
-      <div class="catalogue-cloud-tags"></div>
-    </div>
-    <div class="span6">
-      <h3 class="widget-heading">Last Added</h3>
-      <ul class="catalogue-last-added"></ul>
-    </div>
-  </div>
-</div>
 
-<div class="catalogue-loading">
-  <div class="gif"></div>
-</div>
-
-<div class="catalogue-libraries"></div>
-
-<div class="catalogue-navigation-bar" style="display:none">
-  <span class="catalogue-query">
-  </span>
-  <div class="catalogue-options" style="float:right; display: flex">
-    <div id="catalogue-sort">
-      Sort by
-      <select>
-        <option value="">Relevance</option>
-        <option value="alphabetic">Alphabetic</option>
-        <option value="publish_date">Publish date</option>
-        <option value="approve_date">Added date</option>
-      </select>
-    </div>
-    <div id="catalogue-per-page">
-      Per page
-      <select>
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="30">30</option>
-      </select>
-    </div>
-  </div>
-</div>
 
   <!-- <div class="catalogue&#45;options dropdown" style="float:right"> -->
   <!--   <div class="btn&#45;group"> -->
@@ -151,27 +103,80 @@
 </div>
 
 <div class="catalogue-container" style="display:none">
+  <main class="catalogue-main">
 
-  <div class="catalogue-content span8" style="">
+    <div class="catalogue-toolbar">
+      <form id="catalogue-search-form">
+        <input id="catalogue-search-input" name="query" type="text" placeholder="Search..." autofocus="true">
+        <button id="catalogue-search-submit" class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
 
-    <ul id="catalogue-results" style=""></ul>
-
-    <div class="row-fluid" style="margin-bottom: 20px">
-      <div class="span4"></div>
-      <div class="span4 catalogue-status"></div>
-      <div class="span4" style="padding-top: 8px">
-        <ul class="pager">
-          <li><a class="p">Prev</a></li>
-          <li><a class="n">Next</a></li>
-        </ul>
+    <div class="catalogue-statistics widget" style="display:none">
+      <div class="row-fluid">
+        <div class="span6">
+          <h3 class="widget-heading">Popular Terms</h3>
+          <div class="catalogue-cloud-tags"></div>
+        </div>
+        <div class="span6">
+          <h3 class="widget-heading">Last Added</h3>
+          <ul class="catalogue-last-added"></ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="catalogue-sidebar">
-    <div id="catelogue-categories-menu">Categories</div>
-    <div id="catalogue-categories"></div>
-    <div id="catalogue-facets"></div>
-  </div>
+    <div class="catalogue-loading">
+      <div class="gif"></div>
+    </div>
 
+    <nav class="catalogue-libraries"></nav>
+
+    <div class="catalogue-navigation-bar" style="display:none">
+      <span class="catalogue-query">
+      </span>
+      &nbsp;|&nbsp;
+      <label for="catalogue-sort" class="catalogue-results-option">
+        <span class="sr-only">Sort by</span>
+        <select id="catalogue-sort">
+          <option value="">Sorted by relevance</option>
+          <option value="alphabetic">Sorted alphabetically</option>
+          <option value="publish_date">Sorted by publish date</option>
+          <option value="approve_date">Sorted by added date</option>
+        </select>
+      </label>
+      &nbsp;|&nbsp;
+      <label for="catalogue-per-page" class="catalogue-results-option">
+        <span class="sr-only">Results per page</span>
+        <select id="catalogue-per-page">
+          <option value="10">10 per page</option>
+          <option value="20">20 per page</option>
+          <option value="30">30 per page</option>
+        </select>
+      </label>
+    </div>
+
+
+    <ul id="catalogue-results"></ul>
+
+
+    <nav class="catalogue-pagination">
+      <a href="" class="catalogue-previous">Previous</a>
+      <a href="" class="catalogue-next">Next</a>
+      <span class="catalogue-status"></span>
+    </nav>
+  </main>
+  <aside class="catalogue-aside">
+    <div class="catalogue-sidebar">
+      <h4 class="catalogue-sidebar-title">Filter results</h4>
+      <div id="catalogue-categories">
+        <fieldset class="facet">
+          <div class="facet-header">
+            <h4 class="facet-legend">By Categories</h4>
+          </div>
+          <div class="facet-body"></div>
+        </fieldset>
+      </div>
+      <div id="catalogue-facets"></div>
+    </div>    
+  </aside>
 </div>

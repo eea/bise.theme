@@ -11,6 +11,7 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
 
     titles: {
       site: 'By Source',
+      category: 'By Category',
       author: 'By Author',
       countries: 'By Country',
       biographical_region: 'By Biogeographical Region',
@@ -27,10 +28,9 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
     },
 
     events: {
-      "click .facet-link": "applyFilter",
-      "click .facet-remove": "unapplyFilter",
+      "click .facet-input": "toggleFilter",
       "click .facet-header": "toggleCollapse",
-      "click .show-more": "toggleShowFirsts"
+      "click .facet-showmore": "toggleShowFirsts"
     },
 
     initialize: function() {
@@ -39,20 +39,20 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
     },
 
     render: function() {
-      $(this.el).html(this.template(this.model.toJSON()));
-      if (!this.isOpen) this.$el.find('ul').hide()
-      if (this.isShowingFirstTen) this.$el.find('ul').addClass('first-five')
+      this.setElement(this.template(this.model.toJSON()));
+      if (!this.isOpen) this.$el.addClass('is-closed');
+      if (this.isShowingFirstTen) this.$el.addClass('is-truncated');
+
       return this;
     },
 
-    applyFilter: function(e) {
-      el = $(e.currentTarget)
-      Catalogue.mergeFacet(el.data('facet'), el.data('value'))
-    },
+    toggleFilter: function(e) {
+      el = $(e.currentTarget);
 
-    unapplyFilter: function(e) {
-      el = $(e.currentTarget)
-      Catalogue.removeFacet(el.data('facet'))
+      if (el.checked)
+        Catalogue.mergeFacet(el.name, el.value)
+      else
+        Catalogue.removeFacet(el.name)  
     },
 
     titleFor: function(facet) {
@@ -71,14 +71,11 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
     },
 
     toggleCollapse: function(e) {
-      el = $(e.currentTarget).next().slideToggle($.proxy(this.rotateTriangle, this));
-    },
-    rotateTriangle: function(e){
-      this.$el.find('.triangle').toggleClass('up');
+      $(this.el).toggleClass('is-closed');
     },
 
     toggleShowFirsts: function(e) {
-      this.$el.find('ul').toggleClass('first-five')
+      $(this.el).toggleClass('is-truncated');
     }
   })
   return FacetView;

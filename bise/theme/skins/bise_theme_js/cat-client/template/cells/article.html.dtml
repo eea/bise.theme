@@ -1,22 +1,18 @@
 <div class="catalogue-cell">
-  <span class="label label-success">
-    <%= site.name %>
-  </span>
-
-  <div class="cell-title">
+  <h4 class="cell-title">
     <a target="_blank" href="<%= source_url %>">
       <%= title %>
     </a>
     <% if (title != english_title){ %>
-      <small>
-        <strong><%= english_title %></strong>
-      </small><br/>
+      <small class="cell-alternative-title" title="English title">
+        <%= english_title %>
+      </small>
     <% } %>
-  </div>
+  </h4>
 
-  <div class="cell-subtitle">
-    <strong>Web Page</strong>
-    published on
-    <%= published_on %>
-  </div>
+  <span class="cell-footer">
+    <span class="cell-source"><%= site.name %></span>
+    &middot; Published on <%= published_on %>
+  </span>
+  <!-- <strong>Web Page</strong> -->
 </div>
