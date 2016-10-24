@@ -114,4 +114,12 @@
         permission="zope.Public"
         />
 
+    <browser:page
+        name="site_title"
+        for="*"
+        class=".sitetitle.SiteTitle"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
 </configure>
