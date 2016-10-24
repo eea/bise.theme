@@ -155,9 +155,7 @@
       </label>
     </div>
 
-
     <ul id="catalogue-results"></ul>
-
 
     <nav class="catalogue-pagination">
       <a href="" class="catalogue-previous">Previous</a>
@@ -177,6 +175,6 @@
         </fieldset>
       </div>
       <div id="catalogue-facets"></div>
-    </div>    
+    </div>
   </aside>
 </div>

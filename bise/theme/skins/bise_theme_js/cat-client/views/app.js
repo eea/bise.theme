@@ -31,13 +31,13 @@ define([
     },
 
     events: {
-      "submit #catalogue-search-form":     "fillQueryAndRun",
+      "submit #catalogue-search-form": "fillQueryAndRun",
+      "change #catalogue-sort":        "setSorting",
+      "change #catalogue-per-page":    "setPerPage",
+      "click .pager .p":               "goPrevPage",
+      "click .pager .n":               "goNextPage"
       // "click #catalogue-sort li a"     : "setSorting",
       // "click #catalogue-per-page li a" : "setPerPage",
-      "change #catalogue-sort select":     "setSorting",
-      "change #catalogue-per-page select": "setPerPage",
-      "click .pager .p":                   "goPrevPage",
-      "click .pager .n":                   "goNextPage"
     },
 
     initialize: function(options) {
@@ -249,7 +249,7 @@ define([
         item = this._addWrappedCategory(k);
         categoryFacet.append(item);
       }
-      
+
       categoryFacet.find('input').on('change', $.proxy(this.fillQueryAndRun, this));
 
       this.$("#catalogue-categories .facet-body").append(categoryFacet);
@@ -258,9 +258,9 @@ define([
       var checked = _.contains(this.queryparams.indexes, key)
       if (this.queryparams.indexes.length == 0) checked = true;
       var input = $('<input>', {
-        'type': 'checkbox', 
-        'id': key, 
-        'name': key, 
+        'type': 'checkbox',
+        'id': key,
+        'name': key,
         'value': key,
         'class': 'facet-input hidden-input',
         'checked': checked
