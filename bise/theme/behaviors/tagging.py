@@ -3,16 +3,12 @@ from five import grok
 from plone.directives import form
 from plone.memoize import ram
 from time import time
-from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from z3c.formwidget.optgroup.widget import OptgroupFieldWidget
 from z3c.formwidget.optgroup.widget import OptgroupTerm
 from zope import schema
 from zope.interface import alsoProvides
 from zope.schema.interfaces import IVocabularyFactory
-from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-
-
 import json
 import requests
 
@@ -84,7 +80,8 @@ class CatalogueTagVocabulary(object):
                     )
 
                     i = i + 1
-        return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.title, y.title)))
+        return SimpleVocabulary(
+                sorted(terms, lambda x, y: cmp(x.title, y.title)))
 
 grok.global_utility(
     CatalogueTagVocabulary,
@@ -112,7 +109,7 @@ class TargetVocabulary(object):
             target = targetdict.get('target', {})
             if target:
                 target_title = target.get('title', '')
-                target_id = target.get('id', '')
+                # target_id = target.get('id', '')
                 terms.append(
                     OptgroupTerm(
                         value=target_title,
@@ -126,7 +123,8 @@ class TargetVocabulary(object):
                 log = getLogger(__name__)
                 log.info('Target value emtpy: {0}'.format(targetdict))
 
-        return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.title, y.title)))
+        return SimpleVocabulary(
+                sorted(terms, lambda x, y: cmp(x.title, y.title)))
 
 grok.global_utility(
     TargetVocabulary,
@@ -143,7 +141,7 @@ class ActionVocabulary(object):
         for targetdict in targets:
             target = targetdict.get('target')
             target_title = target.get('title')
-            target_id = target.get('id')
+            # target_id = target.get('id')
             for action in target.get('strategy_actions'):
                 action_title = action.get('title')
                 terms.append(
@@ -155,7 +153,8 @@ class ActionVocabulary(object):
                     )
                 )
 
-        return SimpleVocabulary(sorted(terms, lambda x, y: cmp(x.optgroup, y.optgroup)))
+        return SimpleVocabulary(
+                sorted(terms, lambda x, y: cmp(x.optgroup, y.optgroup)))
 
 grok.global_utility(
     ActionVocabulary,
