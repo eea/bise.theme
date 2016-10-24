@@ -30,8 +30,12 @@ class ImportStories(grok.View):
 
                 )
             newsitem = context.get(id)
-            text = u' '.join((safe_unicode(item['description'], 'latin-1'), safe_unicode(item['body'], 'latin-1')))
-            text = text.replace(u'\x96', u'').replace(u'\x92', u'').replace(u'\x93', u'').replace(u'\x94', u'')
+            text = u' '.join(
+                (safe_unicode(item['description'], 'latin-1'),
+                 safe_unicode(item['body'], 'latin-1'))
+            )
+            text = text.replace(u'\x96', u'').replace(u'\x92', u'')\
+                .replace(u'\x93', u'').replace(u'\x94', u'')
             newsitem.text = RichTextValue(text, 'text/html', 'text/html')
             newsitem.setModificationDate(item['last_modification'])
             newsitem.setEffectiveDate(item['releasedate'])
@@ -48,5 +52,3 @@ class ImportStories(grok.View):
             except Exception, e:
                 log.exception(e)
         return 1
-
-

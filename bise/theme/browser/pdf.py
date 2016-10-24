@@ -5,7 +5,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from eea.converter.browser.app.pdfview import Header as BaseHeader
 from zope.component import getMultiAdapter
 
-    
+
 class Header(BaseHeader):
     """ PDF Header
     """
@@ -25,8 +25,7 @@ class Header(BaseHeader):
     def body(self):
         """ Header body
         """
-        print "rendering header" 
+        print "rendering header"
         text = self.request.get('subsection', '')
         text = self.truncate(text, 75, 5, suffix='')
         return text
-
