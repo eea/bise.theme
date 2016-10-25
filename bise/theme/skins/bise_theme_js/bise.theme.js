@@ -20,17 +20,84 @@ $(document).ready(function(){
 
   //jQuery('body').bugme({remember:false});
 
-  if ($("#form-widgets-ICatalogueTags-cataloguetags").length){
-    $("#form-widgets-ICatalogueTags-cataloguetags").chosen({width: "100%", placeholder_text_multiple: "Select tags"});
+  // if ($("#form-widgets-ICatalogueTags-cataloguetags").length){
+  //   $("#form-widgets-ICatalogueTags-cataloguetags").chosen({width: "100%", placeholder_text_multiple: "Select tags"});
+  // }
+    //
+  var $tags = $("#form-widgets-ICatalogueTags-cataloguetags");
+
+  if ($tags.length){
+
+    var data = [];
+    $("optgroup", $tags).each(function(i, v){
+      // console.log(i, v);
+      var $opt = $(v);
+      var label = $opt.attr('label');
+      // data.push($(v).attr({'id': i + 'x', text:'label'}));
+      var branch = {
+        id: i + 100,
+        text: label,
+        submenu: {items: [], showSearchInput:true}
+      };
+
+      var thirdLevel = {};
+
+      // TODO: use submenu
+
+      $('option', $opt).each(function(k, l){
+        var label = $(l).html();
+        var id = $(l).attr('value');
+        var _sub_3 = label.match(/(.+?):(.+?)$/);
+        if ((_sub_3 !== null) && (_sub_3.length === 3)) {
+          if (!(_sub_3[1] in thirdLevel)) {
+            thirdLevel = {
+              id: id,
+              text: _sub_3[1],
+              items:[],
+              showSearchInput: true
+            };
+          }
+          thirdLevel.items.push({
+            id: id,
+            text: _sub_3[2]
+          });
+        } else {
+          branch.submenu.items.push({id: id, text: label});
+        }
+      });
+
+      if (Object.keys(thirdLevel).length > 0) {
+        console.log(thirdLevel);
+        branch.submenu.items.push(thirdLevel);
+      }
+      data.push(branch);
+    });
+    // console.log(data);
+
+    // change the select to div, this way selectivize doesn't use the select options
+    var $sel = $("<div>");
+    $.each($tags.get(0).attributes, function(i, attrib){
+      $sel.attr(attrib.name, attrib.value);
+    });
+    // Replace the current element with the new one and carry over the contents
+    $tags.replaceWith($sel);
+
+    $sel.selectivity(
+      {
+        'multiple': true,
+        items: data,
+        'placeholder': 'Select tags'
+      }
+    );
   }
 
   if ($("#form-widgets-ICatalogueTags-actions").length){
     $("#form-widgets-ICatalogueTags-actions").chosen({width: "100%", placeholder_text_multiple: "Select actions"});
-  }  
+  }
 
   if ($("#form-widgets-ICatalogueTags-targets").length){
     $("#form-widgets-ICatalogueTags-targets").chosen({width: "100%", placeholder_text_multiple: "Select targets"});
-  } 
+  }
 
   $('.scrollingtext').bind('marquee', function() {
       var ob = $(this);
@@ -50,7 +117,7 @@ $(document).ready(function(){
   }).trigger('marquee');
 
   if($("#counter").length){
-    var oneDay = 24*60*60*1000; 
+    var oneDay = 24*60*60*1000;
     var firstDate = new Date(2020,11,31,23,59);
     var secondDate = new Date();
 
@@ -71,7 +138,7 @@ $(document).ready(function(){
         var trigger = '#portal-globalnav li div#portaltab-' + sid + ', #portalsubtabs-' + sid;
         trigger = $(trigger);
         //var sid;// = 'menuOp3';
-        
+
         $(trigger).mouseenter(function (e) {
           if (beingShown || shown){
             if (hideDelayTimer) {
@@ -79,21 +146,21 @@ $(document).ready(function(){
               }
           }else{
           $(this).addClass("hasFocus");
-          setTimeout(function(){ 
+          setTimeout(function(){
             if ($('#portaltab-' + sid).hasClass("hasFocus")){
               $('#portaltab-' + sid).removeClass("hasFocus");
               if($('#portal-globalnav li div').data('hover')){
-                sid = $('#portal-globalnav li div').attr('id'); 
+                sid = $('#portal-globalnav li div').attr('id');
               }
               /**sid = $(e.target.parentNode).attr('id');
               if (sid == undefined){
                 sid = $(e.target).attr('id');
               }*/
-              
+
               if (hideDelayTimer) {
                 clearTimeout(hideDelayTimer);
               }
-              
+
               if (beingShown || shown) {
                 // don't trigger the animation again
                 return;
@@ -120,7 +187,7 @@ $(document).ready(function(){
                   shown = true;
                 });
               }
-              
+
               return false;
             }
           }, 1, 'sid', 'time', 'hideDelay', 'hideDelayTimer', 'beingShown', 'shown');
@@ -131,7 +198,7 @@ $(document).ready(function(){
           if (hideDelayTimer) {
             clearTimeout(hideDelayTimer);
           }
-          
+
           hideDelayTimer = setTimeout(function () {
             hideDelayTimer = null;
             $('#portalsubtabs-' + sid).animate({
@@ -142,11 +209,11 @@ $(document).ready(function(){
               $('#portalsubtabs-' + sid).css('display', 'none');
             });
           }, hideDelay);
-          
+
           return false;
         });
     }
-    
+
     showSubMenu('topics');
     showSubMenu('policy');
     showSubMenu('data');
@@ -170,11 +237,11 @@ $(document).ready(function(){
           $.each(result.results.bindings, function(key, value) {
             country = new Object();
             countryCode = ""
-            for (name in value){    
+            for (name in value){
               if (name == "country_code"){
                 countryCode = value[name].value;
               }else{
-                country[name] = value[name].value;  
+                country[name] = value[name].value;
                }
             }
             countries[countryCode] = country;
@@ -221,7 +288,7 @@ $(document).ready(function(){
                   if (countries[country].email2.match(regEx)){
                     contact += "<br>" + countries[country].email2.replace(regEx, "<a href=\"mailto:$1\">$1</a>");
                   }
-                }            
+                }
                 $('#infobox-contact').html(contact);
                 $('#infobox-url').html(countries[country].url);
                 $('#infobox-url').attr("href", countries[country].url);
@@ -241,12 +308,12 @@ $(document).ready(function(){
                 $('#infobox-organisation').html("");
               }
               var top = e.pageY;
-              
-              
+
+
               var $body = $(this.ie6 ? document.body : document);
               if (e.pageY + $('#infobox').height() + 4 > $(window).height() + $body.scrollTop()){
                 top = $(window).height() + $body.scrollTop() + 4 - $('#infobox').height() - 9;
-                
+
               }else{
                 top = top - 44;
               }
@@ -257,11 +324,11 @@ $(document).ready(function(){
               });
               $('#infobox-arrow').css({
                 'top': arrowTop
-              }) */ 
+              }) */
               $('#infobox').css({
                 'left': e.pageX - $('#infobox').parent().offset().left + 10,
                 'top': e.pageY - $('#infobox').parent().offset().top - 36
-              }).show(100);  
+              }).show(100);
               /**$('#infobox').css({
                 'left': e.pageX + 10 - 450,
                 'top': top - 210

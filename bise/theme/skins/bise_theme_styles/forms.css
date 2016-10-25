@@ -1,4 +1,4 @@
-/* @group Forms */
+/* @group Forms {{{ */
 
 fieldset,
 .editionComment {
@@ -207,6 +207,24 @@ body.template-new-user #content input {
 margin-left: 0.25em;
 }
 
-/* @end */
+/* @end }}} */
+
+/* Selectivize tweaks {{{ */
+
+.selectivity-multiple-input-container {
+  width: 100%;
+  max-height: 20em;
+}
+.selectivity-multiple-input-container input {
+  width: 6em !important;
+}
+#form-widgets-ICatalogueTags-cataloguetags {
+  width: 26em;
+}
+
+.optgroup-widget .selectivity-clearfix {
+    clear: inherit;
+}
+/* end selectivize }}} */
 
 /* @end */

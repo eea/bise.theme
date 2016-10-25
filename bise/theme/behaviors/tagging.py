@@ -1,4 +1,5 @@
 from bise.theme import themeMessageFactory as _
+from bise.theme.widget.selectize import SelectizeFieldWidget
 from five import grok
 from plone.directives import form
 from plone.memoize import ram
