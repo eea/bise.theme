@@ -1,5 +1,4 @@
 from bise.theme import themeMessageFactory as _
-from bise.theme.widget.selectize import SelectizeFieldWidget
 from five import grok
 from plone.directives import form
 from plone.memoize import ram
@@ -79,6 +78,7 @@ class CatalogueTagVocabulary(object):
                             title=value,
                             optgroup=parent)
                     )
+                    print terms[-1].value, terms[-1].token
 
                     i = i + 1
         return SimpleVocabulary(

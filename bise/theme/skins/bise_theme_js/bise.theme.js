@@ -30,65 +30,71 @@ $(document).ready(function(){
 
     var data = [];
     $("optgroup", $tags).each(function(i, v){
-      // console.log(i, v);
-      var $opt = $(v);
-      var label = $opt.attr('label');
-      // data.push($(v).attr({'id': i + 'x', text:'label'}));
+
+      var $optgroup = $(v);
+      var label = $optgroup.attr('label');
       var branch = {
         id: i + 100,
         text: label,
         submenu: {items: [], showSearchInput:true}
       };
 
-      var thirdLevel = {};
+      var submenus = {};  // a list of all submenus
 
-      // TODO: use submenu
+      // an optiongroup has multiple options. We want to group
+      // options that have : in them to a separate submenu
 
-      $('option', $opt).each(function(k, l){
+      $('option', $optgroup).each(function(k, l){
+
         var label = $(l).html();
         var id = $(l).attr('value');
-        var _sub_3 = label.match(/(.+?):(.+?)$/);
-        if ((_sub_3 !== null) && (_sub_3.length === 3)) {
-          if (!(_sub_3[1] in thirdLevel)) {
-            thirdLevel = {
+        var entry = {id: id, text: label};
+
+        var m = label.match(/(.+?):(.+?)$/);
+
+        if ((m !== null) && (m.length === 3)) {
+          var root = m[1];
+          var leaf = m[2];
+          if (!(root in submenus)) {
+            submenus[root] = {
               id: id,
-              text: _sub_3[1],
-              items:[],
-              showSearchInput: true
+              text: root,
+              submenu: {items:[], showSearchInput: true},
             };
+            // console.log("Making submenu", root);
           }
-          thirdLevel.items.push({
-            id: id,
-            text: _sub_3[2]
-          });
+          submenus[root].submenu.items.push({id: id, text: leaf});
         } else {
-          branch.submenu.items.push({id: id, text: label});
+          branch.submenu.items.push(entry);
         }
+
       });
 
-      if (Object.keys(thirdLevel).length > 0) {
-        console.log(thirdLevel);
-        branch.submenu.items.push(thirdLevel);
+      for (var key in submenus) {
+        branch.submenu.items.unshift(submenus[key]);
       }
       data.push(branch);
+
     });
-    // console.log(data);
 
     // change the select to div, this way selectivize doesn't use the select options
     var $sel = $("<div>");
-    $.each($tags.get(0).attributes, function(i, attrib){
-      $sel.attr(attrib.name, attrib.value);
-    });
-    // Replace the current element with the new one and carry over the contents
-    $tags.replaceWith($sel);
+    $tags.after($sel).hide();
 
-    $sel.selectivity(
-      {
-        'multiple': true,
-        items: data,
-        'placeholder': 'Select tags'
-      }
+    var sel = $sel.selectivity(
+      {'multiple': true, items: data, 'placeholder': 'Select tags' }
     );
+    sel.selectivity('value', $tags.val());
+
+    sel.on("selectivity-selected", function(){
+      // strip the id numbers from the selected values
+      // var opts = $.map(sel.selectivity('value'), function(v){
+      //   return v.match(/^(\d+?)-(.*)/)[2];
+      // });
+      var opts = sel.selectivity('value');
+      // console.log(opts);
+      $tags.val(opts);
+    });
   }
 
   if ($("#form-widgets-ICatalogueTags-actions").length){

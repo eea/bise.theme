@@ -222,8 +222,8 @@ margin-left: 0.25em;
   width: 26em;
 }
 
-.optgroup-widget .selectivity-clearfix {
-    clear: inherit;
+.selectivity-clearfix {
+    clear: inherit !important;
 }
 /* end selectivize }}} */
 
