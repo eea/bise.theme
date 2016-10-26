@@ -26,6 +26,7 @@ $(document).ready(function(){
     //
   var $tags = $("#form-widgets-ICatalogueTags-cataloguetags");
 
+  // create the selectivize based tag selection widget
   if ($tags.length){
 
     var data = [];
@@ -36,7 +37,7 @@ $(document).ready(function(){
       var branch = {
         id: i + 100,
         text: label,
-        submenu: {items: [], showSearchInput:true}
+        submenu: {items: [], showSearchInput:false}
       };
 
       var submenus = {};  // a list of all submenus
@@ -59,9 +60,8 @@ $(document).ready(function(){
             submenus[root] = {
               id: id,
               text: root,
-              submenu: {items:[], showSearchInput: true},
+              submenu: {items:[], showSearchInput: false},
             };
-            // console.log("Making submenu", root);
           }
           submenus[root].submenu.items.push({id: id, text: leaf});
         } else {
@@ -92,7 +92,6 @@ $(document).ready(function(){
       //   return v.match(/^(\d+?)-(.*)/)[2];
       // });
       var opts = sel.selectivity('value');
-      // console.log(opts);
       $tags.val(opts);
     });
   }
