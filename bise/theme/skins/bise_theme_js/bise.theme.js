@@ -238,7 +238,7 @@ $(document).ready(function(){
         contentType: "application/json",
         dataType: 'jsonp',
         success: function(json) {
-          result = $.parseJSON(json.query.results.body);
+          result = $.parseJSON(json.query.results.body.p);
           countries = new Object();
           $.each(result.results.bindings, function(key, value) {
             country = new Object();
