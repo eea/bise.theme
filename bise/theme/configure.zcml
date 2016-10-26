@@ -10,7 +10,6 @@
    <grok:grok package="." />
 
    <include package=".browser" />
-   <include package=".widget" />
    <include package=".behaviors" />
    <include package=".transmogrifier" />
 
