@@ -27,7 +27,8 @@ define([
       query: '',
       page: 1,
       per: 10,
-      sort_on: 'alphabetic'
+      // sort_on: 'alphabetic'
+      sort_on: 'publish_date'
     },
 
     events: {
@@ -67,7 +68,15 @@ define([
 
       // Get query
       q = this.$el.data('query')
-      if (q != 'undefined' && q != '') this.queryparams.query = q
+      if (q != null && q !== '') {
+        this.queryparams.query = q;
+        $('#catalogue-search-input').val(q);
+        $('#catalogue-sort').val('');   // setting sorting to relevance
+        this.queryparams.sort_on = '';
+      } else {
+        this.queryparams.sort_on = 'publish_date';
+        $("#catalogue-sort").val('publish_date');
+      }
 
       // If CORS not enabled in IE8, show message to activate it
       if (this._isIE() === 8){
@@ -84,6 +93,7 @@ define([
 
     // Refresh data from endpoint
     refreshEndpoint: function(){
+      $('.catalogue-loading .gif').show()
       this.Results = new ResultsCollection(this._getEndpoint())
       this.Results.bind('add', this.addOne)
       this.Results.bind('reset', this.addAll)
@@ -91,6 +101,7 @@ define([
     },
 
     runQuery: function(){
+      console.log('running query');
       $('.catalogue-loading .gif').show()
       this.Results.fetch({ data: $.param(this.queryparams) })
     },
@@ -104,14 +115,18 @@ define([
       this.queryparams = {
         indexes: this._getSelectedCategories(),
         query: q.replace(/(<([^>]+)>)/ig,""),
-        page: 1, per: 10
+        page: 1, per: 10,
+        sort_on: ''     // default sort order is relevance, aka ''
       }
+      $('#catalogue-sort').val('');
+      $searchEl.val(q);
       this.runQuery()
     },
 
     // Search Options
     setSorting: function(e){
       this.queryparams.sort_on = $('#catalogue-sort').val()
+      console.log(this.queryparams)
       this.runQuery()
     },
     setPerPage: function(e){

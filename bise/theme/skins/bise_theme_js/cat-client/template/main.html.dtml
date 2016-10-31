@@ -105,7 +105,7 @@
 
     <div class="catalogue-toolbar">
       <form id="catalogue-search-form">
-        <input id="catalogue-search-input" name="query" type="text" placeholder="Search..." autofocus="true">
+        <input id="catalogue-search-input" name="query" type="text" placeholder="Search..." autofocus="true" />
         <button id="catalogue-search-submit" class="btn btn-primary" type="submit">Search</button>
       </form>
     </div>
@@ -123,9 +123,9 @@
       </div>
     </div>
 
-    <div class="catalogue-loading">
-      <div class="gif"></div>
-    </div>
+    <!-- <div class="catalogue&#45;loading"> -->
+    <!--   <div class="gif"></div> -->
+    <!-- </div> -->
 
     <nav class="catalogue-libraries"></nav>
 
@@ -136,8 +136,8 @@
       <label for="catalogue-sort" class="catalogue-results-option">
         <span class="sr-only">Sort by</span>
         <select id="catalogue-sort">
+          <!-- <option selected="selected" value="alphabetic">Sorted alphabetically</option> -->
           <option value="">Sorted by relevance</option>
-          <option value="alphabetic">Sorted alphabetically</option>
           <option value="publish_date">Sorted by publish date</option>
           <option value="approve_date">Sorted by added date</option>
         </select>
