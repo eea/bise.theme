@@ -123,9 +123,9 @@
       </div>
     </div>
 
-    <!-- <div class="catalogue&#45;loading"> -->
-    <!--   <div class="gif"></div> -->
-    <!-- </div> -->
+    <div class="catalogue-loading">
+      <div class="gif"></div>
+    </div>
 
     <nav class="catalogue-libraries"></nav>
 
