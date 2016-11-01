@@ -35,10 +35,8 @@ define([
       "submit #catalogue-search-form": "fillQueryAndRun",
       "change #catalogue-sort":        "setSorting",
       "change #catalogue-per-page":    "setPerPage",
-      "click .pager .p":               "goPrevPage",
-      "click .pager .n":               "goNextPage"
-      // "click #catalogue-sort li a"     : "setSorting",
-      // "click #catalogue-per-page li a" : "setPerPage",
+      "click .catalogue-previous":     "goPrevPage",
+      "click .catalogue-next":         "goNextPage"
     },
 
     initialize: function(options) {
@@ -101,7 +99,7 @@ define([
     },
 
     runQuery: function(){
-      console.log('running query');
+      // console.log('running query');
       $('.catalogue-loading .gif').show()
       this.Results.fetch({ data: $.param(this.queryparams) })
     },
@@ -126,13 +124,13 @@ define([
     // Search Options
     setSorting: function(e){
       this.queryparams.sort_on = $('#catalogue-sort').val()
-      console.log(this.queryparams)
+      // console.log(this.queryparams)
       this.runQuery()
     },
     setPerPage: function(e){
       this.queryparams.page = 1
       this.queryparams.per = $('#catalogue-per-page').val()
-		// this.queryparams.per = parseInt($(e.target).html());
+      // this.queryparams.per = parseInt($(e.target).html());
       this.runQuery()
     },
     goPrevPage: function(e){
@@ -140,12 +138,14 @@ define([
         this.queryparams.page -= 1;
         this.runQuery()
       }
+      return false;
     },
     goNextPage: function(e){
       if (this.queryparams.page < this._getLastPage()){
         this.queryparams.page += 1;
         this.runQuery()
       }
+      return false;
     },
 
 
