@@ -55,12 +55,12 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
         for tab in portal_tabs_view.topLevelTabs():
             tab['navmenucode'] = u''
             tab_obj = portal.get(tab['id'], None)
-        if tab_obj:
+            if tab_obj:
                 if hasattr(tab_obj, 'navmenucode'):
                     tab['navmenucode'] = (tab_obj.navmenucode and
                                           tab_obj.navmenucode.output or '')
-        self.portal_tabs.append(tab)
-#        self.portal_tabs = portal_tabs_view.topLevelTabs()
+            self.portal_tabs.append(tab)
+    #        self.portal_tabs = portal_tabs_view.topLevelTabs()
 
         self.selected_tabs = self.selectedTabs(portal_tabs=self.portal_tabs)
         self.selected_portal_tab = self.selected_tabs['portal']
