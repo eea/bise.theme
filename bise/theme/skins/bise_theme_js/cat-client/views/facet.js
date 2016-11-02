@@ -76,6 +76,8 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
 
     toggleShowFirsts: function(e) {
       $(this.el).toggleClass('is-truncated');
+            $(this.el).find($('.search-more')).toggleClass('hidden');
+      $(this.el).find($('.search-less')).toggleClass('hidden');
     }
   })
   return FacetView;
