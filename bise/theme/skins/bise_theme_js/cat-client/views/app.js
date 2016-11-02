@@ -62,7 +62,8 @@ define([
       //   this.queryparams.indexes = Object.keys(this.bise_indexes);
       // }
       this.searchType = 'advanced'
-      this.queryparams.indexes = Object.keys(this.all_indexes);
+      // this.queryparams.indexes = Object.keys(this.all_indexes);
+      this.queryparams.indexes = Object.keys(this.bise_indexes);
 
       // Get query
       q = this.$el.data('query')
@@ -99,7 +100,6 @@ define([
     },
 
     runQuery: function(){
-      // console.log('running query');
       $('.catalogue-loading .gif').show()
       this.Results.fetch({ data: $.param(this.queryparams) })
     },
@@ -124,7 +124,6 @@ define([
     // Search Options
     setSorting: function(e){
       this.queryparams.sort_on = $('#catalogue-sort').val()
-      // console.log(this.queryparams)
       this.runQuery()
     },
     setPerPage: function(e){

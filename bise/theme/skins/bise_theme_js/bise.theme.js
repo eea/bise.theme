@@ -23,7 +23,7 @@ $(document).ready(function(){
   // if ($("#form-widgets-ICatalogueTags-cataloguetags").length){
   //   $("#form-widgets-ICatalogueTags-cataloguetags").chosen({width: "100%", placeholder_text_multiple: "Select tags"});
   // }
-    //
+
   var $tags = $("#form-widgets-ICatalogueTags-cataloguetags");
 
   // create the selectivize based tag selection widget
