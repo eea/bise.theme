@@ -37,7 +37,8 @@ $(document).ready(function(){
       var branch = {
         id: i + 100,
         text: label,
-        submenu: {items: [], showSearchInput:false}
+          // submenu: {items: [], showSearchInput:false}
+        children: []
       };
 
       var submenus = {};  // a list of all submenus
@@ -65,13 +66,17 @@ $(document).ready(function(){
           }
           submenus[root].submenu.items.push({id: id, text: leaf});
         } else {
-          branch.submenu.items.push(entry);
+          // branch.submenu.items.push(entry);
+          branch.children.push(entry);
         }
 
       });
 
+      // for (var key in submenus) {
+      //   branch.submenu.items.unshift(submenus[key]);
+      // }
       for (var key in submenus) {
-        branch.submenu.items.unshift(submenus[key]);
+        branch.children.unshift(submenus[key]);
       }
       data.push(branch);
 
