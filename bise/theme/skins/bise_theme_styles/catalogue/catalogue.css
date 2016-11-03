@@ -59,6 +59,7 @@
     border: 1px solid #e5dfd1;
     border-radius: .2em;
     vertical-align: middle;
+    margin-right: .5rem;
 }
 .facet-input:hover + label,
 .facet-input:focus + label {
