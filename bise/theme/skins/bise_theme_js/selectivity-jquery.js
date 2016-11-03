@@ -1101,6 +1101,10 @@ extend(SelectivityDropdown.prototype, {
     selectItem: function(id) {
 
 		console.log("selecting item", id);
+        if($('body.template-edit').hasClass('sidebaropen')) {
+            $('.body.template-edit').removeClass('sidebaropen');
+        }
+
         var item = Selectivity.findNestedById(this.results, id);
         if (item && !item.disabled && item.selectable !== false) {
             var options = { id: id, item: item };
