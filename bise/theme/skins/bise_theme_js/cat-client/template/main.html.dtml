@@ -1,3 +1,6 @@
+ <span class="asidetrigger" id="catalogue-trigger">
+                <button type="button" class="btn btn-sidebar">Toggle filters</button>
+              </span>
 <div class="catalogue-ie-msg" style="display:none">
   <strong>NOTE:</strong>
   If you are using <strong>Internet Explorer 8</strong>, you probably need to allow datasources across domains.
@@ -99,10 +102,8 @@
 <!--   </div> -->
 <!-- </div> -->
 <!-- </div> -->
-
 <div class="catalogue-container" style="display:none">
   <main class="catalogue-main">
-
     <div class="catalogue-toolbar">
       <form id="catalogue-search-form">
         <input id="catalogue-search-input" name="query" type="text" placeholder="Search..." autofocus="true" />

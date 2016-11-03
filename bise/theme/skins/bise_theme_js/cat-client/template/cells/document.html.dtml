@@ -12,7 +12,7 @@
     <% } %>
   </h4>
 
-    <div class="cell-subtitle">
+    <div class="cell-summary">
       
       <!-- <%= file_name.substring(file_name.lastIndexOf('/')+1, file_name.length) %> -->
       
