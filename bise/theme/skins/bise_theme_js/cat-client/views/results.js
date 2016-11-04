@@ -55,7 +55,7 @@ define([
         'application/pdf':                                                           'pdf',
         'application/rtf':                                                           'rtf',
         'application/msword':                                                        'word',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document':   'word20120',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document':   'word2012',
         'text/csv':                                                                  'csv',
         'application/vnd.ms-excel':                                                  'excel',
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':         'excel2010',
