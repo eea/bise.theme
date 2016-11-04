@@ -49,10 +49,10 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
     toggleFilter: function(e) {
       el = $(e.currentTarget);
 
-      if (el.checked)
-        Catalogue.mergeFacet(el.name, el.value)
+      if (el.is(':checked'))
+        Catalogue.mergeFacet(el.attr('name'), el.val())
       else
-        Catalogue.removeFacet(el.name)  
+        Catalogue.removeFacet(el.attr('name'))
     },
 
     titleFor: function(facet) {
