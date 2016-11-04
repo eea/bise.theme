@@ -50,6 +50,26 @@ define([
       }
     },
 
+    formatContentType: function(ct){
+      var CTYPES = {
+        'application/pdf':                                                           'pdf',
+        'application/rtf':                                                           'rtf',
+        'application/msword':                                                        'word',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document':   'word20120',
+        'text/csv':                                                                  'csv',
+        'application/vnd.ms-excel':                                                  'excel',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':         'excel2010',
+        'application/vnd.ms-powerpoint':                                             'powerpoint',
+        'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'powerpoint2010',
+        'text/plain':                                                                'plaintext'
+      }
+      if (CTYPES.hasOwnProperty(ct)){
+        return CTYPES[ct]
+      } else {
+        return ''
+      }
+    },
+
     render: function() {
       var m = this.model.toJSON();
 
@@ -58,6 +78,7 @@ define([
         $(this.el).html(this.art_tmpl(m))
       } else if (m._type === "document"){
         m.published_on = this.formatDate(m.published_on)
+        m.content_type = this.formatContentType(m.content_type)
         $(this.el).html(this.doc_tmpl(m))
       } else if (m._type === "link"){
         m.published_on = this.formatDate(m.published_on)
