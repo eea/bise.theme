@@ -1106,7 +1106,6 @@ extend(SelectivityDropdown.prototype, {
             var options = { id: id, item: item };
             if (this.selectivity.triggerEvent('selectivity-selecting', options)) {
                 this.selectivity.triggerEvent('selectivity-selected', options);
-                $('body.template-edit').removeClass('sidebaropen');
             }
         }
     },

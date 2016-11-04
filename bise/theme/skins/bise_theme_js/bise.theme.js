@@ -101,20 +101,7 @@ $(document).ready(function(){
     });
   }
 
-$('.selectivity-multiple-input-container').click(function(){
-  $('body.template-edit').addClass('sidebaropen');
-});
 
-
-$(document).keyup(function(e) {
-     if (e.keyCode == 27) { // escape key maps to keycode `27`
-      if($('body.template-edit').hasClass('sidebaropen')){
-        $('.selectivity-multiple-input-container').parent().removeClass('open');
-        $('body').removeClass('sidebaropen');
-        console.log('yep');
-      }
-    }
-});
 
 
   if ($("#form-widgets-ICatalogueTags-actions").length){
