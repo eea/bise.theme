@@ -52,7 +52,7 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
       if (el.is(':checked'))
         Catalogue.mergeFacet(el.attr('name'), el.val())
       else
-        Catalogue.removeFacet(el.attr('name'))
+        Catalogue.removeFacet(el.attr('name'), el.val())
     },
 
     titleFor: function(facet) {
@@ -76,7 +76,7 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
 
     toggleShowFirsts: function(e) {
       $(this.el).toggleClass('is-truncated');
-            $(this.el).find($('.search-more')).toggleClass('hidden');
+      $(this.el).find($('.search-more')).toggleClass('hidden');
       $(this.el).find($('.search-less')).toggleClass('hidden');
     }
   })

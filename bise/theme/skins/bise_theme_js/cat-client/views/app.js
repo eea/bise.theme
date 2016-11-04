@@ -381,12 +381,16 @@ define([
      * FACETS
      **************************************************************************/
     mergeFacet: function(key, value){
-      this.queryparams[key] = value
+      // this.queryparams[key] = value
+      if (!this.queryparams[key]) this.queryparams[key] = [];
+      this.queryparams[key].push(value)
       this.queryparams['page'] = 1
       this.runQuery()
     },
-    removeFacet: function(key) {
-      delete this.queryparams[key];
+    removeFacet: function(key, value) {
+      var i = this.queryparams[key].indexOf(value);
+      if (i > -1) this.queryparams[key].splice(i);
+      // delete this.queryparams[key];
       this.queryparams['page'] = 1
       this.runQuery()
     },
@@ -400,7 +404,7 @@ define([
         return true
       // Checks if key present and contains value
       if (_.has(this.queryparams, key))
-        if (this.queryparams[key] == value)
+        if (_.contains(this.queryparams[key], value))
           return true
       return false
     },
