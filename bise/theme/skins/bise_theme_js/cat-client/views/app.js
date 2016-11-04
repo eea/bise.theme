@@ -83,6 +83,7 @@ define([
       }
 
       this.refreshEndpoint()
+      // $('.catalogue-loading .gif').hide()
       this.runQuery()
     },
 
@@ -100,6 +101,7 @@ define([
     },
 
     runQuery: function(){
+      // if (this.queryparams.query === "") return;
       $('.catalogue-loading .gif').show()
       this.Results.fetch({ data: $.param(this.queryparams) })
     },
@@ -427,3 +429,4 @@ define([
   })
   return AppView
 })
+// vim: set ts=2 sw=2 ai e
