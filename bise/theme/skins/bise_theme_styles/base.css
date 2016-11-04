@@ -225,10 +225,11 @@ div.note,
 div.tip,
 div.warning {
     margin: 1em 0;
-    font-size: 80%;
-    border: 1px solid #996;
-    background-color: #ffffe3;
+    border: 1px solid #41b764;
+    background: white;
     clear:both;
+    border-radius: 3px;
+    overflow: hidden;
 }
 dl.portalMessage a,
 #content dl.portalMessage a,
@@ -255,7 +256,7 @@ div.warning a,
 }
 dl.portalMessage dt,
 div > .admonition-title {
-    background-color: #996;
+    background-color: #41b764;
     font-weight: bold;
     float: left;
     margin: 0 0.5em 0 0;
@@ -279,11 +280,11 @@ div.warning > .last {
 }
 
 dl.warning {
-    border-color: #d80;
+    border-color: #ffc612;
 }
 dl.warning > dt,
 .warning > .admonition-title {
-    background-color: #d80;
+    background-color: #ffc612;
 }
 
 dl.error {
@@ -295,11 +296,7 @@ dl.error > dt,
 }
 .warning > dd,
 .warning > .last {
-    background-color: #fd7;
-}
-.error > dd,
-.error > .last {
-    background-color: #fdc;
+    background-color: white;
 }
 
 /* Additional specificity for when status is shown inside #content */

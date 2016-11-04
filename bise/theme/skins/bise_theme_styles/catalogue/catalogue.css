@@ -2072,6 +2072,10 @@ div.jqcloud span {
 @media (max-width: 799px) {
   #catalogue-app .catalogue-libraries {
     overflow: auto;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding: 0 .5rem;
+    margin-top: 1.2rem;
   }
   #catalogue-app .catalogue-libraries ul {
     display: table;
@@ -2105,6 +2109,7 @@ div.jqcloud span {
 .catalogue-container ol {
     margin-left: 0!important;
     margin-top: 0!important;
+    padding-left: 0rem;
 }
 
 @media (max-width: 799px){
