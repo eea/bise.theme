@@ -99,9 +99,14 @@ $(document).ready(function(){
       var opts = sel.selectivity('value');
       $tags.val(opts);
     });
+  };
+
+
+  if($("select#form-widgets-title").length){
+    $("select#form-widgets-title").chosen(
+      {width: "100%"}
+    );
   }
-
-
 
 
   if ($("#form-widgets-ICatalogueTags-actions").length){
