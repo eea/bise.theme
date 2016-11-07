@@ -20,41 +20,6 @@
   plans and activities in the European Union up to 2020.
 </div>
 
-<div class="catalogue-available-content widget" style="display:none">
-  <h3 class="widget-heading">Available content</h3>
-  <div class="row-fluid">
-    <div class="span2 documents">
-      <i></i>
-      <h1>0</h1>
-      <strong>Documents</strong>
-    </div>
-    <div class="span2 webpages">
-      <i></i>
-      <h1>0</h1>
-      <strong>Web Pages</strong>
-    </div>
-    <div class="span2 links">
-      <i></i>
-      <h1>0</h1>
-      <strong>Links</strong>
-    </div>
-    <div class="span2 sites">
-      <i></i>
-      <h1>0</h1>
-      <strong>Protected Sites</strong>
-    </div>
-    <div class="span2 habitats">
-      <i></i>
-      <h1>0</h1>
-      <strong>Habitat Types</strong>
-    </div>
-    <div class="span2 species">
-      <i></i>
-      <h1>0</h1>
-      <strong>Species</strong>
-    </div>
-  </div>
-</div>
 
 <div class="catalogue-container">
   <main class="catalogue-main">
@@ -63,6 +28,42 @@
         <input id="catalogue-search-input" name="query" type="text" placeholder="Search..." autofocus="true" />
         <button id="catalogue-search-submit" class="btn btn-primary" type="submit">Search</button>
       </form>
+    </div>
+
+    <div class="catalogue-available-content widget" style="display:none">
+      <h3 class="widget-heading">Available content</h3>
+      <div class="row-fluid">
+        <div class="span2 documents">
+          <i></i>
+          <h1>0</h1>
+          <strong>Documents</strong>
+        </div>
+        <div class="span2 webpages">
+          <i></i>
+          <h1>0</h1>
+          <strong>Web Pages</strong>
+        </div>
+        <div class="span2 links">
+          <i></i>
+          <h1>0</h1>
+          <strong>Links</strong>
+        </div>
+        <div class="span2 sites">
+          <i></i>
+          <h1>0</h1>
+          <strong>Protected Sites</strong>
+        </div>
+        <div class="span2 habitats">
+          <i></i>
+          <h1>0</h1>
+          <strong>Habitat Types</strong>
+        </div>
+        <div class="span2 species">
+          <i></i>
+          <h1>0</h1>
+          <strong>Species</strong>
+        </div>
+      </div>
     </div>
 
     <div class="catalogue-statistics widget" style="display:none">
