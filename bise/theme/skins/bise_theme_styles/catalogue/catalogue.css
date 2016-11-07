@@ -2090,6 +2090,7 @@ div.jqcloud span {
 
 .section-search #viewlet-below-content-title {
     margin-left: 4rem;
+    display: none;
 }
 
 .facet-input + label:before {
