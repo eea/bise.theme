@@ -334,21 +334,18 @@ define([
       this._drawPagination()
     },
     _showNoResults: function(){
-      this.$('.catalogue-libraries').hide()
-      this.$('.catalogue-container').hide()
-      this.$('.catalogue-navigation-bar').hide()
+      // this.$('.catalogue-libraries').hide()
+      // this.$('.catalogue-container').hide()
+      // this.$('.catalogue-navigation-bar').hide()
 
+      // Reset categories, if nothing found
+      // this.queryparams.indexes = Object.keys(this.bise_indexes);
+      this._drawSearches();
+      this._drawCategories();
+      this._renderStatistics();
       this.$('.catalogue-no-results').show()
       this.$('.catalogue-statistics').show()
       this.$('.catalogue-available-content').show()
-      this._renderStatistics()
-
-      // Reset categories, if nothing found
-      this.queryparams.indexes = Object.keys(this.bise_indexes);
-      // if (this.$el.data('type') === 'advanced')
-      //   this.queryparams.indexes = Object.keys(this.all_indexes);
-      // else
-      //   this.queryparams.indexes = Object.keys(this.bise_indexes);
     },
 
 
