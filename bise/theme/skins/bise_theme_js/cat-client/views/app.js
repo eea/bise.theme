@@ -53,16 +53,8 @@ define([
       // Options
       this.host = options['host']
 
-      // Check search type
-      // if (this.$el.data('type') === 'advanced'){
-      //   this.searchType = 'advanced'
-      //   this.queryparams.indexes = Object.keys(this.all_indexes);
-      // } else {
-      //   this.searchType = 'bise'
-      //   this.queryparams.indexes = Object.keys(this.bise_indexes);
-      // }
+      // Search type: always advanced, but by default only use BISE indexes
       this.searchType = 'advanced'
-      // this.queryparams.indexes = Object.keys(this.all_indexes);
       this.queryparams.indexes = Object.keys(this.bise_indexes);
 
       // Get query
@@ -89,8 +81,9 @@ define([
       } else {
         // this.$('.catalogue-statistics').show();
         this._drawSearches();
-
+        this._drawCategories();
         this._renderStatistics();
+
         this.$('.catalogue-statistics').show();
         this.$('.catalogue-available-content').show();
       };
@@ -242,11 +235,7 @@ define([
           (this.Results.total === 1 ? 'result' : 'results')
         );
       }
-      // if (this.queryparams.query != '' && this.queryparams.query != undefined) {
-      //   $('#catalogue-search-input').val(this.queryparams.query);
-      //   text = text.concat('for <em>' + esc.escape('text') + '</em>');
-      // }
-      this.$('.catalogue-query').html(text);
+      this.$('.catalogue-query').html(text);  // shows "586 results" under search input
     },
 
     // Renders Library filters
@@ -281,6 +270,7 @@ define([
 
       this.$("#catalogue-categories .facet-body").append(categoryFacet);
     },
+
     _addWrappedCategory: function(key, checked){
       var checked = _.contains(this.queryparams.indexes, key)
       if (this.queryparams.indexes.length == 0) checked = true;
@@ -352,11 +342,13 @@ define([
       this.$('.catalogue-statistics').show()
       this.$('.catalogue-available-content').show()
       this._renderStatistics()
+
       // Reset categories, if nothing found
-      if (this.$el.data('type') === 'advanced')
-        this.queryparams.indexes = Object.keys(this.all_indexes);
-      else
-        this.queryparams.indexes = Object.keys(this.bise_indexes);
+      this.queryparams.indexes = Object.keys(this.bise_indexes);
+      // if (this.$el.data('type') === 'advanced')
+      //   this.queryparams.indexes = Object.keys(this.all_indexes);
+      // else
+      //   this.queryparams.indexes = Object.keys(this.bise_indexes);
     },
 
 
