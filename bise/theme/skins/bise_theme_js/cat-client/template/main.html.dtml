@@ -56,7 +56,7 @@
   </div>
 </div>
 
-<div class="catalogue-container" style="display:none" >
+<div class="catalogue-container">
   <main class="catalogue-main">
     <div class="catalogue-toolbar">
       <form id="catalogue-search-form">
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <div class="catalogue-loading">
+    <div class="catalogue-loading" style="display:none">
       <div class="gif"></div>
     </div>
 
@@ -110,13 +110,13 @@
 
     <ul id="catalogue-results"></ul>
 
-    <nav class="catalogue-pagination">
+    <nav class="catalogue-pagination" style="display:none">
       <a href="" class="catalogue-previous">Previous</a>
       <a href="" class="catalogue-next">Next</a>
       <span class="catalogue-status"></span>
     </nav>
   </main>
-  <aside class="catalogue-aside">
+  <aside class="catalogue-aside"  style="display:none" >
     <div class="catalogue-sidebar">
       <h4 class="catalogue-sidebar-title">Filter results</h4>
       <div id="catalogue-categories">

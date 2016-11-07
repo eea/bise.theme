@@ -82,9 +82,18 @@ define([
         $('.catalogue-ie-msg').show()
       }
 
-      this.refreshEndpoint()
+      this.refreshEndpoint();
       // $('.catalogue-loading .gif').hide()
-      this.runQuery()
+      if (this.queryparams.query) {
+        this.runQuery()
+      } else {
+        // this.$('.catalogue-statistics').show();
+        this._drawSearches();
+
+        this._renderStatistics();
+        this.$('.catalogue-statistics').show();
+        this.$('.catalogue-available-content').show();
+      };
     },
 
     /***************************************************************************
@@ -101,8 +110,10 @@ define([
     },
 
     runQuery: function(){
-      // if (this.queryparams.query === "") return;
-      $('.catalogue-loading .gif').show()
+      this.$('.catalogue-loading .gif').show()
+      this.$('.catalogue-aside').show();
+      this.$('.catalogue-pagination').show();
+      this.$('.catalogue-loading').show();
       this.Results.fetch({ data: $.param(this.queryparams) })
     },
 
