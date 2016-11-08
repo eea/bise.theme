@@ -188,7 +188,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><polygon points="4 6 7 10 10 6 4 6" style="fill: #748284"/></svg>') right center no-repeat;
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><polygon points="4 6 7 10 10 6 4 6" style="fill: gray"/></svg>') right center no-repeat;
     background-size: 1em;
     font: inherit;
     font-weight: 400;
@@ -201,7 +201,7 @@
     display: inline-block;
     width: 1em;
     height: 1em;
-    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><polygon points="4 6 7 10 10 6 4 6" style="fill: #748284"/></svg>') right center no-repeat;
+    background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><polygon points="4 6 7 10 10 6 4 6" style="fill: gray"/></svg>') right center no-repeat;
     background-size: 1em;
     vertical-align: middle;
 }
@@ -422,6 +422,7 @@ ul.catalogue-last-added li > a {
     #catalogue-facets { display: none; }
 }
 .facet-legend {
+    
     display: inline-block;
     margin: 0;
     font-weight: 400;
