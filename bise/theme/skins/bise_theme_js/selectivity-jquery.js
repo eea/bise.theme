@@ -1298,8 +1298,7 @@ extend(SelectivityDropdown.prototype, {
      */
     _resultClicked: function(event) {
 
-        this.selectItem(this.selectivity.getRelatedItemId(event));
-
+       this.selectItem(this.selectivity.getRelatedItemId(event));
         stopPropagation(event);
     },
 

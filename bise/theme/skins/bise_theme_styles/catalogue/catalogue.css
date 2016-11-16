@@ -511,6 +511,9 @@ ul.catalogue-last-added li > a {
     list-style: none;
     margin: 0 auto;
 }
+#catalogue-results sup {
+    margin-top: 0!important;
+}
 
 .clearfix:after {
     clear: both;
@@ -1373,6 +1376,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus {
     font-family: inherit;
     font-size: larger!important;
     margin-bottom: .25em;
+    font-weight: 400;
 }
 .cell-alternative-title {
     display: block;
@@ -1393,8 +1397,8 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus {
     text-transform: uppercase;
     font-weight: 600;
 }
-.cell-document-type::before { content: '['; }
-.cell-document-type::after  { content: ']'; }
+.cell-document-type::before { content: '['; font: inherit;}
+.cell-document-type::after  { content: ']'; font: inherit;}
 
 .catalogue-cell .cell-source {
     color: #41b664;
