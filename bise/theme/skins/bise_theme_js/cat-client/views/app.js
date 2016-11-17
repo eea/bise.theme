@@ -122,6 +122,7 @@ define([
     },
 
     fillQueryAndRun: function(e){
+
       e.preventDefault()
       $searchEl = $('#catalogue-search-input');
       var q = $searchEl.val()
@@ -131,6 +132,9 @@ define([
         this.showStatsScreen();
         return
       }
+
+      pushState = window.history.pushState;
+      if (pushState) pushState({'q': q}, 'new query', '/search?q=' + q);
 
       $searchEl.val('');
       this.queryparams = {
