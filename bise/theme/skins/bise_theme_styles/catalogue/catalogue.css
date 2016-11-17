@@ -422,7 +422,7 @@ ul.catalogue-last-added li > a {
     #catalogue-facets { display: none; }
 }
 .facet-legend {
-    
+
     display: inline-block;
     margin: 0;
     font-weight: 400;
@@ -1435,7 +1435,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus {
     margin-top: 12px;
     margin-bottom: -5px;
     margin-left: -25px;
-    list-style-type: disc;
+    list-style-type: none;
 }
 
 .catalogue-cell .att-preview ol li {
