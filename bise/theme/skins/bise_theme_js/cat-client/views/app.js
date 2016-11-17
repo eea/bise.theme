@@ -79,13 +79,7 @@ define([
       if (this.queryparams.query) {
         this.runQuery()
       } else {
-        // this.$('.catalogue-statistics').show();
-        this._drawSearches();
-        this._drawCategories();
-        this._renderStatistics();
-
-        this.$('.catalogue-statistics').show();
-        this.$('.catalogue-available-content').show();
+        this.showStatsScreen()
       };
     },
 
@@ -105,9 +99,26 @@ define([
     runQuery: function(){
       this.$('.catalogue-loading .gif').show()
       this.$('.catalogue-aside').show();
+      this.$("#catalogue-results").show();
       this.$('.catalogue-pagination').show();
       this.$('.catalogue-loading').show();
       this.Results.fetch({ data: $.param(this.queryparams) })
+    },
+
+    showStatsScreen: function(e){
+      // this.$('.catalogue-statistics').show();
+      this._drawSearches();
+      this._drawCategories();
+      this._renderStatistics();
+
+      this.$('.catalogue-statistics').show();
+      this.$('.catalogue-available-content').show();
+
+      this.$(".catalogue-libraries").hide();
+      this.$(".catalogue-navigation-bar").hide();
+      this.$("#catalogue-results").hide();
+      this.$(".catalogue-aside").hide();
+      this.$('.catalogue-pagination').hide();
     },
 
     fillQueryAndRun: function(e){
@@ -115,6 +126,12 @@ define([
       $searchEl = $('#catalogue-search-input');
       var q = $searchEl.val()
       if (q === 'undefined') q = ''
+
+      if (!q) {
+        this.showStatsScreen();
+        return
+      }
+
       $searchEl.val('');
       this.queryparams = {
         indexes: this._getSelectedCategories(),
@@ -358,6 +375,7 @@ define([
         }
 
         // Render last added content
+        $(".catalogue-last-added").empty();
         _.each(data.last, function(item){
           var cell = $('<li>').addClass('catalogue-cell')
           var link = $('<a>').attr('href', item.link).html(item.title)

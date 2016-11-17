@@ -25,7 +25,8 @@
   <main class="catalogue-main">
     <div class="catalogue-toolbar">
       <form id="catalogue-search-form">
-        <input id="catalogue-search-input" name="query" type="text" placeholder="Search..." autofocus="true" />
+        <input id="catalogue-search-input" name="query" type="text"
+        placeholder="Please enter a query" autofocus="true" />
         <button id="catalogue-search-submit" class="btn btn-primary" type="submit">Search</button>
       </form>
     </div>
