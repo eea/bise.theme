@@ -133,8 +133,9 @@ define([
         return
       }
 
-      pushState = window.history.pushState;
-      if (pushState) pushState({'q': q}, 'new query', '/search?q=' + q);
+      try {
+        window.history.pushState({'q': q}, 'new query', '/search?q=' + q);
+      } catch(err) {}
 
       $searchEl.val('');
       this.queryparams = {
