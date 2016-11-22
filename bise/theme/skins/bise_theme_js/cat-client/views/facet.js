@@ -40,6 +40,11 @@ define(['jquery', 'underscore', 'backbone', 'models/facet', 'text!template/facet
 
     render: function() {
       this.setElement(this.template(this.model.toJSON()));
+
+      // reorder the selected option in the faceted: selected options first
+      var parent = this.$('.facet-body ul');
+      this.$("input:checked").parent().detach().prependTo(parent);
+
       if (!this.isOpen) this.$el.addClass('is-closed');
       if (this.isShowingFirstTen) this.$el.addClass('is-truncated');
 

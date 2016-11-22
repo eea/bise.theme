@@ -217,6 +217,12 @@ define([
       })
       return array
     },
+    _getLastPage: function(){
+      var pages = Math.floor(this.Results.total / this.queryparams.per)
+      if (this.Results.total % this.queryparams.per > 0)
+        pages += 1;
+      return pages;
+    },
 
     // Render the pagination
     _drawPagination: function(){
@@ -239,12 +245,6 @@ define([
         prev.setAttribute('disabled', 'disabled');
       else
         prev.removeAttribute('disabled', 'disabled');
-    },
-    _getLastPage: function(){
-      var pages = Math.floor(this.Results.total / this.queryparams.per)
-      if (this.Results.total % this.queryparams.per > 0)
-        pages += 1;
-      return pages;
     },
 
     // Renders the performed search information
