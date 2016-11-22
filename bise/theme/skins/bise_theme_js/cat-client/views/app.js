@@ -144,6 +144,7 @@ define([
         page: 1, per: 10,
         sort_on: ''     // default sort order is relevance, aka ''
       }
+      this.getSelectedFacet();
       $('#catalogue-sort').val('');
       $searchEl.val(q);
       this.runQuery()
@@ -217,6 +218,12 @@ define([
       })
       return array
     },
+    getSelectedFacet: function() {
+      var array = _.map(this.$('#catalog-facets input:checked'), function(node) {
+        var $n = $(node);
+        return [$n.attr('name'), $n.val()];
+      });
+    },
     _getLastPage: function(){
       var pages = Math.floor(this.Results.total / this.queryparams.per)
       if (this.Results.total % this.queryparams.per > 0)
@@ -281,16 +288,16 @@ define([
     _drawCategories: function(){
       this.$("#catalogue-categories .facet-body").html('');
 
-      var categoryFacet = $('<ul>');
+      var facet = $('<ul>');
 
       for (var k in this.all_indexes) {
         item = this._addWrappedCategory(k);
-        categoryFacet.append(item);
+        facet.append(item);
       }
 
-      categoryFacet.find('input').on('change', $.proxy(this.fillQueryAndRun, this));
+      facet.find('input').on('change', $.proxy(this.fillQueryAndRun, this));
 
-      this.$("#catalogue-categories .facet-body").append(categoryFacet);
+      this.$("#catalogue-categories .facet-body").append(facet);
     },
 
     _addWrappedCategory: function(key, checked){
