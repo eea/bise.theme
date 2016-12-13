@@ -1,8 +1,10 @@
 Changelog
 =========
 
-2.5.dev0 - (unreleased)
+3.0.dev0 - (unreleased)
 -----------------------
+* Implemented a new website theme
+  [tiberich #69997]
 
 2.4 - (2016-09-09)
 ------------------
