@@ -1,6 +1,9 @@
 Changelog
 =========
 
+3.2.dev0 - (unreleased)
+-----------------------
+
 3.1 - (2016-12-23)
 ------------------
 * Bug fix: copied images from bise_theme_overrides layer to bise_theme_images
