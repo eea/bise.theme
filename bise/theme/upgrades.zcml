@@ -1,82 +1,90 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="bise.theme">
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  i18n_domain="bise.theme">
 
 
   <genericsetup:upgradeSteps
-     source="1000"
-     destination="1001"
-     profile="bise.theme:default">
+    source="1000"
+    destination="1001"
+    profile="bise.theme:default">
 
 
     <genericsetup:upgradeStep
       title="Resolve PloneGlossary Javascript issues in Plone 4.3"
       handler=".upgrades.ploneglossary_1001"
-    />
+      />
 
     <genericsetup:upgradeStep
       title="Reload CSS registry for bise.biodiversityfactsheet"
       handler=".upgrades.reload_css_1001"
-    />
+      />
 
 
   </genericsetup:upgradeSteps>
 
   <genericsetup:upgradeStep
-     source="1001"
-     destination="1002"
-     profile="bise.theme:default"
-     title="Enable versioning for custom types"
-     handler=".upgrades.upgrade_to_1002"
-      />
+    source="1001"
+    destination="1002"
+    profile="bise.theme:default"
+    title="Enable versioning for custom types"
+    handler=".upgrades.upgrade_to_1002"
+    />
 
   <genericsetup:upgradeStep
-     source="1002"
-     destination="1003"
-     profile="bise.theme:default"
-     title="Workflow fixes"
-     handler=".upgrades.upgrade_to_1003"
-      />
+    source="1002"
+    destination="1003"
+    profile="bise.theme:default"
+    title="Workflow fixes"
+    handler=".upgrades.upgrade_to_1003"
+    />
 
   <genericsetup:upgradeStep
-     source="1003"
-     destination="1004"
-     profile="bise.theme:default"
-     title="Workflow fixes"
-     handler=".upgrades.upgrade_to_1004"
-      />
+    source="1003"
+    destination="1004"
+    profile="bise.theme:default"
+    title="Workflow fixes"
+    handler=".upgrades.upgrade_to_1004"
+    />
 
   <genericsetup:upgradeStep
-     source="1004"
-     destination="1005"
-     profile="bise.theme:default"
-     title="Disable JS"
-     handler=".upgrades.upgrade_to_1005"
-      />
+    source="1004"
+    destination="1005"
+    profile="bise.theme:default"
+    title="Disable JS"
+    handler=".upgrades.upgrade_to_1005"
+    />
 
   <genericsetup:upgradeStep
-     source="1005"
-     destination="1006"
-     profile="bise.theme:default"
-     title="Enable JS"
-     handler=".upgrades.upgrade_to_1006"
-      />
+    source="1005"
+    destination="1006"
+    profile="bise.theme:default"
+    title="Enable JS"
+    handler=".upgrades.upgrade_to_1006"
+    />
 
   <genericsetup:upgradeStep
-     source="1006"
-     destination="1007"
-     profile="bise.theme:default"
-     title="Enable behavior for Folderish Pages"
-     handler=".upgrades.upgrade_to_1007"
-      />
+    source="1006"
+    destination="1007"
+    profile="bise.theme:default"
+    title="Enable behavior for Folderish Pages"
+    handler=".upgrades.upgrade_to_1007"
+    />
 
   <genericsetup:upgradeStep
-     source="1007"
-     destination="1008"
-     profile="bise.theme:default"
-     title="Add the overrides skins folder"
-     handler=".upgrades.upgrade_to_1008"
-      />
+    source="1007"
+    destination="1008"
+    profile="bise.theme:default"
+    title="Add the overrides skins folder"
+    handler=".upgrades.upgrade_to_1008"
+    />
+
+  <genericsetup:upgradeStep
+    source="1008"
+    destination="1009"
+    profile="bise.theme:default"
+    title="Fix broken relative links"
+    handler=".upgrades.upgrade_to_1009"
+    />
 
 </configure>

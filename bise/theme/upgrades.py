@@ -1,5 +1,10 @@
-from logging import getLogger
 from Products.CMFCore.utils import getToolByName
+from logging import getLogger
+from lxml.html import fromstring, tostring
+from plone.app.textfield.value import RichTextValue
+from urlparse import urljoin
+from zope.component.hooks import getSite
+
 
 PROFILE_ID = 'profile-bise.theme:default'
 
@@ -29,8 +34,10 @@ def upgrade_to_1002(context, logger=None):
 
     setup = getToolByName(context, 'portal_setup')
 
-    setup.runAllImportStepsFromProfile('profile-plone.app.versioningbehavior:default')
-    setup.runAllImportStepsFromProfile('profile-plone.app.iterate:plone.app.iterate')
+    setup.runAllImportStepsFromProfile(
+        'profile-plone.app.versioningbehavior:default')
+    setup.runAllImportStepsFromProfile(
+        'profile-plone.app.iterate:plone.app.iterate')
 
     setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
     setup.runImportStepFromProfile(PROFILE_ID, 'repositorytool')
@@ -107,3 +114,92 @@ def upgrade_to_1008(context, logger=None):
     setup = getToolByName(context, 'portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'skins')
     logger.info('Upgraded')
+
+
+def _fix_text(obj, site_url, logger):
+    text = obj.text.raw
+    text = text.strip()
+    if not text:
+        return
+    try:
+        e = fromstring(text)
+    except Exception:
+        import pdb; pdb.set_trace()
+        return
+    links = e.xpath('//a')
+
+    dirty = False
+
+    obj_url = None
+
+    for link in links:
+        href = link.get('href')
+        if not href:
+            continue
+        if href.startswith('../'):
+            if obj_url is None:
+                obj_url = obj.absolute_url()
+            newv = urljoin(obj_url + '/', href)
+            newv = newv.replace(site_url, '')
+            link.set('href', newv)
+            logger.info('For obj: %s - fixed link %s to %s',
+                        obj_url, href, newv)
+            dirty = True
+
+    if dirty:
+        text = tostring(e, pretty_print=True)
+        obj.text = RichTextValue(text, 'text/html', 'text/html')
+        obj._p_changed = True
+
+
+def upgrade_to_1009(context, logger=None):
+    site_url = getSite().absolute_url()
+    if logger is None:
+        logger = getLogger('upgrade_to_1009')
+
+    all_types = [
+        # 'Collage',
+        # 'Collection',
+        # 'DavizVisualization',
+        # 'EEAPossibleRelation',
+        # 'EEARelationsContentType',
+        # 'ElasticSearch',
+        # 'FeedFeederItem',
+        # 'FeedfeederFolder',
+        # 'File',
+        # 'FileAttachment',
+        # 'Image',
+        # 'ImageAttachment',
+        # 'PDFTheme',
+        # 'PDFTool',
+        # 'PloneGlossary',
+        # 'PloneGlossaryDefinition',
+        # 'Ploneboard',
+        # 'PloneboardComment',
+        # 'PloneboardConversation',
+        # 'PloneboardForum',
+        # 'Sparql',
+        # 'TreeVocabulary',
+        # 'TreeVocabularyTerm',
+        'BiodiversityFactsheet',
+        'Document',
+        'Ecosystem',
+        'Event',
+        'Fact',
+        'Folder',
+        'FolderishPage',
+        'Link',
+        'News Item',
+        'Section',
+        'Service',
+        'Study',
+        'collective.cover.content'
+    ]
+    brains = context.portal_catalog.searchResults(portal_type=all_types)
+    for b in brains:
+        obj = b.getObject()
+        if getattr(obj, 'text', None) is None:
+            continue
+        _fix_text(obj, site_url, logger)
+
+    import pdb; pdb.set_trace()
