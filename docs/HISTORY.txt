@@ -1,8 +1,11 @@
 Changelog
 =========
 
-3.2.dev0 - (unreleased)
+3.3.dev0 - (unreleased)
 -----------------------
+
+3.2 - (2017-01-05)
+------------------
 * Bug fix: added a migration to fix broken richtext links
   [tiberich #80194]
 
