@@ -3,6 +3,8 @@ Changelog
 
 3.2.dev0 - (unreleased)
 -----------------------
+* Bug fix: added a migration to fix broken richtext links
+  [tiberich #80194]
 
 3.1 - (2016-12-23)
 ------------------
