@@ -115,6 +115,15 @@ def upgrade_to_1008(context, logger=None):
     setup.runImportStepFromProfile(PROFILE_ID, 'skins')
     logger.info('Upgraded')
 
+FIXES = (
+    ('/chm-network/bise/chm-network/', '/chm-network/'),
+    ('/ecosystem-assessments/', '/ecosystem-assessment/'),
+    ('/policy/countries_and_networks/bap/', '/countries/bap/'),
+    ('/bise/topics/bise/topics/', '/topics/'),
+    ('/topics/countries/bap/', '/topics/bap/'),
+    ('/chm-network/european-chm-toolkit/', '/chm-network/the-european-chm-toolkit/')
+)
+
 
 def _fix_text(obj, site_url, logger):
     text = obj.text.raw
@@ -141,6 +150,9 @@ def _fix_text(obj, site_url, logger):
                 obj_url = obj.absolute_url()
             newv = urljoin(obj_url + '/', href)
             newv = newv.replace(site_url, '')
+            for s, r in FIXES:
+                if newv.startswith(s):
+                    newv = newv.replace(s, r)
             link.set('href', newv)
             logger.info('For obj: %s - fixed link %s to %s',
                         obj_url, href, newv)
@@ -201,5 +213,3 @@ def upgrade_to_1009(context, logger=None):
         if getattr(obj, 'text', None) is None:
             continue
         _fix_text(obj, site_url, logger)
-
-    import pdb; pdb.set_trace()
