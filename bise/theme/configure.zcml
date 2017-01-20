@@ -13,7 +13,6 @@
     <include package=".behaviors" />
     <include package=".transmogrifier" />
 
-    <include file="workflow.zcml" />
     <include file="skins.zcml" />
 
     <include file="profiles.zcml" />
