@@ -18,6 +18,20 @@ $(document).ready(function(){
 
   $("a[href*='@@iterate_diff']").hide();
 
+  // automatically hide all div.field that have only a hidden input inside
+  var $hiddenInputs = $(".field input[type=hidden]");
+  if( $hiddenInputs.length > 0 ) {
+
+    jQuery.each( $hiddenInputs, function(i, input) {
+      var $hiddenInput = $(this);
+      count = $hiddenInput.parent().find("select, radio, input[type!='hidden']").length;
+      if( count === 0 ) {
+        $hiddenInput.parent().css("display", "none");
+      }
+    });
+
+  }
+
   //jQuery('body').bugme({remember:false});
 
   // if ($("#form-widgets-ICatalogueTags-cataloguetags").length){
