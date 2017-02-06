@@ -39,6 +39,8 @@ textarea:focus {
     background-color: #ffffe0;
 }
 
+#sparql_query {min-height: 200px;}
+
 #content textarea {
     font: 100% Monaco, "Courier New", Courier, monospace;
     width: 100%;

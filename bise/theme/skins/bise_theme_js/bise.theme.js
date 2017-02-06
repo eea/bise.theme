@@ -18,6 +18,21 @@ $(document).ready(function(){
 
   $("a[href*='@@iterate_diff']").hide();
 
+
+  var $hiddenInputs = $(".field input[type=hidden]");
+
+  if( $hiddenInputs.length > 0 ) {
+
+    jQuery.each( $hiddenInputs, function(i, input) {
+      var $hiddenInput = $(this);
+      count = $hiddenInput.parent().find("select, radio, textarea, input[type!='hidden']").length;
+      if( count === 0 ) {
+        $hiddenInput.parent().css("display", "none");
+      }
+    });
+
+  }
+
   //jQuery('body').bugme({remember:false});
 
   // if ($("#form-widgets-ICatalogueTags-cataloguetags").length){
@@ -25,6 +40,7 @@ $(document).ready(function(){
   // }
 
   var $tags = $("#form-widgets-ICatalogueTags-cataloguetags");
+
 
   // create the selectivize based tag selection widget
   if ($tags.length){
