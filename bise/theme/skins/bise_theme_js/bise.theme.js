@@ -18,9 +18,8 @@ $(document).ready(function(){
 
   $("a[href*='@@iterate_diff']").hide();
 
-
+  // automatically hide all div.field that have only a hidden input inside
   var $hiddenInputs = $(".field input[type=hidden]");
-
   if( $hiddenInputs.length > 0 ) {
 
     jQuery.each( $hiddenInputs, function(i, input) {
