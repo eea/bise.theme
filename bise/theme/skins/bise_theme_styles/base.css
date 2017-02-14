@@ -2,7 +2,7 @@
 /* - base.css - */
 @media screen {
 /* @group Content Area */
-    
+
 /* Editor styles */
 #content .discreet,
 #sidebar .discreet,
@@ -265,11 +265,14 @@ div.warning > .last {
     line-height: 1.25em;
 }
 
-dl.warning {
+dl.warning,
+.portalMessage.warning {
     border-color: #ffc612;
 }
 dl.warning > dt,
-.warning > .admonition-title {
+.warning > .admonition-title,
+.portalMessage.warning strong
+{
     background-color: #ffc612;
 }
 
