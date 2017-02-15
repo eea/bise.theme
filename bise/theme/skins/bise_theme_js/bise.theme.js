@@ -378,4 +378,9 @@ $(document).ready(function(){
       });
         }
       }
+
+  // fix warning messages from plone.app.iterate
+  if($(".portalMessage.info:contains('Warning')").length){
+    $('.portalMessage.info').removeClass('info').addClass('warning');
+  }
 });
