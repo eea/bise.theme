@@ -380,7 +380,8 @@ $(document).ready(function(){
       }
 
   // fix warning messages from plone.app.iterate
-  if($(".portalMessage.info:contains('Warning')").length){
-    $('.portalMessage.info').removeClass('info').addClass('warning');
+  var $warnings = $(".portalMessage.info:contains('Warning')");
+  if($warnings.length){
+    $warnings.removeClass('info').addClass('warning');
   }
 });
