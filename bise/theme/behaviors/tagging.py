@@ -1,5 +1,6 @@
 from bise.theme import themeMessageFactory as _
 from five import grok
+from plone.autoform import directives
 from plone.directives import form
 from plone.memoize import ram
 from time import time
@@ -20,6 +21,7 @@ def _cache_key(fun, *args):
 class ICatalogueTags(form.Schema):
 
     form.widget(cataloguetags=OptgroupFieldWidget)
+    directives.write_permission(cataloguetags='cmf.ReviewPortalContent')
     cataloguetags = schema.List(
         title=_(u"Catalogue tags"),
         required=False,
@@ -29,6 +31,7 @@ class ICatalogueTags(form.Schema):
     )
 
     form.widget(targets=OptgroupFieldWidget)
+    directives.write_permission(targets='cmf.ReviewPortalContent')
     targets = schema.List(
         title=_(u"Target "),
         required=False,
@@ -38,6 +41,7 @@ class ICatalogueTags(form.Schema):
     )
 
     form.widget(actions=OptgroupFieldWidget)
+    directives.write_permission(actions='cmf.ReviewPortalContent')
     actions = schema.List(
         title=_(u"Target and actions"),
         required=False,
