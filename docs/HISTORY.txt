@@ -3,6 +3,9 @@ Changelog
 
 3.3.dev0 - (unreleased)
 -----------------------
+- Change: use the Review permission for tagging.py fields behavior [tiberich]
+- Remove stagingbehavior as dependency [tiberich]
+- Styling fixes [tiberich]
 
 3.2 - (2017-01-05)
 ------------------
