@@ -122,4 +122,13 @@
         permission="zope2.View"
         />
 
+    <!-- Pdf Override -->
+    <browser:page
+        name="download.pdf"
+        layer="bise.theme.browser.interfaces.IThemeSpecific"
+        for="eea.pdf.interfaces.IPDFAware"
+        class=".pdf.DownloadPdfOverride"
+        permission="eea.pdf.download"
+        />
+
 </configure>

@@ -3,6 +3,8 @@ Changelog
 
 3.4.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Enabled eea.pdf for bise
+  [iulianpetchesi #29648]
 
 3.3 - (2017-03-29)
 ------------------
