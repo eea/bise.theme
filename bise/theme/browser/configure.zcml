@@ -81,6 +81,20 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <browser:view
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        name="detect-broken-blobs"
+        class=".fixblobs.DetectBlobs"
+        permission="cmf.ManagePortal"
+        />
+
+    <browser:page
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        name="show-broken-blobs"
+        class=".fixblobs.ShowBlobs"
+        permission="cmf.ManagePortal"
+        template="templates/show-blobs.pt"
+        />
 
     <browser:viewletManager
         name="bise.htmlheadtitle"
