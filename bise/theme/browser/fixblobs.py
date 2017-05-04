@@ -69,7 +69,7 @@ def recurse(tree):
 
 class DetectBlobs(BrowserView):
     """
-    You can call this view by going to site/@@fix-broken-blobs
+    You can call this view by going to site/@@detect-broken-blobs
     Currently it is used to detect broken blobs
 
     Original code taken from
@@ -105,6 +105,9 @@ class DetectBlobs(BrowserView):
 
 
 class ShowBlobs(BrowserView):
+    """ View that shows us a list of broken blobs, located at 
+    site/@@show-broken-blobs
+    """
     def __call__(self):
         self.bad_blobs = bad_blobs
         return self.index()
