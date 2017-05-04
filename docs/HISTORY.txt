@@ -1,8 +1,8 @@
 Changelog
 =========
 
-3.5.dev0 - (unreleased)
------------------------
+3.5 - (2017-05-04)
+------------------
 * Bug Fix: Added browser views for the detection/showing of broken blobs
   [iulianpetchesi #75182]
 * Bug Fix: Fixed rss_summary_view template
