@@ -8,6 +8,7 @@ from Products.Archetypes.interfaces import IBaseContent
 from plone.namedfile.interfaces import INamedFile
 from plone.dexterity.content import DexterityContent
 from logging import getLogger
+from zope.annotation.interfaces import IAnnotations
 
 
 bad_blobs = []
@@ -93,11 +94,15 @@ class DetectBlobs(BrowserView):
     def render(self):
         #plone = getMultiAdapter((self.context, self.request), name="plone_portal_state")
         logger.info("Checking blobs")
+
         portal = self.context
         self.disable_integrity_check()
         recurse(portal)
         self.enable_integrity_check()
+
         logger.info("All done")
+        if IAnnotations(self.context) is not None and len(bad_blobs) > 0:
+            IAnnotations(self.context)['bad_blobs'] = bad_blobs
         return "OK - check console for status messages"
 
     def __call__(self):
@@ -109,5 +114,5 @@ class ShowBlobs(BrowserView):
     site/@@show-broken-blobs
     """
     def __call__(self):
-        self.bad_blobs = bad_blobs
+        self.bad_blobs = IAnnotations(self.context)['bad_blobs']
         return self.index()
