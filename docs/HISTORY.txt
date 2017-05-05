@@ -3,6 +3,8 @@ Changelog
 
 3.7.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Removed some feeds from the auto update
+  [iulianpetchesi #75502]
 
 3.6 - (2017-05-04)
 ------------------

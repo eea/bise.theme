@@ -27,7 +27,10 @@ class FeedUpdate(grok.View):
 
             logger.info("Found %d feed folders" % len(list(brains)))
 
+            ignore_feeds = ['CHM DE', 'WCMC', 'EURACTIV', 'EU CHM']
             for brain in brains:
+                if brain.getObject().title in ignore_feeds:
+                    continue
                 folder = brain.getObject()
                 logger.debug("Updating folder:" + str(folder))
                 update_view = folder.unrestrictedTraverse("@@update_feed_items")
