@@ -3,6 +3,8 @@ Changelog
 
 3.8.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Changed the link cell template to display item description
+  [iulianpetchesi #74240]
 
 3.7 - (2017-05-11)
 ------------------
