@@ -4,6 +4,9 @@ from lxml.html import fromstring, tostring
 from plone.app.textfield.value import RichTextValue
 from urlparse import urljoin
 from zope.component.hooks import getSite
+from .browser.fixblobs import check_at_blobs, check_dexterity_blobs
+import transaction
+from Products.CMFCore.interfaces import IFolderish
 
 
 PROFILE_ID = 'profile-bise.theme:default'
@@ -213,3 +216,36 @@ def upgrade_to_1009(context, logger=None):
         if getattr(obj, 'text', None) is None:
             continue
         _fix_text(obj, site_url, logger)
+
+
+def remove_blobs(context):
+    """
+    Iterate through the object variables and see if they are blob fields
+    and if the field loading fails then we delete them
+    """
+    logger = getLogger('upgrade_to_1010')
+    if check_at_blobs(context) or check_dexterity_blobs(context):
+        parent = context.aq_parent
+        logger.info("Deleting blob: %s" % context.absolute_url())
+        parent._delObject(context.getId(), suppress_events=True)
+        parent._p_changed = True
+        parent.reindexObject()
+
+
+def recurse(tree):
+    """ Walk through all the content on a Plone site """
+    for id, child in tree.contentItems():
+        remove_blobs(child)
+
+        if IFolderish.providedBy(child):
+            recurse(child)
+
+
+def upgrade_to_1010(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1010')
+    logger.info("Starting upgrade.")
+    site = getSite()
+    recurse(site)
+    transaction.commit()
+    logger.info("Finished upgrade.")

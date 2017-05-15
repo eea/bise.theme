@@ -3,6 +3,9 @@ Changelog
 
 3.8.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Added upgrade step for the removal of broken blobs and made some view
+  improvements
+  [iulianpetchesi #75182]
 * Bug Fix: Changed the link cell template to display item description
   [iulianpetchesi #74240]
 

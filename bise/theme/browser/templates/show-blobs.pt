@@ -9,6 +9,7 @@
 <body>
 
 <metal:core fill-slot="content">
+  <div tal:condition="view/bad_blobs | nothing">
     <span style="font-weight: bold;">Total number of broken blobs:
         <span tal:content="python: len(view.bad_blobs)"></span>
     </span>
@@ -16,6 +17,8 @@
         <span tal:content="blobs"></span>
         <br><br>
     </div>
+  </div>
+  <p tal:condition="python: view.bad_blobs is None"> There are no broken blobs.</p>
 </metal:core>
 
 </body>

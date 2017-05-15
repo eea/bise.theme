@@ -103,6 +103,8 @@ class DetectBlobs(BrowserView):
         logger.info("All done")
         if IAnnotations(self.context) is not None and len(bad_blobs) > 0:
             IAnnotations(self.context)['bad_blobs'] = bad_blobs
+        else:
+            IAnnotations(self.context)['bad_blobs'] = None
         return "OK - check console for status messages"
 
     def __call__(self):
@@ -114,5 +116,8 @@ class ShowBlobs(BrowserView):
     site/@@show-broken-blobs
     """
     def __call__(self):
-        self.bad_blobs = IAnnotations(self.context)['bad_blobs']
+        if IAnnotations(self.context).get('bad_blobs', None):
+            self.bad_blobs = IAnnotations(self.context)['bad_blobs']
+        else:
+            self.bad_blobs = None
         return self.index()
