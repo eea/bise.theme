@@ -1,6 +1,9 @@
 Changelog
 =========
 
+3.9.dev0 - (unreleased)
+-----------------------
+
 3.8 - (2017-05-17)
 ------------------
 * Bug Fix: Added upgrade step for the removal of broken blobs and made some view
