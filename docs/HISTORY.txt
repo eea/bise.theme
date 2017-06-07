@@ -3,6 +3,8 @@ Changelog
 
 3.9.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Template override for the required packages viewlet
+  [iulianpetchesi #80975]
 
 3.8 - (2017-05-17)
 ------------------

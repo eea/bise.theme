@@ -1,0 +1,4 @@
+<tal:metal tal:condition="context/@@plone_context_state/is_view_template"
+    tal:define="site_url python:context.portal_url()">
+</tal:metal>
+
