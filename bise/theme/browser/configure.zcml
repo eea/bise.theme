@@ -129,6 +129,14 @@
         />
 
     <browser:page
+        name="pdf.cover"
+        for="eea.pdf.interfaces.IPDFAware"
+        class=".pdf.Cover"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope.Public"
+        />
+
+    <browser:page
         name="site_title"
         for="*"
         class=".sitetitle.SiteTitle"

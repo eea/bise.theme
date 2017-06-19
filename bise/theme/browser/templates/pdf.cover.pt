@@ -1,0 +1,63 @@
+<tal:block tal:define="disabledLeft python:request.set('disable_plone.leftcolumn', 1)"/>
+<tal:block tal:define="disabledRight python:request.set('disable_plone.rightcolumn', 1)"/>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  lang="en"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="eea">
+
+<body>
+
+<metal:title fill-slot="content-title"></metal:title>
+<metal:description fill-slot="content-description"></metal:description>
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core">
+
+<div class="cover">
+
+  <div class="cover-header">
+    <span tal:content="context/Type" class="cover-header-type">Content Type</span>
+    <span class="cover-header-separator">|</span>
+    <span tal:content="view/header" class="cover-header-root-title">Navigation Root Title</span>
+  </div>
+
+  <div class="cover-bellow-header">
+    <h1 class="cover-title" tal:content="context/Title">
+      Document Title
+    </h1>
+
+    <h2 class="cover-subtitle"
+             tal:define="description context/Description;
+                         description python:view.truncate(description)"
+             tal:condition="python: view.display_subtitle() and description"
+             tal:content="description">
+      Document Subtitle
+    </h2>
+  </div>
+
+
+  <div class="cover-body">
+  </div>
+
+  <div class="cover-logo"
+    tal:condition="exists:context/++theme++bise.diazotheme/img/bise-logo.png">
+    <img tal:attributes="src string:${portal_url}/++theme++bise.diazotheme/img/bise-logo.png" />
+  </div>
+
+  <div class="cover-logo"
+    tal:condition="not:exists:context/++theme++bise.diazotheme/img/bise-logo.png">
+    <img tal:attributes="src string:${portal_url}/++resource++plone-logo.png" />
+  </div>
+
+
+</div>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

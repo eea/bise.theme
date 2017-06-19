@@ -3,6 +3,8 @@ Changelog
 
 3.9.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Added pdf cover override
+  [iulianpetchesi #85140]
 * Bug Fix: Template override for the required packages viewlet
   [iulianpetchesi #80975]
 
