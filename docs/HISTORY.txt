@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.0 - (unreleased)
+------------------
+
 3.9 - (2017-06-23)
 ------------------
 * Bug Fix: Added pdf cover override
