@@ -1,8 +1,8 @@
 Changelog
 =========
 
-3.9.dev0 - (unreleased)
------------------------
+3.9 - (2017-06-23)
+------------------
 * Bug Fix: Added pdf cover override
   [iulianpetchesi #85140]
 * Bug Fix: Template override for the required packages viewlet
