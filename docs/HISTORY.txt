@@ -3,6 +3,8 @@ Changelog
 
 4.0 - (unreleased)
 ------------------
+* Bug Fix: Added before/after event for pdf export that wraps images in 'a' tags
+  [iulianpetchesi #85140]
 
 3.9 - (2017-06-23)
 ------------------

@@ -384,4 +384,30 @@ $(document).ready(function(){
   if($warnings.length){
     $warnings.removeClass('info').addClass('warning');
   }
+
+  var beforePrint = function() {
+    // Before print event that wraps images without an 'a' element
+    $('img').each(function (index, value) {
+      if ($(value).parent('a').length < 1) {
+        $(value).wrap('<a href="' + value.src + '" target="_blank"></a>');
+      }
+    })
+  };
+
+  var afterPrint = function() {
+    // placeholder
+  };
+
+  if (window.matchMedia) {
+      var mediaQueryList = window.matchMedia('print');
+      mediaQueryList.addListener(function(mql) {
+          if (mql.matches) {
+              beforePrint();
+          } else {
+              afterPrint();
+          }
+      });
+  }
+  window.onbeforeprint = beforePrint;
+  window.onafterprint = afterPrint;
 });
