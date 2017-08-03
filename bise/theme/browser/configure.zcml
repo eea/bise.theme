@@ -96,6 +96,13 @@
         template="templates/show-blobs.pt"
         />
 
+    <browser:page
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        name="sync-cached-blobs"
+        class=".fixblobs.SyncBlobsFromCache"
+        permission="cmf.ManagePortal"
+        />
+
     <browser:viewletManager
         name="bise.htmlheadtitle"
         provides=".interfaces.IHtmlHeadTitle"
