@@ -3,6 +3,8 @@ Changelog
 
 4.1.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Exclude plone.app.stagingbehavior from folderishpage schema.
+  [iulianpetchesi #87107]
 
 4.0 - (2017-08-03)
 ------------------
