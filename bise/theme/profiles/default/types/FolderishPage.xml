@@ -4,6 +4,6 @@
  <property name="behaviors" purge="False">
   <element value="bise.theme.behaviors.sources.IExtraFolderishPage"/>
   <element value="bise.theme.behaviors.tagging.ICatalogueTags"/>
-  <element value="plone.app.stagingbehavior.interfaces.IStagingSupport"/>
+  <!-- <element value="plone.app.stagingbehavior.interfaces.IStagingSupport"/> -->
  </property>
 </object>
