@@ -392,6 +392,16 @@ $(document).ready(function(){
         $(value).wrap('<a href="' + value.src + '" target="_blank"></a>');
       }
     })
+
+    // Add window location to anchors
+    $('a').each(function(index, value) {
+      if ($(value).attr("href")) {
+        var href = $(value).attr("href").match(/#/);
+        if (href) {
+          $(value).attr("href", $(value)[0].baseURI + $(value)[0].hash);
+        }
+      }
+    });
   };
 
   var afterPrint = function() {

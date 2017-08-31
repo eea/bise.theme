@@ -3,6 +3,8 @@ Changelog
 
 4.1.dev0 - (unreleased)
 -----------------------
+* Bug Fix: Modify footnotes & references at pdf export
+  [iulianpetchesi #85140]
 * Bug Fix: Exclude plone.app.stagingbehavior from folderishpage schema.
   [iulianpetchesi #87107]
 
