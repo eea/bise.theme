@@ -3,6 +3,8 @@ Changelog
 
 4.1.dev0 - (unreleased)
 -----------------------
+* Replace HTTP link resources with HTTPS
+  [krisztina #87770]
 * Bug Fix: Modify footnotes & references at pdf export
   [iulianpetchesi #85140]
 * Bug Fix: Exclude plone.app.stagingbehavior from folderishpage schema.
@@ -221,4 +223,3 @@ Changelog
 -------------------
 - Initial release
   [erral]
-

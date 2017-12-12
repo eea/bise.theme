@@ -118,7 +118,7 @@ define([
         }
         $.ajax({
           // url: "http://test.discomap.eea.europa.eu/arcgis/rest/services/N2K/Natura2000Query_WM/MapServer/3/query",
-          url: "http://bio.discomap.eea.europa.eu/arcgis/rest/services/ProtectedSites/Natura2000Query_WM/MapServer/3/query",
+          url: "https://bio.discomap.eea.europa.eu/arcgis/rest/services/ProtectedSites/Natura2000Query_WM/MapServer/3/query",
           data: data,
           dataType: 'json'
         }).done(function (data){
@@ -133,7 +133,7 @@ define([
           if (hasGeometry)
             // http://bio.discomap.eea.europa.eu/arcgis/rest/services/ProtectedSites/Natura2000_Dyna_WM/MapServer
             // http://bio.discomap.eea.europa.eu/map/Filtermap/?webmap=0b2680c2bc544431a9a97119aa63d707
-            ifr.attr('src', "http://discomap.eea.europa.eu/map/Filtermap/?webmap=0b2680c2bc544431a9a97119aa63d707&SiteCode="+ifr.data('code')+"&autoquery=false&zoomto=true")
+            ifr.attr('src', "https://discomap.eea.europa.eu/map/Filtermap/?webmap=0b2680c2bc544431a9a97119aa63d707&SiteCode="+ifr.data('code')+"&autoquery=false&zoomto=true")
           else
             ifr.hide()
         }).fail(function (){

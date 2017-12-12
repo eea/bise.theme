@@ -380,7 +380,7 @@ define([
 
     // Renders statistics if no results found...
     _renderStatistics: function(){
-      $.get("http://"+this.host+"/api/v1/stats.json", function( data ) {
+      $.get("https://"+this.host+"/api/v1/stats.json", function( data ) {
         // Show cloud tags
         if (!$('.catalogue-cloud-tags').hasClass('jqcloud')){
           $('.catalogue-cloud-tags').jQCloud(data.tags);
