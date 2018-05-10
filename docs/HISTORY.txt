@@ -3,6 +3,8 @@ Changelog
 
 4.2.dev0 - (unreleased)
 -----------------------
+* Task: Add override for login_form
+  [iulianpetchesi #92503]
 
 4.1 - (2017-12-12)
 ------------------
