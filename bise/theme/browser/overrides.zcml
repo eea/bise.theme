@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="bise.theme">
+
+  <browser:page
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    name="change-password"
+    class=".overrides.PasswordAccountPanelOverride"
+    permission="cmf.SetOwnPassword"
+    layer="bise.theme.browser.interfaces.IThemeSpecific"
+  />
+</configure>

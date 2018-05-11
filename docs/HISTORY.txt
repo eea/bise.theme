@@ -3,7 +3,8 @@ Changelog
 
 4.2.dev0 - (unreleased)
 -----------------------
-* Task: Add override for login_form
+* Task: Add override for login_form and for the password change page so that
+  it links to eionet
   [iulianpetchesi #92503]
 
 4.1 - (2017-12-12)
