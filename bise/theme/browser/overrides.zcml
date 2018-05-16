@@ -9,6 +9,7 @@
     name="change-password"
     class=".overrides.PasswordAccountPanelOverride"
     permission="cmf.SetOwnPassword"
-    layer="bise.theme.browser.interfaces.IThemeSpecific"
+    layer="bise.theme.interfaces.IBiseThemeLayer"
   />
+
 </configure>

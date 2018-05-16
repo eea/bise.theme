@@ -95,4 +95,12 @@
     handler=".upgrades.upgrade_to_1010"
     />
 
+  <genericsetup:upgradeStep
+    source="1010"
+    destination="1011"
+    profile="bise.theme:default"
+    title="Add browser layer"
+    handler=".upgrades.upgrade_to_1011"
+    />
+
 </configure>

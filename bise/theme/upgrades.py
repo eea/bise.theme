@@ -249,3 +249,11 @@ def upgrade_to_1010(context, logger=None):
     recurse(site)
     transaction.commit()
     logger.info("Finished upgrade.")
+
+
+def upgrade_to_1011(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1011')
+    logger.info("Starting upgrade.")
+    context.runImportStepFromProfile(PROFILE_ID, 'browserlayer')
+    logger.info("Finished upgrade.")
