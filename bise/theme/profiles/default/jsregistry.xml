@@ -73,15 +73,11 @@
     expression="" id="modernizr.js" inline="False"
     insert-after="nodeutilities.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="full" conditionalcomment="" cookable="True" enabled="False"
-    expression="" id="livesearch.js" inline="False"
-    insert-after="modernizr.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="++resource++search.js" inline="False"
-    insert-after="livesearch.js"/>
+    insert-after="modernizr.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="full" conditionalcomment="" cookable="True" enabled="True"
+    compression="full" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="collapsiblesections.js" inline="False"
     insert-after="++resource++search.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
@@ -107,18 +103,10 @@
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="table_sorter.js" inline="False" insert-after="toc.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="full" conditionalcomment="" cookable="True" enabled="False"
-    expression="" id="accessibility.js" inline="False"
-    insert-after="table_sorter.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="False"
-    expression="" id="styleswitcher.js" inline="False"
-    insert-after="accessibility.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="dragdropreorder.js" inline="False"
-    insert-after="styleswitcher.js"/>
+    insert-after="table_sorter.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++plone.app.jquerytools.dateinput.js"
@@ -127,7 +115,7 @@
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="select_all.js" inline="False"
     insert-after="++resource++plone.app.jquerytools.dateinput.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
+ <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="collapsibleformfields.js" inline="False"
     insert-after="select_all.js"/>
@@ -232,60 +220,19 @@
     expression="" id="bise.theme.js" inline="False"
     insert-after="++resource++plone.formwidget.contenttree/contenttree.js"/>
  <javascript authenticated="True" bundle="default" cacheable="False"
-    compression="none" conditionalcomment="" cookable="False" enabled="True"
+    compression="none" conditionalcomment="" cookable="False" enabled="False"
     expression="" id="https://www.google.com/jsapi" inline="False"
     insert-after="bise.theme.js"/>
  <javascript authenticated="False" bundle="default" cacheable="False"
     compression="safe" conditionalcomment="" cookable="False" enabled="True"
     expression="" id="cifChart.js" inline="False"
     insert-after="https://www.google.com/jsapi"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.ajaxfileupload.js" inline="False"
-    insert-after="cifChart.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.bbq.js" inline="False"
-    insert-after="++resource++jquery.ajaxfileupload.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.cookie.js" inline="False"
-    insert-after="++resource++jquery.bbq.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.jstree.js" inline="False"
-    insert-after="++resource++jquery.cookie.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.select2uislider.js" inline="False"
-    insert-after="++resource++jquery.jstree.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.tagcloud.js" inline="False"
-    insert-after="++resource++jquery.select2uislider.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="eeareferencebrowser.js" inline="False"
-    insert-after="++resource++jquery.tagcloud.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="False"
-    expression="" id="eea_relations.js" inline="False"
-    insert-after="eeareferencebrowser.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.splitter.js" inline="False"
-    insert-after="eea_relations.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++jquery.tokeninput.js" inline="False"
-    insert-after="++resource++jquery.splitter.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:portal.portal_glossary.includePloneGlossaryJS(here, request)"
-    id="ploneglossary.js" inline="False"
-    insert-after="++resource++jquery.tokeninput.js"/>
+    id="ploneglossary.js" inline="False" insert-after="cifChart.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:portal.portal_glossary.includePloneGlossaryJS(here, request)"
     id="ploneglossary_definitions.js" inline="False"
     insert-after="ploneglossary.js"/>
@@ -295,24 +242,16 @@
     insert-after="ploneglossary_definitions.js"/>
  <javascript authenticated="False" bundle="default" cacheable="False"
     compression="none" conditionalcomment="" cookable="False" enabled="False"
-    expression="" id="http://yourjavascript.com/24108121335/chromefix.js"
-    inline="False" insert-after="strategyPlan.js"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="none" conditionalcomment="" cookable="False" enabled="False"
     expression="" id="https://js.arcgis.com/3.9/" inline="False"
-    insert-after="http://yourjavascript.com/24108121335/chromefix.js"/>
+    insert-after="strategyPlan.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="False" enabled="False"
     expression="" id="++resource++bise.ecosystemservices/maes.js"
     inline="False" insert-after="https://js.arcgis.com/3.9/"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++select2/select2.min.js" inline="False"
-    insert-after="++resource++bise.ecosystemservices/maes.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="False" enabled="True"
     expression="" id="chosen.jquery.min.js" inline="False"
-    insert-after="++resource++select2/select2.min.js"/>
+    insert-after="++resource++bise.ecosystemservices/maes.js"/>
  <javascript authenticated="False" bundle="tofix" cacheable="False"
     compression="none" conditionalcomment="" cookable="False" enabled="True"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
@@ -324,26 +263,10 @@
     compression="safe" conditionalcomment="" cookable="False" enabled="True"
     expression="python:'pdf.' in request['URL0'] or '.pdf' in request['URL0']"
     id="pdf.print.js" inline="False" insert-after="atlas.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++eea.tinymce.plugins.js" inline="False"
-    insert-after="pdf.print.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="eeatinymceutils.js" inline="False"
-    insert-after="++resource++eea.tinymce.plugins.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++eea.uberlisting.js/uberlisting_view.js"
-    inline="False" insert-after="eeatinymceutils.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++eea.alchemy.js" inline="False"
-    insert-after="++resource++eea.uberlisting.js/uberlisting_view.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++collective.galleria.js" inline="False"
-    insert-after="++resource++eea.alchemy.js"/>
+    insert-after="pdf.print.js"/>
  <javascript authenticated="True" bundle="deco" cacheable="False"
     compression="safe" conditionalcomment="" cookable="False" enabled="True"
     expression="" id="++resource++plone.app.tiles/src/plone.tile.js"
@@ -383,12 +306,8 @@
     insert-after="++theme++bise.diazotheme/js/sidebar-plugin.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="createversion.js" inline="False"
-    insert-after="++theme++bise.diazotheme/js/navbar.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++eea.sparql.js" inline="False"
-    insert-after="createversion.js"/>
+    insert-after="++theme++bise.diazotheme/js/navbar.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="selectivity-jquery.min.js" inline="False"
@@ -400,31 +319,8 @@
     inline="False" insert-after="selectivity-jquery.min.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++eea.pdf.js" inline="False"
-    insert-after="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/1.1.7/jquery.linkify.min.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++theme++bise.diazotheme/js/override-pdf-overlay.js"
-    inline="False" insert-after="++resource++eea.pdf.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="False"
-    expression="" id="++resource++eea.jquery.screentimeanalytics.js"
-    inline="False"
-    insert-after="++theme++bise.diazotheme/js/override-pdf-overlay.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="False"
-    expression="python:member is None" id="screentimeanalytics.js"
-    inline="False"
-    insert-after="++resource++eea.jquery.screentimeanalytics.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="False"
-    expression="python:member is None"
-    id="++theme++bise.diazotheme/js/activate-screentime.js" inline="False"
-    insert-after="screentimeanalytics.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++bise.datatiles/tiles.js" inline="False"
-    insert-after="++theme++bise.diazotheme/js/activate-screentime.js"/>
+    insert-after="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/1.1.7/jquery.linkify.min.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++collective.cover/js/layout_edit.js"
