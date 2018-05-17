@@ -160,4 +160,6 @@
         permission="eea.pdf.download"
         />
 
+    <include file="overrides.zcml" />
+
 </configure>
