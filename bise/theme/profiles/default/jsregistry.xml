@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<object name="portal_javascripts" meta_type="JavaScripts Registry">
+<object name="portal_javascripts" meta_type="JavaScripts Registry" purge="True">
  <javascript authenticated="False" bundle="jquery" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++plone.app.jquery.js" inline="False"/>
@@ -199,15 +199,15 @@
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
     id="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5" inline="False"
     insert-after="++resource++bise.biodiversityfactsheet/mapsConfig.js"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
     id="++resource++bise.biodiversityfactsheet/layout.js" inline="False"
     insert-after="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
-    id="++resource++bise.biodiversityfactsheet/maps.js" inline="True"
+    id="++resource++bise.biodiversityfactsheet/maps.js" inline="False"
     insert-after="++resource++bise.biodiversityfactsheet/layout.js"/>
  <javascript authenticated="True" bundle="default" cacheable="False"
     compression="none" conditionalcomment="" cookable="False" enabled="False"
@@ -256,9 +256,14 @@
     insert-after="++resource++plone.app.tiles/src/plone.tiletype.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="python: context.portal_type == &quot;collective.cover.content&quot; and 'compose' in request.URL0"
+    id="++resource++collective.cover/js/layout_edit.js" inline="False"
+    insert-after="++resource++collective.cover/js/contentchooser.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++collective.js.bootstrap/js/bootstrap.min.js"
     inline="False"
-    insert-after="++resource++collective.cover/js/contentchooser.js"/>
+    insert-after="++resource++collective.cover/js/layout_edit.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression=""
@@ -266,7 +271,7 @@
     inline="False"
     insert-after="++resource++collective.js.bootstrap/js/bootstrap.min.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="++resource++collective.cover/js/main.js" inline="False"
     insert-after="++resource++collective.cover/js/vendor/jquery.endless-scroll.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
@@ -286,20 +291,16 @@
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++bise.datatiles/tiles.js" inline="False"
     insert-after="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/1.1.7/jquery.linkify.min.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++collective.cover/js/layout_edit.js"
-    inline="False" insert-after="++resource++bise.datatiles/tiles.js"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="bise.theme.js" inline="False"
-    insert-after="++resource++collective.cover/js/layout_edit.js"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
+    insert-after="++resource++bise.datatiles/tiles.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="cifChart.js" inline="False"
     insert-after="bise.theme.js"/>
- <javascript authenticated="False" bundle="default" cacheable="False"
-    compression="safe" conditionalcomment="" cookable="False" enabled="True"
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="strategyPlan.js" inline="False"
     insert-after="cifChart.js"/>
  <javascript authenticated="False" bundle="tofix" cacheable="True"
