@@ -109,9 +109,17 @@
     expression="" id="++resource++plone.formwidget.contenttree/contenttree.js"
     inline="False" insert-after="++resource++pb_attachment.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="formUnload.js" inline="False"
+    insert-after="++resource++plone.formwidget.contenttree/contenttree.js"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="unlockOnFormUnload.js" inline="False"
+    insert-after="formUnload.js"/>
+ <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="kss-bbb.js" inline="False"
-    insert-after="++resource++plone.formwidget.contenttree/contenttree.js"/>
+    insert-after="unlockOnFormUnload.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python: 'search' in request.ACTUAL_URL" id="modernizr.js"
@@ -125,19 +133,11 @@
     expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
     id="inline_validation.js" inline="False"
     insert-after="++resource++search.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="formUnload.js" inline="False"
-    insert-after="inline_validation.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="unlockOnFormUnload.js" inline="False"
-    insert-after="formUnload.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
     id="formsubmithelpers.js" inline="False"
-    insert-after="unlockOnFormUnload.js"/>
+    insert-after="inline_validation.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
@@ -192,7 +192,7 @@
  <javascript authenticated="False" bundle="default" cacheable="False"
     compression="safe" conditionalcomment="" cookable="False" enabled="True"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
-    id="++resource++bise.biodiversityfactsheet/mapsConfig.js" inline="False"
+    id="++resource++bise.biodiversityfactsheet/mapsConfig.js" inline="True"
     insert-after="++resource++bise.biodiversityfactsheet/jquery.collapsible.min.js"/>
  <javascript authenticated="False" bundle="default" cacheable="False"
     compression="none" conditionalcomment="" cookable="False" enabled="True"
@@ -202,17 +202,17 @@
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
-    id="++resource++bise.biodiversityfactsheet/layout.js" inline="False"
+    id="++resource++bise.biodiversityfactsheet/maps.js" inline="False"
     insert-after="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
-    id="++resource++bise.biodiversityfactsheet/maps.js" inline="False"
-    insert-after="++resource++bise.biodiversityfactsheet/layout.js"/>
+    id="++resource++bise.biodiversityfactsheet/layout.js" inline="False"
+    insert-after="++resource++bise.biodiversityfactsheet/maps.js"/>
  <javascript authenticated="True" bundle="default" cacheable="False"
     compression="none" conditionalcomment="" cookable="False" enabled="False"
     expression="" id="https://www.google.com/jsapi" inline="False"
-    insert-after="++resource++bise.biodiversityfactsheet/maps.js"/>
+    insert-after="++resource++bise.biodiversityfactsheet/layout.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="python:portal.portal_glossary.includePloneGlossaryJS(here, request)"
@@ -259,54 +259,39 @@
     expression="python: context.portal_type == &quot;collective.cover.content&quot; and 'compose' in request.URL0"
     id="++resource++collective.cover/js/layout_edit.js" inline="False"
     insert-after="++resource++collective.cover/js/contentchooser.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++collective.js.bootstrap/js/bootstrap.min.js"
-    inline="False"
-    insert-after="++resource++collective.cover/js/layout_edit.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression=""
-    id="++resource++collective.cover/js/vendor/jquery.endless-scroll.js"
-    inline="False"
-    insert-after="++resource++collective.js.bootstrap/js/bootstrap.min.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="False"
     expression="" id="++resource++collective.cover/js/main.js" inline="False"
-    insert-after="++resource++collective.cover/js/vendor/jquery.endless-scroll.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++theme++bise.diazotheme/js/sidebar-plugin.js"
-    inline="False" insert-after="++resource++collective.cover/js/main.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++theme++bise.diazotheme/js/navbar.js" inline="False"
-    insert-after="++theme++bise.diazotheme/js/sidebar-plugin.js"/>
+    insert-after="++resource++collective.cover/js/layout_edit.js"/>
  <javascript authenticated="False" bundle="default" cacheable="False"
     compression="none" conditionalcomment="" cookable="False" enabled="True"
     expression="python:'/bap/' in request.URL0"
     id="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/1.1.7/jquery.linkify.min.js"
-    inline="False" insert-after="++theme++bise.diazotheme/js/navbar.js"/>
+    inline="False" insert-after="++resource++collective.cover/js/main.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++bise.datatiles/tiles.js" inline="False"
     insert-after="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/1.1.7/jquery.linkify.min.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++collective.js.bootstrap/js/bootstrap.min.js"
+    inline="False" insert-after="++resource++bise.datatiles/tiles.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++theme++bise.diazotheme/js/sidebar-plugin.js"
+    inline="False"
+    insert-after="++resource++collective.js.bootstrap/js/bootstrap.min.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++theme++bise.diazotheme/js/navbar.js" inline="False"
+    insert-after="++theme++bise.diazotheme/js/sidebar-plugin.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="bise.theme.js" inline="False"
-    insert-after="++resource++bise.datatiles/tiles.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="cifChart.js" inline="False"
-    insert-after="bise.theme.js"/>
- <javascript authenticated="False" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="strategyPlan.js" inline="False"
-    insert-after="cifChart.js"/>
+    insert-after="++theme++bise.diazotheme/js/navbar.js"/>
  <javascript authenticated="False" bundle="tofix" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="atlas.js" inline="False"
-    insert-after="strategyPlan.js"/>
+    expression="" id="atlas.js" inline="False" insert-after="bise.theme.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="fix_iframe.js" inline="False" insert-after="atlas.js"/>
