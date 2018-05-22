@@ -122,61 +122,61 @@
     insert-after="unlockOnFormUnload.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: 'search' in request.ACTUAL_URL" id="modernizr.js"
+    expression="python: '@@search' in request.ACTUAL_URL" id="modernizr.js"
     inline="False" insert-after="kss-bbb.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: 'search' in request.ACTUAL_URL"
+    expression="python: '@@search' in request.ACTUAL_URL"
     id="++resource++search.js" inline="False" insert-after="modernizr.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="inline_validation.js" inline="False"
     insert-after="++resource++search.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="formsubmithelpers.js" inline="False"
     insert-after="inline_validation.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="jquery.tinymce.js" inline="False"
     insert-after="formsubmithelpers.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="tiny_mce_gzip.js" inline="False" insert-after="jquery.tinymce.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="++resource++plone.formwidget.querystring.querywidget.js"
     inline="False" insert-after="tiny_mce_gzip.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="++resource++plone.formwidget.autocomplete/jquery.autocomplete.min.js"
     inline="False"
     insert-after="++resource++plone.formwidget.querystring.querywidget.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="++resource++plone.formwidget.autocomplete/formwidget-autocomplete.js"
     inline="False"
     insert-after="++resource++plone.formwidget.autocomplete/jquery.autocomplete.min.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="chosen.jquery.min.js" inline="False"
     insert-after="++resource++plone.formwidget.autocomplete/formwidget-autocomplete.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="++resource++eea.sparql.js" inline="False"
     insert-after="chosen.jquery.min.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL"
+    expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.ACTUAL_URL or (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'compose' in request.ACTUAL_URL"
     id="selectivity-jquery.min.js" inline="False"
     insert-after="++resource++eea.sparql.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
@@ -270,8 +270,13 @@
     inline="False" insert-after="++resource++collective.cover/js/main.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++bise.datatiles/tiles.js" inline="False"
+    expression="python: 'reorder_' in request.URL0" id="reorder_resources.js"
+    inline="False"
     insert-after="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/1.1.7/jquery.linkify.min.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+    compression="safe" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="++resource++bise.datatiles/tiles.js" inline="False"
+    insert-after="reorder_resources.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++collective.js.bootstrap/js/bootstrap.min.js"

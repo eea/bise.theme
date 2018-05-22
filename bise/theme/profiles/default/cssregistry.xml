@@ -1,274 +1,231 @@
 <?xml version="1.0"?>
 <object name="portal_css" meta_type="Stylesheets Registry" purge="True">
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="base.css" media="screen"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="base.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="jqueryui" cacheable="True" compression="none"
-   conditionalcomment="" cookable="True" enabled="on" expression=""
-   id="collective.js.jqueryui.custom.min.css" insert-after="base.css"
-   media="screen" rel="stylesheet" rendering="link"/>
+    bundle="jqueryui" cacheable="True" compression="none"
+    conditionalcomment="" cookable="True" enabled="on" expression=""
+    id="collective.js.jqueryui.custom.min.css" insert-after="base.css"
+    media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="portlets.css"
-   insert-after="collective.js.jqueryui.custom.min.css" media="screen"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="portlets.css"
+    insert-after="collective.js.jqueryui.custom.min.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="forms.css"
-   insert-after="portlets.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="print.css"
+    insert-after="portlets.css" media="print" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="print.css"
-   insert-after="forms.css" media="print" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++sl_stylesheets/social_like.css" insert-after="print.css"
+    media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++plone.app.jquerytools.dateinput.css"
-   insert-after="print.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="False"
+    expression="not:request/HTTP_X_THEME_ENABLED | nothing" id="public.css"
+    insert-after="++resource++sl_stylesheets/social_like.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="strategyPlan.css"
-   insert-after="++resource++plone.app.jquerytools.dateinput.css" media=""
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="fonts.css"
+    insert-after="public.css" media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="cifChart.css"
-   insert-after="strategyPlan.css" media="" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="False"
+    expression="not:request/HTTP_X_THEME_ENABLED | nothing" id="columns.css"
+    insert-after="fonts.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++sl_stylesheets/social_like.css"
-   insert-after="cifChart.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="False"
+    expression="not:request/HTTP_X_THEME_ENABLED | nothing" id="mobile.css"
+    insert-after="columns.css"
+    media="handheld, screen and (max-device-width: 480px)" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++plone.formwidget.querystring.querywidget.css"
-   insert-after="++resource++sl_stylesheets/social_like.css" media="screen"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="False"
+    expression="not:request/HTTP_X_THEME_ENABLED | nothing"
+    id="bise.theme.css" insert-after="mobile.css" media="" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="ploneglossary_popup.css"
-   insert-after="++resource++plone.formwidget.querystring.querywidget.css"
-   media="" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="fonts.css"
-   insert-after="ploneglossary_popup.css" media="" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="forms.css"
+    insert-after="bise.theme.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="member.css"
-   insert-after="fonts.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="member.css"
+    insert-after="forms.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="authoring.css"
-   insert-after="member.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="authoring.css"
+    insert-after="member.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="controlpanel.css"
-   insert-after="authoring.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="controlpanel.css"
+    insert-after="authoring.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++plone.app.discussion.stylesheets/discussion.css"
-   insert-after="controlpanel.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="chosen.min.css"
+    insert-after="controlpanel.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++tinymce.stylesheets/tinymce.css"
-   insert-after="++resource++plone.app.discussion.stylesheets/discussion.css"
-   media="screen" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="False" compression="none"
-   conditionalcomment="" cookable="False" enabled="False" expression=""
-   id="http://194.30.43.115:3000/assets/catalogue-client/catalogue.min.css"
-   insert-after="++resource++tinymce.stylesheets/tinymce.css" media=""
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="selectivity-jquery.css"
+    insert-after="chosen.min.css" media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css"
-   insert-after="http://194.30.43.115:3000/assets/catalogue-client/catalogue.min.css"
-   media="screen" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.cover/css/contentchooser.css"
+    insert-after="selectivity-jquery.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++plone.formwidget.contenttree/contenttree.css"
-   insert-after="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css"
-   media="screen" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.app.discussion.stylesheets/discussion.css"
+    insert-after="++resource++collective.cover/css/contentchooser.css"
+    media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="ploneboard.css"
-   insert-after="++resource++plone.formwidget.contenttree/contenttree.css"
-   media="all" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++tinymce.stylesheets/tinymce.css"
+    insert-after="++resource++plone.app.discussion.stylesheets/discussion.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="False" expression=""
+    id="++resource++plone.app.jquerytools.overlays.css"
+    insert-after="++resource++tinymce.stylesheets/tinymce.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="++resource++collection.css"
-   insert-after="ploneboard.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.app.jquerytools.dateinput.css"
+    insert-after="++resource++plone.app.jquerytools.overlays.css"
+    media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="jquery.bugme.css"
-   insert-after="++resource++collection.css" media="" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.querystring.querywidget.css"
+    insert-after="++resource++plone.app.jquerytools.dateinput.css"
+    media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="chosen.min.css"
-   insert-after="jquery.bugme.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css"
+    insert-after="++resource++plone.formwidget.querystring.querywidget.css"
+    media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++eea.alchemy.css" insert-after="chosen.min.css"
-   media="screen" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="ploneboard.css"
+    insert-after="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css"
+    media="all" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++collective.cover/css/contentchooser.css"
-   insert-after="++resource++eea.alchemy.css" media="screen" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++plone.formwidget.contenttree/contenttree.css"
+    insert-after="ploneboard.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="selectivity-jquery.css"
-   insert-after="++resource++collective.cover/css/contentchooser.css"
-   media="" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="++resource++collection.css"
+    insert-after="++resource++plone.formwidget.contenttree/contenttree.css"
+    media="screen" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++collective.cover/css/cover.css"
+    insert-after="++resource++collection.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="True"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="++resource++eea.sparql.css"
+    insert-after="++resource++collective.cover/css/cover.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.URL0"
-   id="++resource++jquery.tokeninput.facebook.css"
-   insert-after="selectivity-jquery.css" media="all" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="False" compression="none"
+    conditionalcomment="" cookable="False" enabled="False"
+    expression="python:context.portal_type == 'BiodiversityFactsheet'"
+    id="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css"
+    insert-after="++resource++eea.sparql.css" media="" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.URL0"
-   id="++resource++select2/select2.css"
-   insert-after="++resource++jquery.tokeninput.facebook.css" media="screen"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="False" compression="none"
+    conditionalcomment="" cookable="False" enabled="False"
+    expression="python:context.portal_type == 'BiodiversityFactsheet'"
+    id="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css"
+    insert-after="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css"
+    media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="none" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python: (not here.restrictedTraverse('@@plone_portal_state').anonymous()) and 'edit' in request.URL0"
-   id="eeareferencebrowser.css"
-   insert-after="++resource++select2/select2.css" media="all"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on"
+    expression="python:here.portal_type=='PloneGlossary'"
+    id="ploneglossary.css"
+    insert-after="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css"
+    media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="False" enabled="on"
-   expression="nocall: object/@@collage_view|nothing" id="collage.css"
-   insert-after="eeareferencebrowser.css" media="all" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on"
+    expression="python:here.portal_type=='PloneGlossary'"
+    id="ploneglossary_popup.css" insert-after="ploneglossary.css" media=""
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="False" compression="none"
-   conditionalcomment="" cookable="False" enabled="on"
-   expression="python:context.portal_type == 'BiodiversityFactsheet'"
-   id="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css"
-   insert-after="collage.css" media="" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="False" compression="none"
+    conditionalcomment="" cookable="False" enabled="False" expression=""
+    id="https://gist.githubusercontent.com/MikelS/ae35f238e09ecea38554/raw/"
+    insert-after="ploneglossary_popup.css" media="" rel="stylesheet"
+    rendering="import"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="False" compression="none"
-   conditionalcomment="" cookable="False" enabled="on"
-   expression="python:context.portal_type == 'BiodiversityFactsheet'"
-   id="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css"
-   insert-after="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css"
-   media="" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="False" compression="none"
+    conditionalcomment="" cookable="False" enabled="False" expression=""
+    id="https://js.arcgis.com/3.9/js/esri/css/esri.css"
+    insert-after="https://gist.githubusercontent.com/MikelS/ae35f238e09ecea38554/raw/"
+    media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="none" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') or 'edit' in request.URL0"
-   id="faceted_view.css"
-   insert-after="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css"
-   media="all" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="False" enabled="on"
+    expression="nocall: object/@@collage_view|nothing" id="collage.css"
+    insert-after="https://js.arcgis.com/3.9/js/esri/css/esri.css" media="all"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.facetednavigation.subtypes.interfaces.IFacetedNavigable') or 'edit' in request.URL0"
-   id="++resource++jquery.select2uislider.css"
-   insert-after="faceted_view.css" media="all" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="none" conditionalcomment=""
+    cookable="False" enabled="False" expression=""
+    id="++resource++bise.ecosystemservices/maes.css"
+    insert-after="collage.css" media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="none" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python:'configure_faceted.html' in request.URL0"
-   id="faceted_edit.css"
-   insert-after="++resource++jquery.select2uislider.css" media="all"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="False" expression="" id="ploneCustom.css"
+    insert-after="++resource++bise.ecosystemservices/maes.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python:here.portal_type=='PloneGlossary'"
-   id="ploneglossary.css" insert-after="faceted_edit.css" media=""
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="False" enabled="on"
+    expression="python:'pdf.' in request['URL0'] or '.pdf' in request['URL0'] or 'epub.' in request['URL0'] or '.epub' in request['URL0']"
+    id="pdf.print.css" insert-after="ploneCustom.css" media="print"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="none" conditionalcomment=""
-   cookable="False" enabled="False" expression=""
-   id="++resource++bise.ecosystemservices/maes.css"
-   insert-after="ploneglossary.css" media="" rel="stylesheet"
-   rendering="link"/>
+    bundle="default" cacheable="True" compression="none" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++resource++bise.datatiles/tiles.css" insert-after="pdf.print.css"
+    media="" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python: object.restrictedTraverse('@@plone_interface_info').provides('eea.uberlisting.browser.app.interfaces.IUberlistingView')"
-   id="++resource++eea.uberlisting.css/uberlisting_view.css"
-   insert-after="++resource++bise.ecosystemservices/maes.css" media="screen"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++theme++bise.diazotheme/css/fixes.css"
+    insert-after="++resource++bise.datatiles/tiles.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="False" expression="" id="ploneCustom.css"
-   insert-after="++resource++eea.uberlisting.css/uberlisting_view.css"
-   media="screen" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on"
-   expression="python:getattr(object, 'portal_type', None) in ['Sparql', 'SparqlBookmarksFolder']"
-   id="++resource++eea.sparql.css" insert-after="ploneCustom.css"
-   media="screen" rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="False" enabled="on"
-   expression="python:'pdf.' in request['URL0'] or '.pdf' in request['URL0'] or 'epub.' in request['URL0'] or '.epub' in request['URL0']"
-   id="pdf.print.css" insert-after="++resource++eea.sparql.css" media="print"
-   rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="++resource++eea.pdf.css"
-   insert-after="pdf.print.css" media="screen" rel="stylesheet"
-   rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++collective.cover/css/cover.css"
-   insert-after="++resource++eea.pdf.css" media="screen" rel="stylesheet"
-   rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="none" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++resource++bise.datatiles/tiles.css"
-   insert-after="++resource++collective.cover/css/cover.css" media=""
-   rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression=""
-   id="++theme++bise.diazotheme/css/fixes.css"
-   insert-after="++resource++bise.datatiles/tiles.css" media="screen"
-   rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="on" expression="" id="kgs-fixes.css"
-   insert-after="++theme++bise.diazotheme/css/fixes.css" media=""
-   rel="stylesheet" rendering="link"/>
- <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="True" enabled="False" expression="" id="country-hotfixes.css"
-   insert-after="kgs-fixes.css" media="" rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="kgs-fixes.css"
+    insert-after="++theme++bise.diazotheme/css/fixes.css" media=""
+    rel="stylesheet" rendering="link"/>
 </object>
