@@ -160,4 +160,21 @@
         permission="eea.pdf.download"
         />
 
+    <!-- Resource Reordering Browser Pages -->
+    <browser:page
+      for="*"
+      name="reorder_css"
+      class=".admin.ReorderCSS"
+      permission="cmf.ManagePortal"
+      template="templates/reorder.pt"
+    />
+
+    <browser:page
+      for="*"
+      name="reorder_javascripts"
+      class=".admin.ReorderJavascript"
+      permission="cmf.ManagePortal"
+      template="templates/reorder.pt"
+    />
+
 </configure>
