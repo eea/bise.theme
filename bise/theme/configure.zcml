@@ -25,4 +25,10 @@
         for="plone.dexterity.interfaces.IDexterityContent Products.CMFPlone.interfaces.syndication.IFeed"
         provides="Products.CMFPlone.interfaces.syndication.IFeedItem" />
 
+    <interface
+        interface=".interfaces.IBiseThemeLayer"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="BiseThemeLayer"
+        />
+
 </configure>
