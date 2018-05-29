@@ -101,13 +101,9 @@
     expression="" id="calendar_formfield.js" inline="False"
     insert-after="dropdown.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
-    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="++resource++pb_attachment.js" inline="False"
-    insert-after="calendar_formfield.js"/>
- <javascript authenticated="True" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++plone.formwidget.contenttree/contenttree.js"
-    inline="False" insert-after="++resource++pb_attachment.js"/>
+    inline="False" insert-after="calendar_formfield.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="formUnload.js" inline="False"
@@ -273,6 +269,26 @@
     expression="python: 'reorder_' in request.URL0" id="reorder_resources.js"
     inline="False"
     insert-after="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/1.1.7/jquery.linkify.min.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+   compression="safe" conditionalcomment="" cookable="True" enabled="True"
+   expression="python: 'biodiversity-strategy-plan' in request.URL0" id="strategyPlan.js"
+   inline="False"
+   insert-after="reorder_resources.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+   compression="safe" conditionalcomment="" cookable="True" enabled="True"
+   expression="python: 'policy' in request.URL0" id="cifChart.js"
+   inline="False"
+   insert-after="strategyPlan.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+   compression="safe" conditionalcomment="" cookable="True" enabled="True"
+   expression="python: python:member is None" id="screentimeanalytics.js"
+   inline="False"
+   insert-after="cifChart.js"/>
+ <javascript authenticated="False" bundle="default" cacheable="True"
+   compression="safe" conditionalcomment="" cookable="True" enabled="True"
+   expression="python: python:member is None" id="++theme++bise.diazotheme/js/activate-screentime.js"
+   inline="False"
+   insert-after="screentimeanalytics.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="++resource++bise.datatiles/tiles.js" inline="False"
