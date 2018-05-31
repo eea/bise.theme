@@ -257,3 +257,12 @@ def upgrade_to_1011(context, logger=None):
     logger.info("Starting upgrade.")
     context.runImportStepFromProfile(PROFILE_ID, 'browserlayer')
     logger.info("Finished upgrade.")
+
+
+def upgrade_to_1012(context, logger=None):
+    if logger is None:
+        logger = getLogger('upgrade_to_1012')
+    logger.info("Starting upgrade.")
+    context.runImportStepFromProfile(PROFILE_ID, 'jsregistry')
+    context.runImportStepFromProfile(PROFILE_ID, 'cssregistry')
+    logger.info("Finished upgrade.")
