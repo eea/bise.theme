@@ -1,3 +1,5 @@
+// used within a normal tinymce page at
+// https://biodiversity.europa.eu/policy#cifChart
       var level2Opened = true;
       var level3Opened = true;
       var level4Opened = true;
