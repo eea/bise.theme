@@ -4,6 +4,8 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="bise.theme">
 
+    <include file="overrides.zcml" />
+
     <!-- 'BISETheme' Zope 3 browser layer
       Register views, viewlets and resources for this layer to make sure
       they only apply to the 'BISETheme' theme.
