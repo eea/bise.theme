@@ -181,7 +181,7 @@
     insert-after="++resource++eea.sparql.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="nocall: object/@@collage_view|nothing"
+    expression="python:here.portal_type=='Collage'"
     id="++resource++collage-resources/collage.js" inline="False"
     insert-after="selectivity-jquery.min.js"/>
  <javascript authenticated="False" bundle="default" cacheable="False"
