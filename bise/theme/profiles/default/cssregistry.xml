@@ -23,8 +23,8 @@
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="False"
     expression="not:request/HTTP_X_THEME_ENABLED | nothing" id="public.css"
-    insert-after="print.css" media="screen"
-    rel="stylesheet" rendering="link"/>
+    insert-after="print.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression="" id="fonts.css"
@@ -123,8 +123,8 @@
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression=""
     id="++resource++plone.formwidget.contenttree/contenttree.css"
-    insert-after="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css" media="screen" rel="stylesheet"
-    rendering="link"/>
+    insert-after="++resource++plone.formwidget.autocomplete/jquery.autocomplete.css"
+    media="screen" rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="True"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression="" id="++resource++collection.css"
@@ -143,14 +143,14 @@
     rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="False" compression="none"
-    conditionalcomment="" cookable="False" enabled="True"
+    conditionalcomment="" cookable="False" enabled="on"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
     id="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css"
     insert-after="++resource++eea.sparql.css" media="" rel="stylesheet"
     rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="False" compression="none"
-    conditionalcomment="" cookable="False" enabled="True"
+    conditionalcomment="" cookable="False" enabled="on"
     expression="python:context.portal_type == 'BiodiversityFactsheet'"
     id="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css"
     insert-after="https://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/claro/claro.css"
@@ -203,28 +203,44 @@
     id="pdf.print.css" insert-after="ploneCustom.css" media="print"
     rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="False" enabled="on"
-   expression="python:'biodiversity-strategy-plan' in request['URL0']"
-   id="strategyPlan.css" insert-after="pdf.print.css" media="screen"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="False" enabled="on"
+    expression="python:'biodiversity-strategy-plan' in request['URL0']"
+    id="strategyPlan.css" insert-after="pdf.print.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
-   bundle="default" cacheable="True" compression="safe" conditionalcomment=""
-   cookable="False" enabled="on"
-   expression="python:'policy' in request['URL0']"
-   id="cifChart.css" insert-after="strategyPlan.css" media="screen"
-   rel="stylesheet" rendering="link"/>
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="False" enabled="on"
+    expression="python:'policy' in request['URL0']" id="cifChart.css"
+    insert-after="strategyPlan.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="none" conditionalcomment=""
     cookable="True" enabled="on" expression=""
-    id="++resource++bise.datatiles/tiles.css" insert-after="pdf.print.css"
+    id="++resource++bise.datatiles/tiles.css" insert-after="cifChart.css"
     media="" rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="none" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="fontawesome.min.css"
+    insert-after="++resource++bise.datatiles/tiles.css" media="screen"
+    rel="stylesheet" rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression=""
+    id="++theme++bise.diazotheme/css/main.css"
+    insert-after="fontawesome.min.css" media="screen" rel="stylesheet"
+    rendering="link"/>
+ <stylesheet title="" applyPrefix="False" authenticated="False"
+    bundle="default" cacheable="True" compression="safe" conditionalcomment=""
+    cookable="True" enabled="on" expression="" id="jquery.slick.css"
+    insert-after="++theme++bise.diazotheme/css/main.css" media="screen"
+    rel="stylesheet" rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression=""
     id="++theme++bise.diazotheme/css/fixes.css"
-    insert-after="++resource++bise.datatiles/tiles.css" media="screen"
-    rel="stylesheet" rendering="link"/>
+    insert-after="jquery.slick.css" media="screen" rel="stylesheet"
+    rendering="link"/>
  <stylesheet title="" applyPrefix="False" authenticated="False"
     bundle="default" cacheable="True" compression="safe" conditionalcomment=""
     cookable="True" enabled="on" expression="" id="kgs-fixes.css"

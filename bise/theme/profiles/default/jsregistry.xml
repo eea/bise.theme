@@ -5,8 +5,12 @@
     expression="" id="++resource++plone.app.jquery.js" inline="False"/>
  <javascript authenticated="False" bundle="jquery" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="" id="collective.js.jqueryui.custom.min.js" inline="False"
+    expression="" id="jquery.migrate.js" inline="False"
     insert-after="++resource++plone.app.jquery.js"/>
+ <javascript authenticated="False" bundle="jquery" cacheable="True"
+    compression="none" conditionalcomment="" cookable="True" enabled="True"
+    expression="" id="collective.js.jqueryui.custom.min.js" inline="False"
+    insert-after="jquery.migrate.min.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="jquery-integration.js" inline="False"
@@ -247,12 +251,12 @@
     insert-after="++resource++plone.app.tiles/src/plone.tile.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: context.portal_type == &quot;collective.cover.content&quot; and 'compose' in request.URL0"
+    expression="python: context.portal_type == 'collective.cover.content'"
     id="++resource++collective.cover/js/contentchooser.js" inline="False"
     insert-after="++resource++plone.app.tiles/src/plone.tiletype.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
     compression="none" conditionalcomment="" cookable="True" enabled="True"
-    expression="python: context.portal_type == &quot;collective.cover.content&quot; and 'compose' in request.URL0"
+    expression="python: context.portal_type == 'collective.cover.content'"
     id="++resource++collective.cover/js/layout_edit.js" inline="False"
     insert-after="++resource++collective.cover/js/contentchooser.js"/>
  <javascript authenticated="True" bundle="default" cacheable="True"
@@ -281,12 +285,12 @@
    insert-after="strategyPlan.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-   expression="python: python:member is None" id="screentimeanalytics.js"
+   expression="python:member is None" id="screentimeanalytics.js"
    inline="False"
    insert-after="cifChart.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
    compression="safe" conditionalcomment="" cookable="True" enabled="True"
-   expression="python: python:member is None" id="++theme++bise.diazotheme/js/activate-screentime.js"
+   expression="python:member is None" id="++theme++bise.diazotheme/js/activate-screentime.js"
    inline="False"
    insert-after="screentimeanalytics.js"/>
  <javascript authenticated="False" bundle="default" cacheable="True"
@@ -317,3 +321,4 @@
     compression="safe" conditionalcomment="" cookable="True" enabled="True"
     expression="" id="fix_iframe.js" inline="False" insert-after="atlas.js"/>
 </object>
+
