@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.3.dev0 - (unreleased)
+-----------------------
+
 4.2 - (2018-06-14)
 ------------------
 * Upgrade Step: Added upgradestep for portal_css and portal_javascripts resource
