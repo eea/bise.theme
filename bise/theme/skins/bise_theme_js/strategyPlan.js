@@ -110,7 +110,7 @@
   		$(".targetsBack").click(function(){
   			hideBackBar();
 
-  			$(".actionBack").css("height", "0px")
+  			$(".actionBack").css("height", "0px");
   			//$(".targetId").show();
   			//$(".targetId").css("height", "270px")
      		//$(".targetDesc").hide();
