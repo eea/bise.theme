@@ -41,24 +41,24 @@ define([
 
     initialize: function(options) {
       _.bindAll(this, 'addOne', 'addAll', 'render',
-                'mergeFacet', 'removeFacet', 'isFacetSelected')
+                'mergeFacet', 'removeFacet', 'isFacetSelected');
 
       // Fix for IE8
       $.support.cors = true;
       this._checkIE();
 
       // Add main template
-      $(this.$el.selector).append(this.mainTemplate)
+      $(this.$el.selector).append(this.mainTemplate);
 
       // Options
-      this.host = options['host']
+      this.host = options['host'];
 
       // Search type: always advanced, but by default only use BISE indexes
-      this.searchType = 'advanced'
+      this.searchType = 'advanced';
       this.queryparams.indexes = Object.keys(this.bise_indexes);
 
       // Get query
-      q = this.$el.data('query')
+      q = this.$el.data('query');
       if (q != null && q !== '') {
         this.queryparams.query = q;
         $('#catalogue-search-input').val(q);
@@ -89,15 +89,15 @@ define([
 
     // Refresh data from endpoint
     refreshEndpoint: function(){
-      $('.catalogue-loading .gif').show()
-      this.Results = new ResultsCollection(this._getEndpoint())
-      this.Results.bind('add', this.addOne)
-      this.Results.bind('reset', this.addAll)
-      this.Results.bind('all', this.render)
+      $('.catalogue-loading .gif').show();
+      this.Results = new ResultsCollection(this._getEndpoint());
+      this.Results.bind('add', this.addOne);
+      this.Results.bind('reset', this.addAll);
+      this.Results.bind('all', this.render);
     },
 
     runQuery: function(){
-      this.$('.catalogue-loading .gif').show()
+      this.$('.catalogue-loading .gif').show();
       this.$('.catalogue-aside').show();
       this.$("#catalogue-results").show();
       this.$('.catalogue-pagination').show();
@@ -123,10 +123,10 @@ define([
 
     fillQueryAndRun: function(e){
 
-      e.preventDefault()
+      e.preventDefault();
       $searchEl = $('#catalogue-search-input');
-      var q = $searchEl.val()
-      if (q === 'undefined') q = ''
+      var q = $searchEl.val();
+      if (q === 'undefined') q = '';
 
       if (!q) {
         this.showStatsScreen();
@@ -143,7 +143,7 @@ define([
         query: q.replace(/(<([^>]+)>)/ig,""),
         page: 1, per: 10,
         sort_on: ''     // default sort order is relevance, aka ''
-      }
+      };
       this.getSelectedFacet();
       $('#catalogue-sort').val('');
       $searchEl.val(q);
@@ -152,12 +152,12 @@ define([
 
     // Search Options
     setSorting: function(e){
-      this.queryparams.sort_on = $('#catalogue-sort').val()
+      this.queryparams.sort_on = $('#catalogue-sort').val();
       this.runQuery()
     },
     setPerPage: function(e){
       this.queryparams.page = 1
-      this.queryparams.per = $('#catalogue-per-page').val()
+      this.queryparams.per = $('#catalogue-per-page').val();
       // this.queryparams.per = parseInt($(e.target).html());
       this.runQuery()
     },
@@ -202,9 +202,9 @@ define([
 
     // Returns API endpoint (BISE or Advanced Search)
     _getEndpoint: function(){
-      this.url = 'http://'+this.host+'/api/v1/'
-      if (this.searchType === 'advanced') this.url += 'search'
-      else this.url += 'bise_search'
+      this.url = 'https://'+this.host+'/api/v1/';
+      if (this.searchType === 'advanced') this.url += 'search';
+      else this.url += 'bise_search';
       return this.url;
     },
 
@@ -212,10 +212,10 @@ define([
     _getSelectedCategories: function(){
       var array = _.map(this.$('#catalogue-categories input:checked'), function (x){
         return $(x).val()
-      })
+      });
       if (_.isEmpty(array)) array = _.map(this.$('#catalogue-categories input'), function (x){
         return $(x).val()
-      })
+      });
       return array
     },
     getSelectedFacet: function() {
@@ -225,7 +225,7 @@ define([
       });
     },
     _getLastPage: function(){
-      var pages = Math.floor(this.Results.total / this.queryparams.per)
+      var pages = Math.floor(this.Results.total / this.queryparams.per);
       if (this.Results.total % this.queryparams.per > 0)
         pages += 1;
       return pages;
@@ -270,11 +270,11 @@ define([
     // Renders Library filters
     _drawLibraries: function(){
       if (_.has(this.Results.facets, 'site')){
-        facet = this.Results.facets['site']
+        facet = this.Results.facets['site'];
 
-        this.$('.catalogue-libraries').html('')
-        m = new Backbone.Model(facet)
-        this.$(".catalogue-libraries").append( $('<ul>') )
+        this.$('.catalogue-libraries').html('');
+        m = new Backbone.Model(facet);
+        this.$(".catalogue-libraries").append( $('<ul>') );
         new LibraryView({
           el: this.$('.catalogue-libraries ul'),
           model: m
@@ -301,7 +301,7 @@ define([
     },
 
     _addWrappedCategory: function(key, checked){
-      var checked = _.contains(this.queryparams.indexes, key)
+      var checked = _.contains(this.queryparams.indexes, key);
       if (this.queryparams.indexes.length == 0) checked = true;
       var input = $('<input>', {
         'type': 'checkbox',
@@ -322,18 +322,18 @@ define([
 
     // Renders facets on sidebar
     _drawFacets: function(){
-      this.$("#catalogue-facets").html('')
+      this.$("#catalogue-facets").html('');
       if (this.Results.total > 0){
-        facet_names = Object.keys(_.omit(this.Results.facets, 'site'))
+        facet_names = Object.keys(_.omit(this.Results.facets, 'site'));
         for (var i=0; i < facet_names.length; i++){
-          title = facet_names[i]
-          facet = this.Results.facets[title]
+          title = facet_names[i];
+          facet = this.Results.facets[title];
 
           if ((typeof(facet.terms) != 'undefined' && facet.terms.length > 0) ||
               (typeof(facet.entries) != 'undefined' && facet.entries.length > 0)){
 
-            m = new Backbone.Model(facet)
-            m.title = title
+            m = new Backbone.Model(facet);
+            m.title = title;
 
             var facet = new FacetView({
               // el: this.$('.facet'),
@@ -353,13 +353,13 @@ define([
 
     // Show / Hide different sections when results found or not.
     _showResults: function(){
-      this.$('.catalogue-libraries').show()
-      this.$('.catalogue-container').show()
-      this.$('.catalogue-navigation-bar').show()
+      this.$('.catalogue-libraries').show();
+      this.$('.catalogue-container').show();
+      this.$('.catalogue-navigation-bar').show();
 
-      this.$('.catalogue-no-results').hide()
-      this.$('.catalogue-statistics').hide()
-      this.$('.catalogue-available-content').hide()
+      this.$('.catalogue-no-results').hide();
+      this.$('.catalogue-statistics').hide();
+      this.$('.catalogue-available-content').hide();
       this._drawPagination()
     },
     _showNoResults: function(){
@@ -372,9 +372,9 @@ define([
       this._drawSearches();
       this._drawCategories();
       this._renderStatistics();
-      this.$('.catalogue-no-results').show()
-      this.$('.catalogue-statistics').show()
-      this.$('.catalogue-available-content').show()
+      this.$('.catalogue-no-results').show();
+      this.$('.catalogue-statistics').show();
+      this.$('.catalogue-available-content').show();
     },
 
 
@@ -389,20 +389,20 @@ define([
         // Render last added content
         $(".catalogue-last-added").empty();
         _.each(data.last, function(item){
-          var cell = $('<li>').addClass('catalogue-cell')
-          var link = $('<a>').attr('href', item.link).html(item.title)
-          cell.append($('<div>').addClass('cell-title').append(link))
+          var cell = $('<li>').addClass('catalogue-cell');
+          var link = $('<a>').attr('href', item.link).html(item.title);
+          cell.append($('<div>').addClass('cell-title').append(link));
 
-          var subtitle = $('<div>').addClass('cell-subtitle')
-          subtitle.append($('<strong>').html(item.type))
-          subtitle.append('&nbsp;').append(item.published_on)
-          cell.append(subtitle)
+          var subtitle = $('<div>').addClass('cell-subtitle');
+          subtitle.append($('<strong>').html(item.type));
+          subtitle.append('&nbsp;').append(item.published_on);
+          cell.append(subtitle);
           $('.catalogue-last-added').append(cell)
         });
 
         // Render count of iterms in the catalogue
         _.each(data.counts, function(count, item){
-          $('.catalogue-available-content .span2.'+item+' > h1').html(count)
+          $('.catalogue-available-content .span2.'+item+' > h1').html(count);
         });
       });
     },
@@ -411,12 +411,12 @@ define([
      * FACETS
      **************************************************************************/
     mergeFacet: function(key, value){
-      this.queryparams[key] = value
+      this.queryparams[key] = value;
       // multiple params allowed version
       // if (!this.queryparams[key]) this.queryparams[key] = [];
       // this.queryparams[key].push(value)
       //
-      this.queryparams['page'] = 1
+      this.queryparams['page'] = 1;
       this.runQuery()
     },
     removeFacet: function(key, value) {
@@ -424,23 +424,24 @@ define([
       // var i = this.queryparams[key].indexOf(value);
       // if (i > -1) this.queryparams[key].splice(i);
       delete this.queryparams[key];
-      this.queryparams['page'] = 1
+      this.queryparams['page'] = 1;
       this.runQuery()
     },
     containsFacetKey: function(key){
-      if (_.has(this.queryparams, key)) return true
+      if (_.has(this.queryparams, key)) return true;
       return false
     },
     isFacetSelected: function(key, value){
       // If no value passed, will check if exist on queryparams
       if (value === undefined && !this.queryparams.hasOwnProperty(key))
-        return true
+        return true;
       // Checks if key present and contains value
       if (_.has(this.queryparams, key))
         // multiple params allowed version
         // if (_.contains(this.queryparams[key], value))
-        if (this.queryparams[key] == value)
-          return true
+        if (this.queryparams[key] == value) {
+            return true;
+        }
       return false
     },
 
@@ -458,14 +459,14 @@ define([
       $('.catalogue-loading .gif').hide()
     },
     addOne: function(result) {
-      var view = new ResultView({model: result})
+      var view = new ResultView({model: result});
       this.$("#catalogue-results").append(view.render().el)
     },
     addAll: function() {
-      this.$('#catalogue-results').html('')
+      this.$('#catalogue-results').html('');
       this.Results.each(this.addOne)
     }
-  })
+  });
   return AppView
-})
+});
 // vim: set ts=2 sw=2 ai e

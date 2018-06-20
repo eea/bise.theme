@@ -3,6 +3,8 @@ Changelog
 
 4.3.dev0 - (unreleased)
 -----------------------
+* Bug fix: fixed catalog search page when checked on IOS 9.3
+  [ichim-david refs #90214]
 
 4.2 - (2018-06-14)
 ------------------
