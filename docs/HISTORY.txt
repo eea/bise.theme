@@ -3,6 +3,8 @@ Changelog
 
 4.4.dev0 - (unreleased)
 -----------------------
+- Viewport defined incorrectly in main template
+  [iulianpetchesi #96812]
 
 4.3 - (2018-06-25)
 ------------------
@@ -244,4 +246,3 @@ Changelog
 -------------------
 - Initial release
   [erral]
-
