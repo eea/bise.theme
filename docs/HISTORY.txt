@@ -3,6 +3,8 @@ Changelog
 
 4.4.dev0 - (unreleased)
 -----------------------
+- Added svg fallback for country map flags
+  [iulianpetchesi #96812]
 - Viewport defined incorrectly in main template
   [iulianpetchesi #96812]
 
