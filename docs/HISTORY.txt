@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.6.dev0 - (unreleased)
+-----------------------
+
 4.5 - (2018-10-09)
 ------------------
 - Added svg fallback for country map flags
