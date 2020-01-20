@@ -35,6 +35,10 @@ class PersonalBarViewlet(common.PersonalBarViewlet):
         self.sitemap = '/'.join([self.portal_state.navigation_root_url(),
                                  "sitemap"])
         self.help = '/'.join([self.portal_state.navigation_root_url(), "help"])
+        self.legal_and_privacy_notice = '/'.join(
+                [self.portal_state.navigation_root_url(),
+                 "/legal-and-privacy-notice/legal-and-privacy-notice"]
+                )
 
 
 class PathBarViewlet(common.PathBarViewlet):
