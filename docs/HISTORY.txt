@@ -3,6 +3,8 @@ Changelog
 
 4.6.dev0 - (unreleased)
 -----------------------
+- footer add terms link and email at contact
+  [iugin #109069]
 
 4.5 - (2018-10-09)
 ------------------
@@ -254,4 +256,3 @@ Changelog
 -------------------
 - Initial release
   [erral]
-
