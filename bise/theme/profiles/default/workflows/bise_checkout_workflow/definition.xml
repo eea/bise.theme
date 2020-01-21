@@ -10,6 +10,10 @@
  <permission>View</permission>
  <permission>iterate : Check in content</permission>
  <permission>iterate : Check out content</permission>
+ <state state_id="archived" title="Archive item">
+  <exit-transition transition_id="publish"/>
+  <exit-transition transition_id="retract"/>
+ </state>
  <state state_id="country_draft" title="Under review by Country Representatives">
   <exit-transition transition_id="immediately_publish"/>
   <exit-transition transition_id="to_etc_review"/>
@@ -75,6 +79,7 @@
  </state>
  <state state_id="draft" title="First draft">
   <exit-transition transition_id="immediately_publish"/>
+  <exit-transition transition_id="to_archived"/>
   <exit-transition transition_id="to_country_draft"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Authenticated</permission-role>
@@ -345,6 +350,7 @@
   <description>Can only be seen and edited by the owner.</description>
   <exit-transition transition_id="publish"/>
   <exit-transition transition_id="submit"/>
+  <exit-transition transition_id="to_archived"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -420,6 +426,7 @@
  <state state_id="published" title="Published">
   <description>Visible to everyone, editable by the owner.</description>
   <exit-transition transition_id="retract"/>
+  <exit-transition transition_id="to_archived"/>
   <exit-transition transition_id="to_country_draft"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>Editor</permission-role>
@@ -557,6 +564,13 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit for publication</action>
   <guard>
    <guard-permission>Request review</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="to_archived" title="Reviewer archives content" new_state="archived" trigger="USER" before_script="" after_script="">
+  <description>Archive the item.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=to_archived" category="workflow" icon="">Archive</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="to_country_draft" title="Send to country representatives" new_state="country_draft" trigger="USER" before_script="" after_script="">

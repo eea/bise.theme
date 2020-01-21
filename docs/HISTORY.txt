@@ -3,6 +3,8 @@ Changelog
 
 4.7.dev0 - (unreleased)
 -----------------------
+- Sync bise workflows from production
+  [krisztina]
 
 4.6 - (2020-01-21)
 ------------------
@@ -261,4 +263,3 @@ Changelog
 -------------------
 - Initial release
   [erral]
-
