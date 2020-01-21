@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.6.dev0 - (unreleased)
------------------------
+4.6 - (2020-01-21)
+------------------
 - Sync bise workflows from production
   [krisztina]
 - footer add terms link and email at contact
@@ -258,3 +258,4 @@ Changelog
 -------------------
 - Initial release
   [erral]
+
