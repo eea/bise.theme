@@ -3,6 +3,8 @@ Changelog
 
 4.6.dev0 - (unreleased)
 -----------------------
+- Sync bise workflows from production
+  [krisztina]
 - footer add terms link and email at contact
   [iugin #109069]
 
