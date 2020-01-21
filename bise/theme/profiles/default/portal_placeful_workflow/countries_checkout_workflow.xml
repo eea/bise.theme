@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<object name="countries_checkout_workflow" meta_type="WorkflowPolicy">
+ <property name="title">CountryReps checkout workflow policy</property>
+ <bindings>
+  <default>
+   <bound-workflow workflow_id="simple_publication_workflow"/>
+  </default>
+  <type type_id="BiodiversityFactsheet">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Collage">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Collection">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Document">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Ecosystem">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="ElasticSearch">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Event">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="FeedfeederFolder">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="File">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Folder">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="FolderishPage">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Image"/>
+  <type type_id="Link">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="MainTopic">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="News Item">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="PloneGlossary">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Service">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Sparql">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="SparqlBookmarksFolder">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="Study">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="SubTopic">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+  <type type_id="countryfactsheet">
+   <bound-workflow workflow_id="bise_checkout_workflow"/>
+  </type>
+ </bindings>
+</object>

@@ -3,4 +3,5 @@
  <property name="title"></property>
  <property name="max_chain_length" type="int">1</property>
  <object name="checkout_workflow_policy" meta_type="WorkflowPolicy"/>
+ <object name="countries_checkout_workflow" meta_type="WorkflowPolicy"/>
 </object>

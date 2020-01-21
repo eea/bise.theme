@@ -1,9 +1,31 @@
 <?xml version="1.0"?>
 <object name="checkout_workflow_policy" meta_type="WorkflowPolicy">
- <property name="title">Checkout Workflow Policy</property>
+ <property name="title">Special Checkout Folder workflow policy</property>
  <bindings>
   <default>
-   <bound-workflow workflow_id="checkout_workflow"/>
+   <bound-workflow workflow_id="bise_wc_workflow"/>
   </default>
+  <type default_chain="true" type_id="BiodiversityFactsheet"/>
+  <type default_chain="true" type_id="Collage"/>
+  <type default_chain="true" type_id="Collection"/>
+  <type default_chain="true" type_id="Document"/>
+  <type default_chain="true" type_id="Ecosystem"/>
+  <type default_chain="true" type_id="ElasticSearch"/>
+  <type default_chain="true" type_id="Event"/>
+  <type default_chain="true" type_id="FeedfeederFolder"/>
+  <type default_chain="true" type_id="File"/>
+  <type default_chain="true" type_id="Folder"/>
+  <type default_chain="true" type_id="FolderishPage"/>
+  <type default_chain="true" type_id="Image"/>
+  <type default_chain="true" type_id="Link"/>
+  <type default_chain="true" type_id="MainTopic"/>
+  <type default_chain="true" type_id="News Item"/>
+  <type default_chain="true" type_id="PloneGlossary"/>
+  <type default_chain="true" type_id="Service"/>
+  <type default_chain="true" type_id="Sparql"/>
+  <type default_chain="true" type_id="SparqlBookmarksFolder"/>
+  <type default_chain="true" type_id="Study"/>
+  <type default_chain="true" type_id="SubTopic"/>
+  <type default_chain="true" type_id="countryfactsheet"/>
  </bindings>
 </object>

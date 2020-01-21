@@ -1,10 +1,14 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="simple_publication_workflow" title="Simple Publication Workflow" description=" - Simple workflow that is useful for basic web sites. - Things start out as private, and can either be submitted for review, or published directly. - The creator of a content item can edit the item even after it is published." state_variable="review_state" initial_state="private" manager_bypass="False">
+<dc-workflow workflow_id="bise_webpages_workflow" title="Simple Publication Workflow" description=" - Simple workflow that is useful for basic web sites. - Things start out as private, and can either be submitted for review, or published directly. - The creator of a content item can edit the item even after it is published." state_variable="review_state" initial_state="private" manager_bypass="True">
  <permission>Access contents information</permission>
  <permission>Change portal events</permission>
  <permission>List folder contents</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
+ <state state_id="archived" title="Archive item">
+  <exit-transition transition_id="publish"/>
+  <exit-transition transition_id="retract"/>
+ </state>
  <state state_id="pending" title="Pending review">
   <description>Waiting to be reviewed, not editable by the owner.</description>
   <exit-transition transition_id="publish"/>
@@ -50,6 +54,7 @@
   <description>Can only be seen and edited by the owner.</description>
   <exit-transition transition_id="publish"/>
   <exit-transition transition_id="submit"/>
+  <exit-transition transition_id="to_archived"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -88,8 +93,9 @@
  </state>
  <state state_id="published" title="Published">
   <description>Visible to everyone, editable by the owner.</description>
-  <exit-transition transition_id="retract"/>
   <exit-transition transition_id="reject"/>
+  <exit-transition transition_id="retract"/>
+  <exit-transition transition_id="to_archived"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Anonymous</permission-role>
   </permission-map>
@@ -141,6 +147,13 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit for publication</action>
   <guard>
    <guard-permission>Request review</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="to_archived" title="Reviewer archives content" new_state="archived" trigger="USER" before_script="" after_script="">
+  <description>Archive the item.</description>
+  <action url="%(content_url)s/content_status_modify?workflow_action=to_archived" category="workflow" icon="">Archive</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
  <worklist worklist_id="reviewer_queue" title="">

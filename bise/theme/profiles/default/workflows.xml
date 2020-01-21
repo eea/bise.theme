@@ -1,18 +1,70 @@
 <?xml version="1.0"?>
 <object name="portal_workflow" meta_type="Plone Workflow Tool">
- <property name="title">Contains workflow definitions for your portal</property>
+ <property
+    name="title">Contains workflow definitions for your portal</property>
  <object name="bise_checkout_workflow" meta_type="Workflow"/>
+ <object name="bise_wc_workflow" meta_type="Workflow"/>
+ <object name="bise_webpages_workflow" meta_type="Workflow"/>
  <object name="checkout_workflow" meta_type="Workflow"/>
  <object name="comment_review_workflow" meta_type="Workflow"/>
  <object name="folder_workflow" meta_type="Workflow"/>
  <object name="intranet_folder_workflow" meta_type="Workflow"/>
- <object name="intranet_folder_workflow" meta_type="Workflow"/>
+ <object name="intranet_workflow" meta_type="Workflow"/>
  <object name="one_state_workflow" meta_type="Workflow"/>
  <object name="plone_workflow" meta_type="Workflow"/>
- <object name="ploneboard_comment_workflow" meta_type="Workflow"/>
- <object name="ploneboard_conversation_workflow" meta_type="Workflow"/>
- <object name="ploneboard_editable_comment_workflow" meta_type="Workflow"/>
- <object name="ploneboard_forum_workflow" meta_type="Workflow"/>
- <object name="ploneboard_workflow" meta_type="Workflow"/>
  <object name="simple_publication_workflow" meta_type="Workflow"/>
+ <bindings>
+  <default>
+   <bound-workflow workflow_id="bise_webpages_workflow"/>
+  </default>
+  <type type_id="ATBooleanCriterion"/>
+  <type type_id="ATCurrentAuthorCriterion"/>
+  <type type_id="ATDateCriteria"/>
+  <type type_id="ATDateRangeCriterion"/>
+  <type type_id="ATListCriterion"/>
+  <type type_id="ATPathCriterion"/>
+  <type type_id="ATPortalTypeCriterion"/>
+  <type type_id="ATReferenceCriterion"/>
+  <type type_id="ATRelativePathCriterion"/>
+  <type type_id="ATSelectionCriterion"/>
+  <type type_id="ATSimpleIntCriterion"/>
+  <type type_id="ATSimpleStringCriterion"/>
+  <type type_id="ATSortCriterion"/>
+  <type type_id="CollageAlias"/>
+  <type type_id="CollageColumn"/>
+  <type type_id="CollageRow"/>
+  <type type_id="DepictionTool"/>
+  <type type_id="Discussion Item">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="EEAPossibleRelation"/>
+  <type type_id="EEARelationsContentType"/>
+  <type type_id="EEARelationsTool"/>
+  <type type_id="File"/>
+  <type type_id="FileAttachment"/>
+  <type type_id="Image"/>
+  <type type_id="ImageAttachment"/>
+  <type type_id="PDFTheme"/>
+  <type type_id="PDFTool"/>
+  <type type_id="Plone Site"/>
+  <type type_id="PloneGlossaryDefinition"/>
+  <type type_id="Ploneboard">
+   <bound-workflow workflow_id="ploneboard_workflow"/>
+  </type>
+  <type type_id="PloneboardComment">
+   <bound-workflow workflow_id="ploneboard_comment_workflow"/>
+  </type>
+  <type type_id="PloneboardConversation">
+   <bound-workflow workflow_id="ploneboard_conversation_workflow"/>
+  </type>
+  <type type_id="PloneboardForum">
+   <bound-workflow workflow_id="ploneboard_forum_workflow"/>
+  </type>
+  <type type_id="Sparql">
+   <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="SparqlBookmarksFolder">
+   <bound-workflow workflow_id="folder_workflow"/>
+  </type>
+ </bindings>
 </object>
