@@ -1,6 +1,9 @@
 Changelog
 =========
 
+4.8.dev0 - (unreleased)
+-----------------------
+
 4.7 - (2020-01-22)
 ------------------
 - Added a viewlet to show the object archived state
