@@ -1,8 +1,8 @@
 Changelog
 =========
 
-4.7.dev0 - (unreleased)
------------------------
+4.7 - (2020-01-22)
+------------------
 - Added a viewlet to show the object archived state
   [krisztina]
 - Sync bise workflows from production
@@ -265,3 +265,4 @@ Changelog
 -------------------
 - Initial release
   [erral]
+
