@@ -3,6 +3,8 @@ Changelog
 
 4.7.dev0 - (unreleased)
 -----------------------
+- Added a viewlet to show the object archived state
+  [krisztina]
 - Sync bise workflows from production
   [krisztina]
 

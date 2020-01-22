@@ -3,6 +3,9 @@ from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets import common
 from zope.component import getMultiAdapter
+from plone.api.content import get_state
+from Products.CMFCore.WorkflowCore import WorkflowException
+from plone.app.layout.viewlets import ViewletBase
 
 
 class LogoViewlet(common.LogoViewlet):
@@ -97,3 +100,17 @@ class GlobalSectionsViewlet(common.GlobalSectionsViewlet):
             return {'portal': valid_actions[-1][1]}
 
         return {'portal': default_tab}
+
+class ArchivedStateViewlet(ViewletBase):
+    index = ViewPageTemplateFile("archived_state_viewlet.pt")
+
+    def render(self):
+        try:
+            state = get_state(self.context)
+        except WorkflowException:
+            return ""
+
+        if state == "archived":
+            return self.index()
+
+        return ""
